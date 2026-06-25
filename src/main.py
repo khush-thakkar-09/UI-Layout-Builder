@@ -19,7 +19,7 @@ RESET = "\033[0m"
 def print_header():
     os.system('clear' if os.name == 'posix' else 'cls')
     print(f"{CYAN}{BOLD}" + "="*60)
-    print("      ✨ UI LAYOUT BUILDER — PROMPT PIPELINE (1-3) ✨      ")
+    print("      ✨ UI LAYOUT BUILDER — PROMPT PIPELINE (1-6) ✨      ")
     print("="*60 + f"{RESET}\n")
 
 def main():
@@ -55,7 +55,11 @@ def main():
                 "input_evaluation_reason": "",
                 "enhanced_prompt": "",
                 "human_approved_prompt": False,
-                "pipeline_status": "running"
+                "pipeline_status": "running",
+                "failure_reason": "",
+                "coded_sections": [],
+                "final_html": "",
+                "output_path": ""
             }
             
             # Execute the Graph
@@ -64,18 +68,38 @@ def main():
             # Print Pipeline Summary
             print(f"\n{CYAN}{BOLD}" + "-"*60 + f"{RESET}")
             print(f"{BOLD}PIPELINE RUN SUMMARY:{RESET}")
-            print(f"Status: {GREEN if final_state.get('pipeline_status') == 'running' else RED}{final_state.get('pipeline_status').upper()}{RESET}")
+            print(f"Status: {GREEN if final_state.get('pipeline_status') == 'complete' else RED}{final_state.get('pipeline_status').upper()}{RESET}")
             
             if final_state.get("pipeline_status") == "failed":
-                print(f"Reason: {RED}{final_state.get('input_evaluation_reason')}{RESET}")
+                reason = final_state.get("failure_reason") or final_state.get("input_evaluation_reason")
+                print(f"Reason: {RED}{reason}{RESET}")
             else:
                 print(f"\n{BOLD}Final Approved Enhanced Prompt:{RESET}")
-                print(f"{GREEN}{final_state.get('enhanced_prompt')}{RESET}")
+                print(f"{GREEN}{final_state.get('enhanced_prompt')}{RESET}\n")
+                
+                sections = final_state.get('sections', [])
+                coded_sections = final_state.get('coded_sections', [])
+                
+                if sections:
+                    print(f"{BOLD}Generated & Coded Sections ({len(sections)}):{RESET}")
+                    for s in sections:
+                        coded_info = next((cs for cs in coded_sections if cs["section_id"] == s["id"]), None)
+                        status_str = f"{GREEN}Coded Successfully{RESET}" if (coded_info and coded_info["status"] == "success") else f"{RED}Coding Failed{RESET}"
+                        print(f"  {CYAN}✓ [{s['id']}] {s['name']}{RESET} — {status_str}")
+                        # Print a snippet of the description
+                        desc = s['description'].replace('\n', ' ')
+                        snippet = (desc[:100] + '...') if len(desc) > 100 else desc
+                        print(f"    {snippet}")
+                
+                if final_state.get("output_path"):
+                    print(f"\n{GREEN}{BOLD}✓ Page synthesized successfully!{RESET}")
+                    print(f"File saved to: {BOLD}{final_state.get('output_path')}{RESET}")
                 
             print(f"{CYAN}{BOLD}" + "-"*60 + f"{RESET}\n")
             
             input("Press Enter to continue...")
             print_header()
+
             
     except KeyboardInterrupt:
         print(f"\n\n{GREEN}Exited by user. Goodbye!{RESET}\n")

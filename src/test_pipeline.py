@@ -40,11 +40,14 @@ class TestPipeline(unittest.TestCase):
             "input_evaluation_reason": "",
             "enhanced_prompt": "",
             "human_approved_prompt": False,
-            "pipeline_status": "running"
+            "pipeline_status": "running",
+            "coded_sections": [],
+            "final_html": "",
+            "output_path": ""
         }
         res = self.graph.invoke(state)
         self.assertEqual(res["input_evaluation"], "pass")
-        self.assertEqual(res["pipeline_status"], "running")
+        self.assertEqual(res["pipeline_status"], "complete")
         self.assertTrue(res["human_approved_prompt"])
         self.assertTrue(len(res["enhanced_prompt"]) > 0)
         # Ensure we didn't output questions in the final approved prompt
@@ -53,8 +56,8 @@ class TestPipeline(unittest.TestCase):
     @patch('builtins.input')
     def test_valid_prompt_with_feedback(self, mock_input):
         """Verify that UI prompt works when feedback is provided."""
-        # Mock inputs: first choice '2' (edit), then feedback string
-        mock_input.side_effect = ["2", "Make sure to emphasize the wood-roasted brewing method and use brown/gold colors."]
+        # Mock inputs: first choice '2' (edit), then feedback string, then '1' for sections
+        mock_input.side_effect = ["2", "Make sure to emphasize the wood-roasted brewing method and use brown/gold colors.", "1", "1", "1", "1", "1"]
         
         state = {
             "user_prompt": "Build a modern landing page for a coffee shop with a dark theme.",
@@ -62,14 +65,18 @@ class TestPipeline(unittest.TestCase):
             "input_evaluation_reason": "",
             "enhanced_prompt": "",
             "human_approved_prompt": False,
-            "pipeline_status": "running"
+            "pipeline_status": "running",
+            "coded_sections": [],
+            "final_html": "",
+            "output_path": ""
         }
         res = self.graph.invoke(state)
         self.assertEqual(res["input_evaluation"], "pass")
-        self.assertEqual(res["pipeline_status"], "running")
+        self.assertEqual(res["pipeline_status"], "complete")
         self.assertTrue(res["human_approved_prompt"])
         # The final prompt should contain elements of feedback or be successfully updated
         self.assertTrue(len(res["enhanced_prompt"]) > 0)
+
 
 if __name__ == "__main__":
     unittest.main()

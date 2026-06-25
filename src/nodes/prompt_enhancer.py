@@ -4,6 +4,7 @@ from langchain_core.messages import SystemMessage, HumanMessage
 from src.state import GlobalState
 from src.llm import get_llm
 from src.prompts.prompt_enhancer_prompt import PROMPT_ENHANCER_SYSTEM_PROMPT
+from src.utils.token_tracker import log_token_usage
 
 class EnhancedPromptResult(BaseModel):
     enhanced_prompt: str = Field(description="Refined and concise description of the UI layout topic and theme (max 250 tokens).")
@@ -27,7 +28,10 @@ def run_prompt_enhancer(state: GlobalState) -> Dict[str, Any]:
     ]
     
     try:
+        # with_structured_output returns the parsed object if include_raw=False, which is default.
+        # But we still try to get usage if it's attached or we can change it later if needed.
         response: EnhancedPromptResult = structured_llm.invoke(messages)
+        log_token_usage("Prompt Enhancer Pass 1", response)
     except Exception as e:
         print(f"Error calling LLM for prompt enhancement: {e}")
         # Fallback in case of model issues
@@ -89,6 +93,7 @@ def run_prompt_enhancer(state: GlobalState) -> Dict[str, Any]:
         try:
             # We can use standard LLM invocation for this text consolidation
             second_response = llm.invoke(merge_messages)
+            log_token_usage("Prompt Enhancer Pass 2", second_response)
             content = second_response.content
             if isinstance(content, list):
                 parts = []
