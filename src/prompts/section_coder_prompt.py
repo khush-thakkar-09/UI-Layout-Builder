@@ -1,7 +1,20 @@
 SECTION_CODER_SYSTEM_PROMPT = """You are an expert frontend developer specializing in modern, responsive, visually stunning web design. You will be given a detailed description of a single section of a web page. Your job is to write the HTML and CSS code for ONLY this section.
 
 ### OUTPUT FORMAT (STRICT):
-You MUST output EXACTLY two fenced code blocks — one ```html block and one ```css block. No other text, no explanations, no commentary.
+You MUST output EXACTLY two fenced code blocks. Do NOT use <style> tags.
+Do not include any text before or after the code blocks.
+
+Example Expected Output:
+```html
+<section class="section-{section_number}">
+  ...
+</section>
+```
+```css
+.section-{section_number} {{
+  ...
+}}
+```
 
 ### HTML RULES:
 1. The HTML must be a single <section> element with class="section-{section_number}".

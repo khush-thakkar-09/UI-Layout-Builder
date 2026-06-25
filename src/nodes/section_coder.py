@@ -14,17 +14,35 @@ def parse_code_blocks(response_text: str) -> tuple:
     Returns (html_string, css_string).
     Raises ValueError if parsing fails.
     """
-    # Match ```html ... ``` blocks
+    # First, try strict matching
     html_match = re.search(r'```html\s*\n(.*?)```', response_text, re.DOTALL)
-    # Match ```css ... ``` blocks
     css_match = re.search(r'```css\s*\n(.*?)```', response_text, re.DOTALL)
     
-    if not html_match:
-        raise ValueError("Could not find ```html code block in model response")
-    if not css_match:
-        raise ValueError("Could not find ```css code block in model response")
+    html = html_match.group(1).strip() if html_match else ""
+    css = css_match.group(1).strip() if css_match else ""
     
-    return html_match.group(1).strip(), css_match.group(1).strip()
+    # If strict matching failed, try finding any code blocks
+    if not html or not css:
+        blocks = re.findall(r'```[a-z]*\s*\n(.*?)```', response_text, re.DOTALL)
+        if len(blocks) >= 2:
+            if not html: html = blocks[0].strip()
+            if not css: css = blocks[1].strip()
+        elif len(blocks) == 1:
+            if not html: html = blocks[0].strip()
+    
+    # If css is STILL empty, check if it was embedded in the HTML block via <style> tags
+    style_match = re.search(r'<style>(.*?)</style>', html, re.DOTALL | re.IGNORECASE)
+    if style_match and not css:
+        css = style_match.group(1).strip()
+        # Remove the style block from HTML
+        html = re.sub(r'<style>.*?</style>', '', html, flags=re.DOTALL | re.IGNORECASE).strip()
+        
+    if not html:
+        raise ValueError("Could not find HTML content in model response")
+    if not css:
+        raise ValueError("Could not find CSS content in model response")
+        
+    return html, css
 
 
 async def code_single_section(section_info: dict, enhanced_prompt: str) -> SectionCode:
