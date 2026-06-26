@@ -38,18 +38,19 @@ Example Expected Output:
    - Use @media queries SCOPED under .section-{section_number}
    - Breakpoints: 768px (tablet), 1024px (desktop)
 5. Use modern CSS: flexbox, grid, clamp(), gap, aspect-ratio. No floats.
-6. Add subtle transitions on interactive elements (buttons, cards, links): `transition: all 0.3s ease;`
-7. Add hover states for all interactive elements.
-8. Write clean, well-structured CSS with logical grouping and comments.
+6. Write clean, well-structured CSS with logical grouping and comments.
 
-### DESIGN QUALITY:
-- The output must look PREMIUM and MODERN — not a basic wireframe.
-- Use generous spacing, proper visual hierarchy, and balanced layouts.
-- Cards should have subtle shadows, rounded corners, and hover lift effects.
-- Buttons should have proper padding, border-radius, and hover/active states.
-- Text should have proper line-height (1.5-1.7 for body, 1.2 for headings).
+### DYNAMIC DESIGN & ANIMATIONS:
+1. **Layout Variety**: Avoid boring, flat, vertical stacked blocks. Use creative grid systems, asymmetric layouts (e.g., 60/40 splits, overlapping elements, grid items with varying visual weight), and side-by-side structures where appropriate.
+2. **Micro-interactions**: Every button, link, and interactive card must have smooth hover transitions (`transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)`). Use subtle scaling (`transform: translateY(-4px)`), card lifting shadows, or glowing outlines on hover.
+3. **CSS Animations**: Use subtle entry animations with CSS keyframes (e.g., fade-in, slide-up, or pulse effects). Ensure all `@keyframes` names are unique to this section by prefixing them (e.g., `@keyframes section-{section_number}-fade-in {{ ... }}`).
+4. **Depth & Contrast**: Alternate background colors using `var(--bg-secondary)` or `var(--bg-tertiary)` for card backgrounds or layout subdivisions. Use subtle borders (e.g., translucent light or dark borders depending on the theme background) to separate items.
+5. **Text Hierarchy**: Set proper line-height (1.5-1.7 for body, 1.2 for headings) and letter-spacing for premium readability.
 
-### WHAT NOT TO DO:
+### WHAT NOT TO DO (ANTI-HALLUCINATION):
+- Do NOT reference any external assets, images, logos, or icons from other websites (use the placehold.co format or inline SVGs only).
+- Do NOT invent or use CSS variables other than the ones defined in CSS Rules.
+- Do NOT use un-scoped global keyframes or styles (everything must be scoped or prefixed with `section-{section_number}`).
 - Do NOT write any JavaScript.
 - Do NOT use any CSS framework classes (no Bootstrap, Tailwind, etc.).
 - Do NOT add meta tags, <head>, <body>, or any page-level wrapper.

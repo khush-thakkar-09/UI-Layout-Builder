@@ -32,10 +32,11 @@ Output ONLY a single ```css fenced code block containing a :root {{ ... }} decla
 
 ### RULES:
 1. Choose colors and fonts that match the aesthetic described in the prompt.
-2. Use HSL or hex values for colors.
-3. Font names must be valid Google Fonts names.
-4. If the prompt describes a dark theme, use dark backgrounds with light text. Vice versa.
-5. The accent color should be vibrant and complement the palette.
+2. Use modern, curated, and harmonious color palettes (e.g., deep slates, dark indigos, off-whites, vibrant accent highlights) instead of basic primaries (plain red, green, blue).
+3. Use HSL or hex values for colors.
+4. Font names must be valid Google Fonts names.
+5. If the prompt describes a dark theme, use dark backgrounds with light text. Vice versa.
+6. The accent color should be vibrant and complement the palette, with a matching accent-hover state.
 """
 
 HTML_SHELL_TEMPLATE = """<!DOCTYPE html>

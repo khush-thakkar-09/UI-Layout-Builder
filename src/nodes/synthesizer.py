@@ -44,7 +44,7 @@ def run_synthesizer(state: GlobalState) -> Dict[str, Any]:
     
     # Initialize Gemini to derive theme tokens
     try:
-        llm = get_llm(temperature=0.2)
+        llm = get_llm(temperature=0.4)
         theme_messages = [
             SystemMessage(content=THEME_EXTRACTOR_PROMPT),
             HumanMessage(content=f"UI Request: {user_prompt}\n\nDetailed Context: {enhanced_prompt}")

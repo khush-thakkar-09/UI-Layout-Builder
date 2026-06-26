@@ -37,8 +37,7 @@ UI_KEYWORDS = [
     r"\bmenu(s)?\b",
     r"\bfeed\b",
     r"\bcheckout\b",
-    r"\bcart\b",
-    r"\b(create|build|generate|make|design|render|construct|setup|add|produce)\b"
+    r"\bcart\b"
 ]
 
 # Compile the patterns for efficiency

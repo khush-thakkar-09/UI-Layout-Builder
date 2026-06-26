@@ -11,6 +11,7 @@ class SectionCode(TypedDict):
     section_name: str         # Human-readable name
     html: str                 # Raw HTML block for this section
     css: str                  # Scoped CSS for this section
+    jsx: Optional[str]        # React JSX code block for this section
     status: str               # "success" | "failed"
     error: Optional[str]      # Error message if failed
 
@@ -29,4 +30,6 @@ class GlobalState(TypedDict):
     # --- Part 5 & 6: Section Coding Agent + Synthesizer ---
     coded_sections: List[SectionCode]        # Individual coded section outputs
     final_html: str                          # Assembled full-page HTML
-    output_path: str                         # Path to saved index.html
+    final_jsx: str                           # Assembled full-page React JSX
+    output_path: str                         # Path to saved file
+
