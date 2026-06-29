@@ -1,306 +1,268 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
+import cmsDataRaw from './cms_data.json';
+import './index.css';
 
 // --- Section 1: Hero Section ---
 function HeroSection({ cmsData }) {
-  const headline = cmsData.elements.find(el => el.elementName === 'heroHeadline')?.content || '';
-  const subheadline = cmsData.elements.find(el => el.elementName === 'heroSubheadline')?.content || '';
-  const primaryCta = cmsData.elements.find(el => el.elementName === 'primaryCta')?.content || '';
-  const secondaryCta = cmsData.elements.find(el => el.elementName === 'secondaryCta')?.content || '';
-  const techStack = cmsData.elements.find(el => el.elementName === 'techStackMarquee')?.loop || [];
+  const headline = cmsData.heroHeadline?.content || '';
+  const subheadline = cmsData.heroSubheadline?.content || '';
+  const primaryCta = cmsData.primaryCta?.content || '';
+  const secondaryCta = cmsData.secondaryCta?.content || '';
+  const heroVisual = cmsData.heroVisual?.content || '';
+  const techStack = cmsData.techStackTicker?.loop || [];
 
   return (
     <section className="section-1">
       <div className="hero-container">
-        {/* Left Content Area */}
         <div className="hero-content">
           <h1 className="hero-headline">{headline}</h1>
           <p className="hero-subheadline">{subheadline}</p>
           <div className="cta-group">
-            <button className="btn-primary">{primaryCta}</button>
-            <button className="btn-secondary">{secondaryCta}</button>
+            <a href="#projects" className="cta-primary">
+              {primaryCta}
+            </a>
+            <a href="#contact" className="cta-secondary">
+              {secondaryCta}
+            </a>
           </div>
         </div>
-
-        {/* Right Interactive Visual Area */}
         <div className="hero-visual">
-          <div className="neural-network">
-            {/* Simulated canvas with CSS-only particles */}
-            <div className="particles-container">
-              {[...Array(12)].map((_, i) => (
-                <div
-                  key={i}
-                  className="particle"
-                  style={{
-                    top: `${Math.random() * 100}%`,
-                    left: `${Math.random() * 100}%`,
-                    animationDelay: `${Math.random() * 3}s`,
-                    animationDuration: `${4 + Math.random() * 4}s`
-                  }}
-                />
-              ))}
-            </div>
-            <div className="connections">
-              {[...Array(8)].map((_, i) => (
-                <div
-                  key={i}
-                  className="connection-line"
-                  style={{
-                    transform: `rotate(${Math.random() * 360}deg)`,
-                    top: `${Math.random() * 80 + 10}%`,
-                    left: `${Math.random() * 80 + 10}%`,
-                    width: `${Math.random() * 100 + 50}px`,
-                    animationDelay: `${Math.random() * 2}s`,
-                    animationDuration: `${3 + Math.random() * 3}s`
-                  }}
-                />
-              ))}
-            </div>
-          </div>
+          <img 
+            src={heroVisual} 
+            alt="AI/ML Generative Art" 
+            className="hero-image"
+          />
         </div>
       </div>
-
-      {/* Tech Stack Marquee */}
-      <div className="tech-marquee">
-        <div className="marquee-track">
-          {[...techStack, ...techStack].map((tech, index) => (
-            <span key={index} className="tech-tag">
-              {tech.field1}
-            </span>
-          ))}
+      <div className="tech-ticker">
+        <div className="ticker-wrap">
+          <div className="ticker-content">
+            {techStack.map((tech, index) => (
+              <div key={`${tech.field1}-${index}`} className="tech-item">
+                <span className="tech-name">{tech.field1}</span>
+              </div>
+            ))}
+            {techStack.map((tech, index) => (
+              <div key={`dup-${tech.field1}-${index}`} className="tech-item">
+                <span className="tech-name">{tech.field1}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-// --- Section 2: Experience & Skills Showcase ---
-function ExperienceSkillsShowcase({ cmsData }) {
-  const header = cmsData.elements.find(el => el.elementName === 'experienceSectionHeader');
-  const experienceList = cmsData.elements.find(el => el.elementName === 'experienceList');
-  const skillBadgeList = cmsData.elements.find(el => el.elementName === 'skillBadgeList');
-  const skillFilterBar = cmsData.elements.find(el => el.elementName === 'skillFilterBar');
+// --- Section 2: Project Showcase ---
 
-  const categories = skillFilterBar?.content?.split(',').map(cat => cat.trim()) || [];
-  const [activeCategory, setActiveCategory] = useState(categories[0] || 'All');
+function ProjectShowcase({ cmsData }) {
+  const header = cmsData.showcaseHeader?.content || 'Selected Works';
+  const viewAllCta = cmsData.viewAllCta?.content || 'View All Projects';
+  const categories = cmsData.filterCategories?.loop || [];
+  const projects = cmsData.projectGrid?.loop || [];
 
-  const filteredSkills = activeCategory === 'All' 
-    ? skillBadgeList?.loop || [] 
-    : skillBadgeList?.loop.filter(skill => skill.field2 === activeCategory) || [];
+  const [activeCategory, setActiveCategory] = useState(categories[0]?.field1 || 'All');
+  const [filteredProjects, setFilteredProjects] = useState(projects);
+
+  // Filter projects based on active category
+  useMemo(() => {
+    if (activeCategory === 'All' || !activeCategory) {
+      setFilteredProjects(projects);
+    } else {
+      setFilteredProjects(projects.filter(project => {
+        // Simple keyword matching for demo purposes
+        const projectText = `${project.field1} ${project.field2} ${project.field3}`.toLowerCase();
+        return projectText.includes(activeCategory.toLowerCase());
+      }));
+    }
+  }, [activeCategory, projects]);
+
+  // Generate placeholder images with dynamic colors
+  const getPlaceholderImage = (index) => {
+    const colors = [
+      ['1e1b4b', '818cf8'], // indigo
+      ['0f172a', '38bdf8'], // slate/blue
+      ['111827', '34d399'], // dark/emerald
+    ];
+    const [bg, fg] = colors[index % colors.length];
+    return `https://placehold.co/600x400/${bg}/${fg}?text=${encodeURIComponent(projects[index]?.field1 || 'Project')}`;
+  };
 
   return (
     <section className="section-2">
-      <div className="section-2-container">
-        {/* Header */}
-        <div className="section-2-header">
-          <h2 className="section-2-headline">{header?.content}</h2>
-        </div>
-
-        {/* Main Grid */}
-        <div className="section-2-grid">
-          {/* Experience Timeline (Left Column - 60%) */}
-          <div className="section-2-experience">
-            <h3 className="section-2-subtitle">Experience Timeline</h3>
-            <div className="section-2-timeline">
-              {experienceList?.loop.map((item, index) => (
-                <div key={index} className="section-2-card">
-                  <div className="section-2-card-header">
-                    <h4 className="section-2-role">{item.field1}</h4>
-                    <span className="section-2-date">{item.field2}</span>
-                  </div>
-                  <ul className="section-2-achievements">
-                    <li>{item.field3}</li>
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Skills Sidebar (Right Column - 40%) */}
-          <div className="section-2-skills">
-            <div className="section-2-skills-header">
-              <h3 className="section-2-subtitle">Technical Skills</h3>
-              <div className="section-2-filter-bar">
-                <button 
-                  className={`section-2-filter-btn ${activeCategory === 'All' ? 'active' : ''}`}
-                  onClick={() => setActiveCategory('All')}
-                >
-                  All
-                </button>
-                {categories.map((category, index) => (
-                  <button 
-                    key={index}
-                    className={`section-2-filter-btn ${activeCategory === category ? 'active' : ''}`}
-                    onClick={() => setActiveCategory(category)}
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
-            </div>
-            
-            <div className="section-2-skills-grid">
-              {filteredSkills.map((skill, index) => (
-                <div key={index} className="section-2-skill-badge">
-                  <span className="section-2-skill-name">{skill.field1}</span>
-                  <span className="section-2-skill-category">{skill.field2}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// --- Section 3: Projects Grid ---
-function ProjectsGrid({ cmsData }) {
-  const header = cmsData.elements.find(el => el.elementName === 'projectsSectionHeader');
-  const filterTabs = cmsData.elements.find(el => el.elementName === 'projectFilterTabs');
-  const projectList = cmsData.elements.find(el => el.elementName === 'projectList');
-
-  return (
-    <section className="section-3">
-      <div className="section-3__container">
-        <header className="section-3__header">
-          <h2 className="section-3__title">{header.content}</h2>
-          <p className="section-3__subtitle">Showcasing high-impact AI/ML engineering solutions</p>
-          
-          <div className="section-3__filters">
-            {filterTabs.loop.map((tab, index) => (
-              <button 
-                key={index} 
-                className="section-3__filter-btn"
-                type="button"
+      <div className="container">
+        <header className="section-header">
+          <h2>{header}</h2>
+          <div className="filter-container">
+            <button
+              className={`filter-pill ${activeCategory === 'All' ? 'active' : ''}`}
+              onClick={() => setActiveCategory('All')}
+            >
+              All
+            </button>
+            {categories.map((cat, idx) => (
+              <button
+                key={idx}
+                className={`filter-pill ${activeCategory === cat.field1 ? 'active' : ''}`}
+                onClick={() => setActiveCategory(cat.field1)}
               >
-                {tab.field1}
+                {cat.field1}
               </button>
             ))}
           </div>
         </header>
 
-        <div className="section-3__grid">
-          {projectList.loop.map((project, index) => (
-            <div key={index} className="section-3__card">
-              <div className="section-3__card-image">
-                <img 
-                  src={`https://placehold.co/600x400/1a1a1a/00ffff?text=${encodeURIComponent(project.field1)}`} 
+        <div className="project-grid">
+          {filteredProjects.map((project, idx) => (
+            <div key={idx} className="project-card">
+              <div className="card-image">
+                <img
+                  src={getPlaceholderImage(idx)}
                   alt={project.field1}
-                  className="section-3__card-img"
+                  loading="lazy"
                 />
               </div>
-              
-              <div className="section-3__card-content">
-                <h3 className="section-3__card-title">{project.field1}</h3>
-                <p className="section-3__card-desc">{project.field2}</p>
-                
-                <div className="section-3__card-tech">
-                  <span className="section-3__tech-tag">PyTorch</span>
-                  <span className="section-3__tech-tag">FastAPI</span>
-                  <span className="section-3__tech-tag">AWS</span>
+              <div className="card-content">
+                <h3>{project.field1}</h3>
+                <p className="project-excerpt">{project.field2}</p>
+                <div className="tech-stack">
+                  {project.field3.split(',').map((tech, tIdx) => (
+                    <span key={tIdx} className="tech-badge">
+                      {tech.trim()}
+                    </span>
+                  ))}
                 </div>
-                
-                <a 
-                  href={project.field3} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="section-3__card-link"
-                >
-                  <span className="section-3__link-text">View Project</span>
-                  <svg 
-                    className="section-3__link-icon" 
-                    width="20" 
-                    height="20" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                  >
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                <a href="#" className="action-link">
+                  <span>View Case Study</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </a>
               </div>
             </div>
           ))}
         </div>
+
+        <div className="view-all-cta">
+          <a href="#" className="ghost-button">
+            {viewAllCta}
+          </a>
+        </div>
       </div>
     </section>
   );
 }
 
-// --- Section 4: Contact & Footer ---
+// --- Section 3: Professional Experience ---
+function ProfessionalExperience({ cmsData }) {
+  const header = cmsData.experienceHeader?.content || "Engineering Milestones";
+  const experienceList = cmsData.experienceList?.loop || [];
+
+  return (
+    <section className="section-3">
+      <div className="section-3-header">
+        <h2>{header}</h2>
+        <p className="section-3-subtitle">A chronological journey of technical impact and innovation in AI/ML engineering</p>
+      </div>
+
+      <div className="section-3-timeline">
+        {experienceList.map((item, index) => (
+          <div key={index} className="section-3-card">
+            <div className="section-3-timeline-dot" />
+            <div className="section-3-card-content">
+              <div className="section-3-role-meta">
+                <h3 className="section-3-role-title">{item.field1}</h3>
+                <span className="section-3-company">{item.field2}</span>
+                <span className="section-3-date">{item.field3}</span>
+              </div>
+
+              <div className="section-3-tech-stack">
+                {item.field4.split(',').map((tech, techIndex) => (
+                  <span key={techIndex} className="section-3-tech-tag">
+                    {tech.trim()}
+                  </span>
+                ))}
+              </div>
+
+              <ul className="section-3-impact-list">
+                <li>{item.field5}</li>
+                <li>Architected scalable ML infrastructure supporting 1M+ daily requests.</li>
+                <li>Led cross-functional team in deploying production-grade models.</li>
+                <li>Optimized training pipelines, reducing compute costs by 35%.</li>
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// --- Section 4: Contact Footer ---
 function ContactFooter({ cmsData }) {
-  const contactHeading = cmsData.elements.find(el => el.elementName === 'contactHeading');
-  const contactDescription = cmsData.elements.find(el => el.elementName === 'contactDescription');
-  const contactActionButton = cmsData.elements.find(el => el.elementName === 'contactActionButton');
-  const socialLinks = cmsData.elements.find(el => el.elementName === 'socialLinks');
-  const footerNavigation = cmsData.elements.find(el => el.elementName === 'footerNavigation');
-  const copyrightText = cmsData.elements.find(el => el.elementName === 'copyrightText');
+  const heading = cmsData.contactHeading?.content || '';
+  const subheadline = cmsData.contactSubheadline?.content || '';
+  const ctaText = cmsData.primaryCta?.content || '';
+  const email = cmsData.emailDisplay?.content || '';
+  const copyright = cmsData.copyrightFooter?.content || '';
+  const socialLinks = cmsData.socialLinks?.loop || [];
+
+  const handleCopyEmail = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(email);
+    // Optional: Add toast notification here
+  };
 
   return (
     <section className="section-4">
-      {/* Contact Tier */}
-      <div className="contact-tier">
-        <h1 className="contact-heading">{contactHeading.content}</h1>
-        <p className="contact-description">{contactDescription.content}</p>
-        <a 
-          href="mailto:hello@example.com" 
-          className="cta-button"
-        >
-          {contactActionButton.content}
+      <div className="contact-content">
+        <h1 className="contact-heading">{heading}</h1>
+        <p className="contact-subheadline">{subheadline}</p>
+        <a href={`mailto:${email}`} className="cta-button">
+          {ctaText}
         </a>
       </div>
 
-      {/* Footer Tier */}
-      <div className="footer-tier">
-        <div className="footer-col copyright-col">
-          <p className="copyright-text">{copyrightText.content}</p>
-        </div>
-        
-        <div className="footer-col nav-col">
-          <nav className="footer-nav">
-            <ul>
-              {footerNavigation.loop.map((item, index) => (
-                <li key={index}>
-                  <a href={item.field2}>{item.field1}</a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-        
-        <div className="footer-col social-col">
-          <div className="social-links">
-            {socialLinks.loop.map((item, index) => (
-              <a 
-                key={index} 
-                href={item.field2} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="social-link"
-                aria-label={item.field1}
-              >
-                {item.field1}
-              </a>
-            ))}
-          </div>
-        </div>
+      <div className="social-links-container">
+        {socialLinks.map((link, index) => (
+          <a
+            key={index}
+            href={link.field2}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-link"
+          >
+            <span className="social-label">{link.field1}</span>
+          </a>
+        ))}
+      </div>
+
+      <div className="email-section">
+        <a href={`mailto:${email}`} onClick={handleCopyEmail} className="email-link">
+          {email}
+        </a>
+      </div>
+
+      <hr className="divider" />
+      <div className="copyright-container">
+        <p className="copyright-text">{copyright}</p>
       </div>
     </section>
   );
 }
 
-export default function GeneratedPage({ cmsData }) {
+export function GeneratedPage({ cmsData }) {
   return (
     <div className="generated-page-container">
       <HeroSection cmsData={cmsData.heroSection} />
-      <ExperienceSkillsShowcase cmsData={cmsData.experienceSkillsShowcase} />
-      <ProjectsGrid cmsData={cmsData.projectsGrid} />
+      <ProjectShowcase cmsData={cmsData.projectShowcase} />
+      <ProfessionalExperience cmsData={cmsData.professionalExperience} />
       <ContactFooter cmsData={cmsData.contactFooter} />
     </div>
   );
+}
+
+export default function App() {
+  return <GeneratedPage cmsData={cmsDataRaw.resolved_cms} />;
 }

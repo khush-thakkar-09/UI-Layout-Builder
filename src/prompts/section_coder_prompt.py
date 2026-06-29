@@ -25,6 +25,7 @@ export default function {section_component_name}({{ cmsData }}) {{
 1. **Single Root Element**: The component must return a single wrapping `<section>` element with `className="section-{section_number}"`.
 2. **className instead of class**: All HTML classes MUST use `className`. Use `htmlFor` instead of `for`.
 3. **Dynamic Data via cmsData (CRITICAL)**:
+   - CMS data is passed as a resolved flat object. Access fields directly as cmsData.fieldName?.content or cmsData.fieldName?.loop. Never use .elements.find() — that pattern does not apply here.
    - You receive a `cmsData` prop. It is a **flat object** where each key is an `elementName` from the CMS schema.
    - Access elements DIRECTLY by key: `cmsData.heroHeadline?.content` — NOT via `.elements.find()`.
    - For single Text/Image elements: `cmsData.myElementName?.content || ''`
@@ -32,6 +33,7 @@ export default function {section_component_name}({{ cmsData }}) {{
    - Loop item fields are accessed as `item.field1`, `item.field2`, `item.field3`, etc.
    - Use `useMemo` (already imported) for any `Math.random()` values so they don't change on re-render:
      `const values = useMemo(() => Array.from({{length: N}}, () => Math.random()), []);`
+   - Use 'useState' when an array containing two elements is needed (the current state value and a setter function), while use 'useMemo' when a single value is needed (the cached result of a calculation function)
    - All JS expressions inside JSX use single curly braces: `{{cmsData.myField?.content}}`
    - Do NOT add an `id` attribute to the section. Do NOT add any `data-*` attributes.
 

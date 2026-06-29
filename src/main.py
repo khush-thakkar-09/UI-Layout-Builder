@@ -97,7 +97,7 @@ def main():
                     print(f"\n{GREEN}{BOLD}✓ React + CMS layout integrated into local project!{RESET}")
                     react_dir = os.path.join(os.path.dirname(out_dir), 'testing_react', 'src')
                     print(f"  Vite App Entry:       [App.jsx](file://{os.path.join(react_dir, 'App.jsx')})")
-                    print(f"  CSS Stylesheet:       [index.css](file://{os.path.join(react_dir, 'App.css')})")
+                    print(f"  CSS Stylesheet:       [index.css](file://{os.path.join(react_dir, 'index.css')})")
                     print(f"  CMS JSON Dataset:     [cms_data.json](file://{os.path.join(react_dir, 'cms_data.json')})")
                 
             print(f"{CYAN}{BOLD}" + "-"*60 + f"{RESET}\n")
