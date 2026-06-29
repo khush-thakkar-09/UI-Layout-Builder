@@ -1,5 +1,6 @@
 import os
 import re
+import json
 from typing import Dict, Any
 from langchain_core.messages import SystemMessage, HumanMessage
 from src.state import GlobalState
@@ -40,6 +41,9 @@ def run_synthesizer(state: GlobalState) -> Dict[str, Any]:
             "failure_reason": "No coded sections found to synthesize",
         }
         
+    # Filter to only successfully coded sections
+    successful_sections = [s for s in coded_sections if s["status"] == "success"]
+    
     print("\n[Synthesizer] Generating global design tokens and theme...")
     
     # Initialize Gemini to derive theme tokens
