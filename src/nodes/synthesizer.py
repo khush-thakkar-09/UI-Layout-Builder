@@ -72,16 +72,26 @@ def run_synthesizer(state: GlobalState) -> Dict[str, Any]:
   --spacing-xl: 64px;
   --border-radius: 8px;
   --border-radius-lg: 16px;
-}"""
+}"""    # Assemble CSS blocks to get a combined CSS string for scanning fonts
+    css_blocks = []
+    for sec_code in successful_sections:
+        css_blocks.append(f"/* Section {sec_code['section_id']}: {sec_code['section_name']} */\n{sec_code['css']}")
 
-    # Extract Google Fonts to link/import
-    font_matches = re.findall(r"font-(?:family|heading):\s*['\"]?([^'\"\;]+)['\"]?", root_css)
+    # Extract Google Fonts to link/import from both root_css and section CSS blocks
+    all_css_to_scan = root_css + "\n" + "\n".join(css_blocks)
+    font_matches = re.findall(
+        r"(?:font-family|font-heading|font-mono|--font-[a-z0-9-]+):\s*['\"]?([^'\"\;,\)]+)['\"]?",
+        all_css_to_scan
+    )
+    
     google_fonts_import = ""
     if font_matches:
         font_families = []
         for font in set(font_matches):
             font = font.split(",")[0].strip()
-            if font.lower() not in ["sans-serif", "serif", "monospace", "cursive", "system-ui", "-apple-system"]:
+            # Clean quotes if any
+            font = font.strip("'\"")
+            if font.lower() not in ["sans-serif", "serif", "monospace", "cursive", "system-ui", "-apple-system", "inherit", "initial", "unset"] and not font.startswith("var("):
                 font_families.append(font.replace(" ", "+"))
         if font_families:
             font_query = "|".join(font_families)
@@ -90,11 +100,6 @@ def run_synthesizer(state: GlobalState) -> Dict[str, Any]:
     print("[Synthesizer] Assembling React components and stylesheets...")
     
     jsx_components = []
-    css_blocks = []
-    
-    # Filter to only successfully coded sections
-    successful_sections = [s for s in coded_sections if s["status"] == "success"]
-    
     resolved_cms = {}
     db_records = []
     
@@ -102,13 +107,11 @@ def run_synthesizer(state: GlobalState) -> Dict[str, Any]:
         section_id = sec_code["section_id"]
         section_name = sec_code["section_name"]
         
-        # Get raw JSX and clean "export default"
+        # Get raw JSX, strip internal React imports to prevent duplicate or invalid imports
         raw_jsx = sec_code["jsx"]
-        clean_jsx = raw_jsx.replace("export default function", "function")
+        clean_jsx = re.sub(r'^\s*import\s+.*?;?\s*$', '', raw_jsx, flags=re.MULTILINE)
+        clean_jsx = clean_jsx.replace("export default function", "function")
         jsx_components.append(f"// --- Section {section_id}: {section_name} ---\n{clean_jsx}")
-        
-        # Scope CSS
-        css_blocks.append(f"/* Section {section_id}: {section_name} */\n{sec_code['css']}")
         
         # CMS Resolution: find the section CMS from state.sections
         section_state = next((s for s in state.get("sections", []) if s["id"] == section_id), None)
@@ -145,10 +148,24 @@ def run_synthesizer(state: GlobalState) -> Dict[str, Any]:
     wrapper_lines.append("    </div>")
     wrapper_lines.append("  );")
     wrapper_lines.append("}")
+
+    # Determine which React hooks are referenced across all generated JSX components
+    all_jsx_content = "\n".join(jsx_components)
+    hooks_to_import = ["useState", "useMemo"]
+    possible_hooks = [
+        "useEffect", "useRef", "useCallback", "useContext", "useReducer",
+        "useImperativeHandle", "useLayoutEffect", "useDebugValue"
+    ]
+    for hook in possible_hooks:
+        if re.search(r'\b' + hook + r'\b', all_jsx_content):
+            hooks_to_import.append(hook)
+    
+    hooks_import_list = ", ".join(sorted(list(set(hooks_to_import))))
     
     combined_jsx = (
-        "import React, { useState } from 'react';\n"
-        "import cmsDataRaw from './cms_data.json';\n\n"
+        f"import React, {{ {hooks_import_list} }} from 'react';\n"
+        "import cmsDataRaw from './cms_data.json';\n"
+        "import './index.css';\n\n"
         + "\n\n".join(jsx_components) + "\n\n"
         + "\n".join(wrapper_lines) + "\n\n"
         "export default function App() {\n"

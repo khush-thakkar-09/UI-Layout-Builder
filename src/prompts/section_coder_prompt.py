@@ -24,11 +24,15 @@ export default function {section_component_name}({{ cmsData }}) {{
 ### REACT & JSX RULES (THE 3 GOLDEN RULES):
 1. **Single Root Element**: The component must return a single wrapping `<section>` element with `className="section-{section_number}"`.
 2. **className instead of class**: All HTML classes MUST use `className`. Use `htmlFor` instead of `for`.
-3. **Dynamic Data via cmsData**: 
-   - You will receive a `cmsData` object prop. The data matches the `elements` in the provided CMS JSON schema.
-   - For single 'Text' or 'Image' elements, render the `content` string dynamically: e.g., `{{cmsData.myElement.content}}`
-   - For repeated/loop 'Cards' elements, map over the `loop` array dynamically: e.g., `{{cmsData.myCardsList.loop.map((item, index) => <div key={{index}}>{{item.field1}}</div>)}}`
-   - Javascript logic and variables must live inside curly braces `{{ }}`.
+3. **Dynamic Data via cmsData (CRITICAL)**:
+   - You receive a `cmsData` prop. It is a **flat object** where each key is an `elementName` from the CMS schema.
+   - Access elements DIRECTLY by key: `cmsData.heroHeadline?.content` — NOT via `.elements.find()`.
+   - For single Text/Image elements: `cmsData.myElementName?.content || ''`
+   - For loop/Cards elements: `cmsData.myElementName?.loop || []`, then `.map()` over the array.
+   - Loop item fields are accessed as `item.field1`, `item.field2`, `item.field3`, etc.
+   - Use `useMemo` (already imported) for any `Math.random()` values so they don't change on re-render:
+     `const values = useMemo(() => Array.from({{length: N}}, () => Math.random()), []);`
+   - All JS expressions inside JSX use single curly braces: `{{cmsData.myField?.content}}`
    - Do NOT add an `id` attribute to the section. Do NOT add any `data-*` attributes.
 
 ### CSS RULES:

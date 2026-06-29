@@ -1,13 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import cmsDataRaw from './cms_data.json';
+import './index.css';
 
 // --- Section 1: Hero Section ---
 function HeroSection({ cmsData }) {
-  const headline = cmsData.elements.find(el => el.elementName === 'heroHeadline')?.content || '';
-  const subheadline = cmsData.elements.find(el => el.elementName === 'heroSubheadline')?.content || '';
-  const primaryCta = cmsData.elements.find(el => el.elementName === 'primaryCta')?.content || '';
-  const secondaryCta = cmsData.elements.find(el => el.elementName === 'secondaryCta')?.content || '';
-  const techStack = cmsData.elements.find(el => el.elementName === 'techStackMarquee')?.loop || [];
+  const headline = cmsData.heroHeadline?.content || '';
+  const subheadline = cmsData.heroSubheadline?.content || '';
+  const primaryCta = cmsData.primaryCta?.content || '';
+  const secondaryCta = cmsData.secondaryCta?.content || '';
+  const techStack = cmsData.techStackMarquee?.loop || [];
+
+  // Stable random positions — recalculated only once per mount
+  const particles = useMemo(() =>
+    Array.from({ length: 12 }, () => ({
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      animationDelay: `${Math.random() * 3}s`,
+      animationDuration: `${4 + Math.random() * 4}s`,
+    })), []
+  );
+  const connections = useMemo(() =>
+    Array.from({ length: 8 }, () => ({
+      transform: `rotate(${Math.random() * 360}deg)`,
+      top: `${Math.random() * 80 + 10}%`,
+      left: `${Math.random() * 80 + 10}%`,
+      width: `${Math.random() * 100 + 50}px`,
+      animationDelay: `${Math.random() * 2}s`,
+      animationDuration: `${3 + Math.random() * 3}s`,
+    })), []
+  );
 
   return (
     <section className="section-1">
@@ -27,33 +48,13 @@ function HeroSection({ cmsData }) {
           <div className="neural-network">
             {/* Simulated canvas with CSS-only particles */}
             <div className="particles-container">
-              {[...Array(12)].map((_, i) => (
-                <div
-                  key={i}
-                  className="particle"
-                  style={{
-                    top: `${Math.random() * 100}%`,
-                    left: `${Math.random() * 100}%`,
-                    animationDelay: `${Math.random() * 3}s`,
-                    animationDuration: `${4 + Math.random() * 4}s`
-                  }}
-                />
+              {particles.map((style, i) => (
+                <div key={i} className="particle" style={style} />
               ))}
             </div>
             <div className="connections">
-              {[...Array(8)].map((_, i) => (
-                <div
-                  key={i}
-                  className="connection-line"
-                  style={{
-                    transform: `rotate(${Math.random() * 360}deg)`,
-                    top: `${Math.random() * 80 + 10}%`,
-                    left: `${Math.random() * 80 + 10}%`,
-                    width: `${Math.random() * 100 + 50}px`,
-                    animationDelay: `${Math.random() * 2}s`,
-                    animationDuration: `${3 + Math.random() * 3}s`
-                  }}
-                />
+              {connections.map((style, i) => (
+                <div key={i} className="connection-line" style={style} />
               ))}
             </div>
           </div>
@@ -76,10 +77,10 @@ function HeroSection({ cmsData }) {
 
 // --- Section 2: Experience & Skills Showcase ---
 function ExperienceSkillsShowcase({ cmsData }) {
-  const header = cmsData.elements.find(el => el.elementName === 'experienceSectionHeader');
-  const experienceList = cmsData.elements.find(el => el.elementName === 'experienceList');
-  const skillBadgeList = cmsData.elements.find(el => el.elementName === 'skillBadgeList');
-  const skillFilterBar = cmsData.elements.find(el => el.elementName === 'skillFilterBar');
+  const header = cmsData.experienceSectionHeader;
+  const experienceList = cmsData.experienceList;
+  const skillBadgeList = cmsData.skillBadgeList;
+  const skillFilterBar = cmsData.skillFilterBar;
 
   const categories = skillFilterBar?.content?.split(',').map(cat => cat.trim()) || [];
   const [activeCategory, setActiveCategory] = useState(categories[0] || 'All');
@@ -156,9 +157,10 @@ function ExperienceSkillsShowcase({ cmsData }) {
 
 // --- Section 3: Projects Grid ---
 function ProjectsGrid({ cmsData }) {
-  const header = cmsData.elements.find(el => el.elementName === 'projectsSectionHeader');
-  const filterTabs = cmsData.elements.find(el => el.elementName === 'projectFilterTabs');
-  const projectList = cmsData.elements.find(el => el.elementName === 'projectList');
+  const header = cmsData.projectsSectionHeader;
+  const filterTabs = cmsData.projectFilterTabs;
+  const projectList = cmsData.projectList;
+  const [activeTab, setActiveTab] = useState('All');
 
   return (
     <section className="section-3">
@@ -168,11 +170,19 @@ function ProjectsGrid({ cmsData }) {
           <p className="section-3__subtitle">Showcasing high-impact AI/ML engineering solutions</p>
 
           <div className="section-3__filters">
+            <button
+              className={`section-3__filter-btn ${activeTab === 'All' ? 'active' : ''}`}
+              type="button"
+              onClick={() => setActiveTab('All')}
+            >
+              All
+            </button>
             {filterTabs.loop.map((tab, index) => (
               <button
                 key={index}
-                className="section-3__filter-btn"
+                className={`section-3__filter-btn ${activeTab === tab.field1 ? 'active' : ''}`}
                 type="button"
+                onClick={() => setActiveTab(tab.field1)}
               >
                 {tab.field1}
               </button>
@@ -235,12 +245,12 @@ function ProjectsGrid({ cmsData }) {
 
 // --- Section 4: Contact & Footer ---
 function ContactFooter({ cmsData }) {
-  const contactHeading = cmsData.elements.find(el => el.elementName === 'contactHeading');
-  const contactDescription = cmsData.elements.find(el => el.elementName === 'contactDescription');
-  const contactActionButton = cmsData.elements.find(el => el.elementName === 'contactActionButton');
-  const socialLinks = cmsData.elements.find(el => el.elementName === 'socialLinks');
-  const footerNavigation = cmsData.elements.find(el => el.elementName === 'footerNavigation');
-  const copyrightText = cmsData.elements.find(el => el.elementName === 'copyrightText');
+  const contactHeading = cmsData.contactHeading;
+  const contactDescription = cmsData.contactDescription;
+  const contactActionButton = cmsData.contactActionButton;
+  const socialLinks = cmsData.socialLinks;
+  const footerNavigation = cmsData.footerNavigation;
+  const copyrightText = cmsData.copyrightText;
 
   return (
     <section className="section-4">
