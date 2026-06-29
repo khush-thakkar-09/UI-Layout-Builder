@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import cmsDataRaw from './cms_data.json';
+import React from 'react';
 
 // --- Section 1: Hero Section ---
 function HeroSection({ cmsData }) {
@@ -84,8 +83,8 @@ function ExperienceSkillsShowcase({ cmsData }) {
   const categories = skillFilterBar?.content?.split(',').map(cat => cat.trim()) || [];
   const [activeCategory, setActiveCategory] = useState(categories[0] || 'All');
 
-  const filteredSkills = activeCategory === 'All'
-    ? skillBadgeList?.loop || []
+  const filteredSkills = activeCategory === 'All' 
+    ? skillBadgeList?.loop || [] 
     : skillBadgeList?.loop.filter(skill => skill.field2 === activeCategory) || [];
 
   return (
@@ -121,14 +120,14 @@ function ExperienceSkillsShowcase({ cmsData }) {
             <div className="section-2-skills-header">
               <h3 className="section-2-subtitle">Technical Skills</h3>
               <div className="section-2-filter-bar">
-                <button
+                <button 
                   className={`section-2-filter-btn ${activeCategory === 'All' ? 'active' : ''}`}
                   onClick={() => setActiveCategory('All')}
                 >
                   All
                 </button>
                 {categories.map((category, index) => (
-                  <button
+                  <button 
                     key={index}
                     className={`section-2-filter-btn ${activeCategory === category ? 'active' : ''}`}
                     onClick={() => setActiveCategory(category)}
@@ -138,7 +137,7 @@ function ExperienceSkillsShowcase({ cmsData }) {
                 ))}
               </div>
             </div>
-
+            
             <div className="section-2-skills-grid">
               {filteredSkills.map((skill, index) => (
                 <div key={index} className="section-2-skill-badge">
@@ -166,11 +165,11 @@ function ProjectsGrid({ cmsData }) {
         <header className="section-3__header">
           <h2 className="section-3__title">{header.content}</h2>
           <p className="section-3__subtitle">Showcasing high-impact AI/ML engineering solutions</p>
-
+          
           <div className="section-3__filters">
             {filterTabs.loop.map((tab, index) => (
-              <button
-                key={index}
+              <button 
+                key={index} 
                 className="section-3__filter-btn"
                 type="button"
               >
@@ -184,39 +183,39 @@ function ProjectsGrid({ cmsData }) {
           {projectList.loop.map((project, index) => (
             <div key={index} className="section-3__card">
               <div className="section-3__card-image">
-                <img
-                  src={`https://placehold.co/600x400/1a1a1a/00ffff?text=${encodeURIComponent(project.field1)}`}
+                <img 
+                  src={`https://placehold.co/600x400/1a1a1a/00ffff?text=${encodeURIComponent(project.field1)}`} 
                   alt={project.field1}
                   className="section-3__card-img"
                 />
               </div>
-
+              
               <div className="section-3__card-content">
                 <h3 className="section-3__card-title">{project.field1}</h3>
                 <p className="section-3__card-desc">{project.field2}</p>
-
+                
                 <div className="section-3__card-tech">
                   <span className="section-3__tech-tag">PyTorch</span>
                   <span className="section-3__tech-tag">FastAPI</span>
                   <span className="section-3__tech-tag">AWS</span>
                 </div>
-
-                <a
-                  href={project.field3}
-                  target="_blank"
+                
+                <a 
+                  href={project.field3} 
+                  target="_blank" 
                   rel="noopener noreferrer"
                   className="section-3__card-link"
                 >
                   <span className="section-3__link-text">View Project</span>
-                  <svg
-                    className="section-3__link-icon"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
+                  <svg 
+                    className="section-3__link-icon" 
+                    width="20" 
+                    height="20" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
                     strokeLinejoin="round"
                   >
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -248,8 +247,8 @@ function ContactFooter({ cmsData }) {
       <div className="contact-tier">
         <h1 className="contact-heading">{contactHeading.content}</h1>
         <p className="contact-description">{contactDescription.content}</p>
-        <a
-          href="mailto:hello@example.com"
+        <a 
+          href="mailto:hello@example.com" 
           className="cta-button"
         >
           {contactActionButton.content}
@@ -261,7 +260,7 @@ function ContactFooter({ cmsData }) {
         <div className="footer-col copyright-col">
           <p className="copyright-text">{copyrightText.content}</p>
         </div>
-
+        
         <div className="footer-col nav-col">
           <nav className="footer-nav">
             <ul>
@@ -273,14 +272,14 @@ function ContactFooter({ cmsData }) {
             </ul>
           </nav>
         </div>
-
+        
         <div className="footer-col social-col">
           <div className="social-links">
             {socialLinks.loop.map((item, index) => (
-              <a
-                key={index}
-                href={item.field2}
-                target="_blank"
+              <a 
+                key={index} 
+                href={item.field2} 
+                target="_blank" 
                 rel="noopener noreferrer"
                 className="social-link"
                 aria-label={item.field1}
@@ -295,7 +294,7 @@ function ContactFooter({ cmsData }) {
   );
 }
 
-export function GeneratedPage({ cmsData }) {
+export default function GeneratedPage({ cmsData }) {
   return (
     <div className="generated-page-container">
       <HeroSection cmsData={cmsData.heroSection} />
@@ -304,8 +303,4 @@ export function GeneratedPage({ cmsData }) {
       <ContactFooter cmsData={cmsData.contactFooter} />
     </div>
   );
-}
-
-export default function App() {
-  return <GeneratedPage cmsData={cmsDataRaw.resolved_cms} />;
 }

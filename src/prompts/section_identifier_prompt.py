@@ -12,15 +12,17 @@ You are currently detailing the section: {section_name}.
 Overall Page Context: {enhanced_prompt}
 
 ### YOUR TASK:
-Provide a thorough, implementation-ready description for this section. 
+Provide a thorough, implementation-ready description for this section, tailored for building React components and generating a CMS schema.
 
-a) **Purpose**: What this section achieves for the user.
+a) **Purpose**: What this section achieves for the user. Keep the purpose concise. Not more than 3-4 lines.
 b) **Components**: List EVERY UI component. For each, specify:
    - What it is (heading, button, image, card)
    - Its content/placeholder intent
    - Its functionality
+   - Whether it is a **single field** (e.g. section title, subtitle, CTA label) or a **repeated/loop field** (e.g. lists of features, FAQ items, cards).
 c) **Layout**: Simple, high-level structuring ONLY. Do NOT use coordinates or pixel-perfect math. Use standard concepts (e.g., "flex row, centered", "2-column grid", "stacked").
 d) **Visual Style**: Typography hierarchy, background colors/themes, and spacing rules.
 
-Do NOT write code. Output a detailed natural language description (200-400 words).
+Part b) of your task is very important, you must be able to define the potential components to be used here. You can decide the number of components based on your understanding of the section. Do not overdo it either, stick to the essentials.
+Do NOT write code. Output a detailed natural language description (200-300 words).
 """

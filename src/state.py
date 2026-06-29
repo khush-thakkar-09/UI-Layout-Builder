@@ -4,14 +4,14 @@ class SectionInfo(TypedDict):
     id: int
     name: str
     description: str
+    cms: Optional[dict]
 
 class SectionCode(TypedDict):
     """Output from the Coding Agent for a single section."""
     section_id: int           # Matches SectionInfo.id (positional order)
     section_name: str         # Human-readable name
-    html: str                 # Raw HTML block for this section
+    jsx: str                  # React JSX block for this section
     css: str                  # Scoped CSS for this section
-    jsx: Optional[str]        # React JSX code block for this section
     status: str               # "success" | "failed"
     error: Optional[str]      # Error message if failed
 
@@ -30,6 +30,4 @@ class GlobalState(TypedDict):
     # --- Part 5 & 6: Section Coding Agent + Synthesizer ---
     coded_sections: List[SectionCode]        # Individual coded section outputs
     final_html: str                          # Assembled full-page HTML
-    final_jsx: str                           # Assembled full-page React JSX
-    output_path: str                         # Path to saved file
-
+    output_path: str                         # Path to saved index.html
