@@ -155,9 +155,9 @@ def run_synthesizer(state: GlobalState) -> Dict[str, Any]:
 
     # Determine which React hooks are referenced across all generated JSX components
     all_jsx_content = "\n".join(jsx_components)
-    hooks_to_import = ["useState", "useMemo"]
+    hooks_to_import = ["useState", "useMemo", "useEffect"]
     possible_hooks = [
-        "useEffect", "useRef", "useCallback", "useContext", "useReducer",
+        "useRef", "useCallback", "useContext", "useReducer",
         "useImperativeHandle", "useLayoutEffect", "useDebugValue"
     ]
     for hook in possible_hooks:
@@ -166,15 +166,197 @@ def run_synthesizer(state: GlobalState) -> Dict[str, Any]:
     
     hooks_import_list = ", ".join(sorted(list(set(hooks_to_import))))
     
+    project_id_val = state.get("project_id", "")
+    
+    app_wrapper_code = """export default function App() {
+  const [cmsData, setCmsData] = useState(cmsDataRaw.resolved_cms);
+  const [editMode, setEditMode] = useState(false);
+  const [hasChanges, setHasChanges] = useState(false);
+  const [pendingChanges, setPendingChanges] = useState({});
+  const [loading, setLoading] = useState(true);
+  
+  const projectId = "__PROJECT_ID__";
+
+  useEffect(() => {
+    fetch(`http://localhost:5001/api/cms/${projectId}`)
+      .then(res => {
+        if (!res.ok) throw new Error("Server not running or project not found");
+        return res.json();
+      })
+      .then(data => {
+        if (data.resolved_cms) {
+          setCmsData(data.resolved_cms);
+        }
+        setLoading(false);
+      })
+      .catch(err => {
+        console.warn("Using local cms_data.json fallback:", err);
+        setLoading(false);
+      });
+  }, []);
+
+  useEffect(() => {
+    const handleDblClick = (e) => {
+      if (!editMode) return;
+      const fieldId = e.target.getAttribute('data-field-id');
+      if (fieldId) {
+        e.target.contentEditable = 'true';
+        e.target.focus();
+      }
+    };
+
+    const handleBlur = (e) => {
+      const fieldId = e.target.getAttribute('data-field-id');
+      if (fieldId) {
+        const newText = e.target.innerText.trim();
+        setPendingChanges(prev => ({ ...prev, [fieldId]: newText }));
+        setHasChanges(true);
+      }
+    };
+
+    document.addEventListener('dblclick', handleDblClick);
+    document.addEventListener('focusout', handleBlur);
+    return () => {
+      document.removeEventListener('dblclick', handleDblClick);
+      document.removeEventListener('focusout', handleBlur);
+    };
+  }, [editMode]);
+
+  const handleSave = async () => {
+    try {
+      const res = await fetch(`http://localhost:5001/api/cms/${projectId}`);
+      if (!res.ok) throw new Error("Failed to contact server for saving");
+      const data = await res.json();
+      const records = data.db_records;
+
+      let updatedCount = 0;
+      for (const record of records) {
+        let sectionUpdated = false;
+        
+        for (const elem of record.elements) {
+          if (pendingChanges[elem.fieldId] !== undefined) {
+            elem.content = pendingChanges[elem.fieldId];
+            sectionUpdated = true;
+            updatedCount++;
+          }
+          if (elem.loop && Array.isArray(elem.loop)) {
+            for (const item of elem.loop) {
+              for (let i = 1; i <= 10; i++) {
+                const fId = item[`fieldId${i}`];
+                if (fId && pendingChanges[fId] !== undefined) {
+                  item[`field${i}`] = pendingChanges[fId];
+                  sectionUpdated = true;
+                  updatedCount++;
+                }
+              }
+            }
+          }
+        }
+
+        if (sectionUpdated) {
+          const sectionId = record.metadata.sectionId;
+          const updateRes = await fetch(`http://localhost:5001/api/cms/${projectId}/section/${sectionId}/update`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ elements: record.elements })
+          });
+          if (!updateRes.ok) throw new Error(`Failed to update section ${sectionId}`);
+        }
+      }
+
+      alert(`Successfully saved ${updatedCount} changes to MongoDB!`);
+      setHasChanges(false);
+      setPendingChanges({});
+      
+      const refreshRes = await fetch(`http://localhost:5001/api/cms/${projectId}`);
+      const refreshData = await refreshRes.json();
+      setCmsData(refreshData.resolved_cms);
+    } catch (err) {
+      console.error(err);
+      alert("Error saving changes: " + err.message);
+    }
+  };
+
+  return (
+    <div className={`app-wrapper ${editMode ? 'edit-mode-active' : ''}`}>
+      <div style={{
+        position: 'fixed',
+        bottom: '24px',
+        right: '24px',
+        zIndex: 99999,
+        background: '#1e293b',
+        border: '1px solid #38bdf8',
+        padding: '12px 18px',
+        borderRadius: '12px',
+        boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.3)',
+        display: 'flex',
+        gap: '12px',
+        alignItems: 'center',
+        fontFamily: 'sans-serif'
+      }}>
+        <span style={{ color: '#f8fafc', fontSize: '14px', fontWeight: 'bold' }}>
+          {editMode ? '✍️ Edit Mode Active (Double Click Text to Edit)' : '👁️ Preview Mode'}
+        </span>
+        <button 
+          onClick={() => setEditMode(!editMode)}
+          style={{
+            background: editMode ? '#ef4444' : '#38bdf8',
+            color: '#0f172a',
+            border: 'none',
+            padding: '6px 12px',
+            borderRadius: '6px',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            transition: 'background 0.2s'
+          }}
+        >
+          {editMode ? 'Disable Edit' : 'Enable Edit'}
+        </button>
+        {hasChanges && (
+          <button 
+            onClick={handleSave}
+            style={{
+              background: '#22c55e',
+              color: '#ffffff',
+              border: 'none',
+              padding: '6px 12px',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+              transition: 'background 0.2s'
+            }}
+          >
+            Save to MongoDB
+          </button>
+        )}
+      </div>
+
+      <style>{`
+        .edit-mode-active [data-field-id] {
+          outline: 1px dashed #38bdf8 !important;
+          cursor: text !important;
+        }
+        .edit-mode-active [data-field-id]:hover {
+          background: rgba(56, 189, 248, 0.1) !important;
+        }
+        .edit-mode-active [data-field-id]:focus {
+          outline: 2px solid #38bdf8 !important;
+          background: rgba(56, 189, 248, 0.15) !important;
+        }
+      `}</style>
+
+      <GeneratedPage cmsData={cmsData} />
+    </div>
+  );
+}""".replace("__PROJECT_ID__", project_id_val)
+
     combined_jsx = (
         f"import React, {{ {hooks_import_list} }} from 'react';\n"
         "import cmsDataRaw from './cms_data.json';\n"
         "import './index.css';\n\n"
         + "\n\n".join(jsx_components) + "\n\n"
         + "\n".join(wrapper_lines) + "\n\n"
-        "export default function App() {\n"
-        "  return <GeneratedPage cmsData={cmsDataRaw.resolved_cms} />;\n"
-        "}"
+        + app_wrapper_code
     )
     combined_css = google_fonts_import + root_css + "\n\n" + "\n\n".join(css_blocks)
     
@@ -223,6 +405,34 @@ def run_synthesizer(state: GlobalState) -> Dict[str, Any]:
         print(f"[Synthesizer] ✓ React components integrated into testing_react: {react_jsx_file}")
         print(f"[Synthesizer] ✓ CSS stylesheet integrated into testing_react: {react_css_file}")
         print(f"[Synthesizer] ✓ CMS JSON integrated into testing_react: {react_cms_file}")
+        
+        # Save CMS records section-wise to MongoDB
+        mongodb_uri = os.getenv("MONGODB_URI")
+        if mongodb_uri:
+            try:
+                from pymongo import MongoClient
+                client = MongoClient(mongodb_uri)
+                db = client["UI-Layout-DB"]
+                collection = db["cms_data"]
+                
+                project_id = state.get("project_id", "")
+                project_name = state.get("user_prompt", "")
+                
+                # Store each section as a separate document
+                for record in db_records:
+                    doc = {
+                        "projectId": project_id,
+                        "projectName": project_name,
+                        "metadata": record.get("metadata", {}),
+                        "elements": record.get("elements", [])
+                    }
+                    collection.insert_one(doc)
+                    
+                print(f"[Synthesizer] ✓ Saved {len(db_records)} sections to MongoDB collection 'cms_data'")
+                client.close()
+            except Exception as db_err:
+                print(f"[Synthesizer] ✗ Failed to save CMS records to MongoDB: {db_err}")
+                
     except Exception as e:
         print(f"[Synthesizer] ✗ Failed to write output files: {e}")
         return {

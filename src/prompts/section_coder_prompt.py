@@ -31,11 +31,14 @@ export default function {section_component_name}({{ cmsData }}) {{
    - For single Text/Image elements: `cmsData.myElementName?.content || ''`
    - For loop/Cards elements: `cmsData.myElementName?.loop || []`, then `.map()` over the array.
    - Loop item fields are accessed as `item.field1`, `item.field2`, `item.field3`, etc.
+   - **Inline Editing Support (CRITICAL)**: Any JSX tag rendering text content from `cmsData` MUST include the `data-field-id` attribute pointing to its corresponding field ID:
+     - For single elements: `<h1 data-field-id={cmsData.heroHeadline?.fieldId}>{cmsData.heroHeadline?.content}</h1>`
+     - For loop items: `<span data-field-id={item.fieldId1}>{item.field1}</span>` (use `fieldId1` for `field1`, `fieldId2` for `field2`, etc.)
    - Use `useMemo` (already imported) for any `Math.random()` values so they don't change on re-render:
      `const values = useMemo(() => Array.from({{length: N}}, () => Math.random()), []);`
    - Use 'useState' when an array containing two elements is needed (the current state value and a setter function), while use 'useMemo' when a single value is needed (the cached result of a calculation function)
    - All JS expressions inside JSX use single curly braces: `{{cmsData.myField?.content}}`
-   - Do NOT add an `id` attribute to the section. Do NOT add any `data-*` attributes.
+   - Do NOT add an `id` attribute to the section. Do NOT add any `data-*` attributes other than `data-field-id`.
 
 ### CSS RULES:
 1. Scope ALL selectors under .section-{section_number}. Example: `.section-{section_number} h2 {{ font-size: 2rem; }}`

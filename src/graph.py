@@ -26,7 +26,7 @@ def handle_invalid_input(state: GlobalState):
         "failure_reason": state.get("input_evaluation_reason")
     }
 
-def build_graph():
+def build_graph(checkpointer=None):
     """
     Builds and compiles the state graph for parts 1-6.
     """
@@ -60,5 +60,5 @@ def build_graph():
     workflow.add_edge("synthesizer", END)
     workflow.add_edge("invalid_input", END)
     
-    return workflow.compile()
+    return workflow.compile(checkpointer=checkpointer)
 

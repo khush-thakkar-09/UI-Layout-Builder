@@ -16,6 +16,7 @@ class SectionCode(TypedDict):
     error: Optional[str]      # Error message if failed
 
 class GlobalState(TypedDict):
+    project_id: str
     # --- Parts 1-4: Input Evaluation, Prompt Enhancement, Section Identification ---
     user_prompt: str
     input_evaluation: Literal["pass", "fail"]

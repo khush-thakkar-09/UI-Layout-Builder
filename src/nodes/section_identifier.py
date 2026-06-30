@@ -99,25 +99,21 @@ def run_section_identifier(state: GlobalState) -> Dict[str, Any]:
             print(f"Error generating details for '{section_name}': {e}")
             return {"pipeline_status": "failed", "failure_reason": f"Generating details for '{section_name}' failed: {e}"}
             
-        # Human-in-the-loop for this section
-        print("\n" + "="*50)
-        print(f"SECTION: {section_name.upper()}")
-        print("-" * 50)
-        print(current_description)
-        print("="*50 + "\n")
+        # LangGraph Native Human-in-the-Loop Interrupt
+        from langgraph.types import interrupt
         
-        print("Do you approve this section description?")
-        print("[1] Approve as-is")
-        print("[2] Provide feedback / edits")
+        human_response = interrupt({
+            "type": "section_approval",
+            "section_name": section_name,
+            "description": current_description
+        })
         
-        choice = ""
-        while choice not in ["1", "2"]:
-            choice = input("Enter choice (1 or 2): ").strip()
-            
+        choice = human_response.get("choice")
+        feedback = human_response.get("feedback", "")
+        
         if choice == "1":
             print(f"\n[Section Identifier] '{section_name}' approved.")
         else:
-            feedback = input("\nEnter your feedback/suggestions: ").strip()
             print(f"\n[Section Identifier] Re-generating '{section_name}' with feedback...")
             
             refine_messages = detailer_messages + [

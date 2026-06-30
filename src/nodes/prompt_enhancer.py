@@ -54,15 +54,18 @@ def run_prompt_enhancer(state: GlobalState) -> Dict[str, Any]:
             print(f"- {q}")
     print("="*50 + "\n")
     
-    # CLI Human-in-the-Loop Loop (runs once)
-    print("Do you approve this enhanced prompt?")
-    print("[1] Approve as-is")
-    print("[2] Provide feedback / answers to questions / edits")
+    # LangGraph Native Human-in-the-Loop Interrupt
+    from langgraph.types import interrupt
     
-    choice = ""
-    while choice not in ["1", "2"]:
-        choice = input("Enter choice (1 or 2): ").strip()
-        
+    human_response = interrupt({
+        "type": "prompt_approval",
+        "enhanced_prompt": enhanced,
+        "questions": questions
+    })
+    
+    choice = human_response.get("choice")
+    feedback = human_response.get("feedback", "")
+    
     if choice == "1":
         print("\n[Prompt Enhancer] Prompt approved as-is.")
         return {
@@ -71,7 +74,6 @@ def run_prompt_enhancer(state: GlobalState) -> Dict[str, Any]:
             "pipeline_status": "running"
         }
     else:
-        feedback = input("\nEnter your feedback/suggestions/answers: ").strip()
         print(f"\n[Prompt Enhancer] Re-enhancing prompt with feedback: '{feedback}'...")
         
         # Second pass: merge feedback into a single final prompt
