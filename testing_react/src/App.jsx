@@ -2,144 +2,204 @@ import React, { useEffect, useMemo, useState } from 'react';
 import cmsDataRaw from './cms_data.json';
 import './index.css';
 
-// --- Section 1: Hero Section ---
-function HeroSection({ cmsData }) {
-  const { heroHeadline, heroSubheadline, primaryCta, secondaryCta, dynamicVisual, techStackBadges } = cmsData;
+// --- Section 1: Navigation & Hero Section ---
+
+function NavigationHeroSection({ cmsData }) {
+  const navLinks = cmsData.navLinks?.loop || [];
+  const logo = cmsData.navLogo?.content || '';
+  const heroHeading = cmsData.heroHeading?.content || '';
+  const heroSubtitle = cmsData.heroSubtitle?.content || '';
+  const heroVisual = cmsData.heroVisual?.content || '';
+
+  const randomValues = useMemo(() => Array.from({ length: 3 }, () => Math.random()), []);
 
   return (
     <section className="section-1">
-      <div className="container">
-        <div className="content-wrapper">
-          <div className="text-section">
-            <h1 data-field-id={heroHeadline?.fieldId}>{heroHeadline?.content}</h1>
-            <p className="subheadline" data-field-id={heroSubheadline?.fieldId}>{heroSubheadline?.content}</p>
-            
-            <div className="cta-group">
-              <button className="btn-primary" data-field-id={primaryCta?.fieldId}>
-                {primaryCta?.content}
-              </button>
-              <button className="btn-secondary" data-field-id={secondaryCta?.fieldId}>
-                {secondaryCta?.content}
-              </button>
-            </div>
+      {/* Navbar */}
+      <nav className="navbar">
+        <div className="navbar-container">
+          <a href="/" className="logo" data-field-id={cmsData.navLogo?.fieldId}>
+            {logo}
+          </a>
+          <div className="nav-links">
+            {navLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.field2}
+                className="nav-link"
+                data-field-id={link.fieldId1}
+              >
+                {link.field1}
+              </a>
+            ))}
+          </div>
+          <div className="auth-buttons">
+            <button className="auth-button ghost" data-field-id="log-in-field-id">
+              Log In
+            </button>
+            <button className="auth-button primary" data-field-id="get-started-field-id">
+              Get Started
+            </button>
+          </div>
+        </div>
+      </nav>
 
-            <div className="tech-badges">
-              {techStackBadges?.loop?.map((badge) => (
-                <div key={badge.fieldId1} className="badge">
-                  <img 
-                    src={`https://placehold.co/24x24/1a1a2e/00d4ff?text=${badge.field1.charAt(0)}`} 
-                    alt={`${badge.field1} icon`}
-                    className="badge-icon"
-                  />
-                  <span data-field-id={badge.fieldId1}>{badge.field1}</span>
-                </div>
-              ))}
-            </div>
+      {/* Hero Section */}
+      <div className="hero">
+        <div className="hero-content">
+          <h1 className="hero-heading" data-field-id={cmsData.heroHeading?.fieldId}>
+            {heroHeading}
+          </h1>
+          <p className="hero-subtitle" data-field-id={cmsData.heroSubtitle?.fieldId}>
+            {heroSubtitle}
+          </p>
+          <div className="cta-group">
+            <button className="cta-button primary" data-field-id="primary-cta-field-id">
+              Start Free Trial
+            </button>
+            <button className="cta-button secondary" data-field-id="secondary-cta-field-id">
+              <svg className="play-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+                <path d="M10 8L16 12L10 16V8Z" fill="currentColor" />
+              </svg>
+              Watch Demo
+            </button>
           </div>
-          
-          <div className="visual-section">
-            <div className="visual-container">
-              <img 
-                src={`https://placehold.co/600x600/1a1a2e/00d4ff?text=${dynamicVisual?.content}`} 
-                alt="Neural Network Animation"
-                className="dynamic-visual"
-              />
-            </div>
+          <div className="social-proof" data-field-id="social-proof-field-id">
+            <span className="badge-icon">✓</span>
+            <span>Trusted by 500+ engineering teams</span>
           </div>
+        </div>
+        <div className="hero-visual">
+          <img
+            src={heroVisual}
+            alt="Product dashboard screenshot"
+            className="hero-image"
+            data-field-id={cmsData.heroVisual?.fieldId}
+          />
         </div>
       </div>
     </section>
   );
 }
 
-// --- Section 2: Project Showcase ---
-
-function ProjectShowcase({ cmsData }) {
-  const [activeFilter, setActiveFilter] = useState('All');
-  const [filteredProjects, setFilteredProjects] = useState(cmsData.projectList?.loop || []);
-
-  const filters = useMemo(() => {
-    const allFilters = ['All', ...(cmsData.projectFilters?.loop?.map(f => f.field1) || [])];
-    return allFilters;
-  }, [cmsData]);
-
-  const handleFilterChange = (filter) => {
-    setActiveFilter(filter);
-    if (filter === 'All') {
-      setFilteredProjects(cmsData.projectList?.loop || []);
-    } else {
-      setFilteredProjects(
-        cmsData.projectList?.loop?.filter(project => 
-          project.field3?.toLowerCase().includes(filter.toLowerCase()) ||
-          project.field2?.toLowerCase().includes(filter.toLowerCase())
-        ) || []
-      );
-    }
-  };
+// --- Section 2: Feature Highlights Grid ---
+function FeatureHighlightsGrid({ cmsData }) {
+  const headerContent = cmsData.featureSectionHeader?.content || '';
+  const [title, subtitle] = headerContent.split('. ').map(s => s.trim());
+  const features = cmsData.featureGrid?.loop || [];
 
   return (
     <section className="section-2">
       <div className="container">
-        {/* Header */}
-        <header className="showcase-header">
-          <h1 data-field-id={cmsData.showcaseHeader?.fieldId}>{cmsData.showcaseHeader?.content}</h1>
-          <p className="showcase-description">
-            Demonstrating technical proficiency through tangible AI/ML implementations
-          </p>
-        </header>
-
-        {/* Filter Toggles */}
-        <div className="filter-container">
-          {filters.map((filter, index) => (
-            <button
-              key={index}
-              className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
-              onClick={() => handleFilterChange(filter)}
-              data-field-id={index === 0 ? null : cmsData.projectFilters?.loop?.[index - 1]?.fieldId1}
-            >
-              {filter}
-            </button>
-          ))}
+        <div className="header-wrapper">
+          <h2 data-field-id={cmsData.featureSectionHeader?.fieldId}>{title}</h2>
+          <h3 className="subtitle" data-field-id={`${cmsData.featureSectionHeader?.fieldId}-sub`}>{subtitle}</h3>
         </div>
-
-        {/* Project Grid */}
-        <div className="project-grid">
-          {filteredProjects.map((project, index) => (
-            <div key={index} className="project-card">
-              <div className="card-image">
+        
+        <div className="feature-grid">
+          {features.map((feature, index) => (
+            <div key={index} className="feature-card">
+              <div className="icon-container">
                 <img 
-                  src={`https://placehold.co/600x400/1a1a2e/e94560?text=${encodeURIComponent(project.field1)}`}
-                  alt={project.field1}
-                  className="project-thumb"
+                  src={`https://placehold.co/64x64/4f46e5/ffffff?text=${index + 1}`} 
+                  alt={feature.field2 || 'Feature icon'}
+                  className="feature-icon"
                 />
               </div>
-              
-              <div className="card-content">
-                <h3 data-field-id={project.fieldId1}>{project.field1}</h3>
-                
-                <div className="tech-tags">
-                  {project.field3?.split(',').map((tag, tagIndex) => (
-                    <span 
-                      key={tagIndex} 
-                      className="tech-tag"
-                      data-field-id={project.fieldId3}
-                    >
-                      {tag.trim()}
-                    </span>
-                  ))}
+              <h4 className="feature-title" data-field-id={feature.fieldId2}>{feature.field2}</h4>
+              <p className="feature-description" data-field-id={feature.fieldId3}>{feature.field3}</p>
+              <a href="#" className="learn-more-link">Learn more →</a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// --- Section 3: Pricing & Social Proof Section ---
+function PricingSocialProofSection({ cmsData }) {
+  const pricingTiers = cmsData.pricingTiers?.loop || [];
+  const testimonials = cmsData.testimonialList?.loop || [];
+
+  return (
+    <section className="section-3">
+      {/* Header Section */}
+      <div className="section-3-header">
+        <h2 data-field-id={cmsData.pricingHeader?.fieldId}>{cmsData.pricingHeader?.content}</h2>
+        <div className="billing-toggle">
+          <span className="billing-label">Monthly</span>
+          <label className="toggle-switch">
+            <input type="checkbox" />
+            <span className="slider"></span>
+          </label>
+          <span className="billing-label">Yearly <span className="discount-badge">-20%</span></span>
+        </div>
+      </div>
+
+      {/* Pricing Cards Grid */}
+      <div className="pricing-grid">
+        {pricingTiers.map((tier, index) => {
+          const isRecommended = tier.field1 === "Pro";
+          return (
+            <div 
+              key={index} 
+              className={`pricing-card ${isRecommended ? 'recommended' : ''}`}
+            >
+              <h3 data-field-id={tier.fieldId1}>{tier.field1}</h3>
+              <div className="price" data-field-id={tier.fieldId2}>{tier.field2}</div>
+              <ul className="feature-list">
+                {tier.field3.split(',').map((feature, idx) => (
+                  <li key={idx} data-field-id={tier.fieldId3}>
+                    <span className="checkmark">✓</span>
+                    {feature.trim()}
+                  </li>
+                ))}
+              </ul>
+              <button className={`cta-button ${isRecommended ? 'primary' : 'secondary'}`}>
+                Start Free Trial
+              </button>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Social Proof Bar */}
+      <div className="social-proof">
+        <p className="trust-header">Trusted by 500+ engineering teams</p>
+        <div className="logo-grid">
+          {[1, 2, 3, 4, 5].map((i) => (
+            <div key={i} className="logo-placeholder">
+              <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="120" height="40" rx="4" fill="#e5e7eb" />
+                <text x="60" y="24" textAnchor="middle" fill="#6b7280" fontSize="14" fontFamily="sans-serif">
+                  Company {i}
+                </text>
+              </svg>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Testimonials */}
+      <div className="testimonials">
+        <h3 className="testimonials-heading">What engineering leaders say</h3>
+        <div className="testimonial-grid">
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="testimonial-card">
+              <div className="quote-icon">“</div>
+              <p className="quote-text" data-field-id={testimonial.fieldId1}>{testimonial.field1}</p>
+              <div className="author-profile">
+                <div className="avatar-placeholder">
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="20" fill="#e5e7eb" />
+                    <circle cx="24" cy="18" r="6" fill="#d1d5db" />
+                    <path d="M10 40C10 34.4772 14.4772 30 20 30H28C33.5228 30 38 34.4772 38 40" stroke="#d1d5db" strokeWidth="2" strokeLinecap="round" />
+                  </svg>
                 </div>
-                
-                <p className="project-description" data-field-id={project.fieldId2}>
-                  {project.field2}
-                </p>
-                
-                <div className="action-links">
-                  <button className="btn case-study-btn">
-                    View Case Study
-                  </button>
-                  <button className="btn github-btn">
-                    GitHub Repo
-                  </button>
+                <div className="author-info">
+                  <span className="author-name" data-field-id={testimonial.fieldId2}>{testimonial.field2}</span>
                 </div>
               </div>
             </div>
@@ -150,292 +210,82 @@ function ProjectShowcase({ cmsData }) {
   );
 }
 
-// --- Section 3: Professional Biography ---
-
-function ProfessionalBiography({ cmsData }) {
-  const skillTags = cmsData.skillTagCloud?.loop || [];
-  const quickFacts = cmsData.quickFactsGrid?.loop || [];
-  
-  const randomGradient = useMemo(() => 
-    `linear-gradient(135deg, rgba(0, 200, 255, 0.08), rgba(138, 43, 226, 0.08))`, 
-  []);
-
-  return (
-    <section className="section-3" style={{ background: randomGradient }}>
-      <div className="container">
-        <div className="biography-grid">
-          {/* Left Column: Profile Image */}
-          <div className="profile-column">
-            <div className="profile-image-wrapper">
-              <img 
-                src={cmsData.profileImage?.content || "https://placehold.co/400x400/1a1a2e/00c8ff"} 
-                alt="Professional Portrait" 
-                className="profile-image"
-              />
-              <div className="profile-glow" />
-            </div>
-          </div>
-
-          {/* Right Column: Content */}
-          <div className="content-column">
-            <h1 data-field-id={cmsData.bioHeading?.fieldId} className="biography-heading">
-              {cmsData.bioHeading?.content}
-            </h1>
-            
-            <div 
-              className="biography-body" 
-              dangerouslySetInnerHTML={{ 
-                __html: cmsData.bioBodyText?.content?.replace(/\n/g, '<br />') || '' 
-              }}
-              data-field-id={cmsData.bioBodyText?.fieldId}
-            />
-            
-            {/* Skill Tag Cloud */}
-            <div className="skill-tag-cloud">
-              {skillTags.map((tag, index) => (
-                <span 
-                  key={index} 
-                  className="skill-tag"
-                  data-field-id={tag.fieldId1}
-                >
-                  {tag.field1}
-                </span>
-              ))}
-            </div>
-            
-            {/* Quick Facts Grid */}
-            <div className="quick-facts-grid">
-              {quickFacts.map((fact, index) => (
-                <div key={index} className="quick-fact-card">
-                  <div className="fact-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                  <div className="fact-content">
-                    <span className="fact-value" data-field-id={fact.fieldId1}>{fact.field1}</span>
-                    <span className="fact-label" data-field-id={fact.fieldId2}>{fact.field2}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            {/* Resume CTA */}
-            <div className="resume-cta-container">
-              <a 
-                href="#" 
-                className="resume-button"
-                data-field-id={cmsData.resumeCta?.fieldId}
-              >
-                {cmsData.resumeCta?.content}
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// --- Section 4: Contact Section ---
-
-function ContactSection({ cmsData }) {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const socialLinks = useMemo(() => cmsData.socialLinks?.loop || [], [cmsData]);
-  const toastMessage = useMemo(() => cmsData.statusToast?.content || 'Message sent successfully!', [cmsData]);
-
-  const validateForm = () => {
-    const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email';
-    }
-    if (!formData.subject.trim()) newErrors.subject = 'Subject is required';
-    if (!formData.message.trim()) newErrors.message = 'Message is required';
-    
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    if (!validateForm()) return;
-    
-    setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setStatus('success');
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    
-    setTimeout(() => setStatus(null), 5000);
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    
-    if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
-    }
-  };
+// --- Section 4: Footer ---
+function Footer({ cmsData }) {
+  const { brandIdentity, navigationGroups, newsletterSignup, socialLinks, copyrightLegal } = cmsData;
 
   return (
     <section className="section-4">
-      {/* Background particles container */}
-      <div className="particles-container">
-        <div className="particle" style={{ top: '20%', left: '15%', animationDelay: '0s' }}></div>
-        <div className="particle" style={{ top: '60%', left: '80%', animationDelay: '1.5s' }}></div>
-        <div className="particle" style={{ top: '30%', left: '70%', animationDelay: '3s' }}></div>
-        <div className="particle" style={{ top: '80%', left: '20%', animationDelay: '2s' }}></div>
-        <div className="particle" style={{ top: '40%', left: '40%', animationDelay: '0.5s' }}></div>
-      </div>
-
-      <div className="contact-container">
-        {/* Left Column */}
-        <div className="contact-left">
-          <h1 data-field-id={cmsData.contactHeader?.fieldId}>{cmsData.contactHeader?.content}</h1>
-          <p className="subheadline" data-field-id={cmsData.contactSubheadline?.fieldId}>
-            {cmsData.contactSubheadline?.content}
+      <div className="footer-container">
+        {/* Brand Identity & Social Links Column */}
+        <div className="footer-col brand-col">
+          <h3 className="brand-title">RemoteFlow</h3>
+          <p className="brand-mission" data-field-id={brandIdentity?.fieldId}>
+            {brandIdentity?.content}
           </p>
           
           <div className="social-links">
-            {socialLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.field2}
-                target={link.field2.startsWith('http') ? '_blank' : '_self'}
-                rel={link.field2.startsWith('http') ? 'noopener noreferrer' : ''}
+            {socialLinks?.loop?.map((item, idx) => (
+              <a 
+                key={idx} 
+                href={item.field2} 
                 className="social-link"
-                aria-label={link.field1}
+                aria-label={item.field1}
               >
-                <span className="social-icon">
-                  {link.field1 === 'LinkedIn' && (
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
+                <svg className="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                  {item.field1 === 'GitHub' && (
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                   )}
-                  {link.field1 === 'GitHub' && (
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
+                  {item.field1 === 'LinkedIn' && (
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                   )}
-                  {link.field1 === 'Email' && (
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                    </svg>
+                  {item.field1 === 'Twitter' && (
+                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
                   )}
-                </span>
-                <span className="social-label">{link.field1}</span>
+                </svg>
               </a>
             ))}
           </div>
         </div>
 
-        {/* Right Column */}
-        <div className="contact-right">
-          <form onSubmit={handleSubmit} className="contact-form">
-            <div className="form-group">
-              <label htmlFor="name" className="form-label">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className={`form-input ${errors.name ? 'error' : ''}`}
-                placeholder="Your name"
-              />
-              {errors.name && <span className="error-text">{errors.name}</span>}
-            </div>
+        {/* Navigation Groups */}
+        {navigationGroups?.loop?.map((group, idx) => (
+          <div className="footer-col nav-col" key={idx}>
+            <h4 className="nav-heading" data-field-id={group.fieldId1}>{group.field1}</h4>
+            <ul className="nav-list">
+              {group.field2.split(',').map((link, linkIdx) => (
+                <li key={linkIdx} className="nav-item">
+                  <a href="#" className="nav-link">{link.trim()}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
 
-            <div className="form-group">
-              <label htmlFor="email" className="form-label">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className={`form-input ${errors.email ? 'error' : ''}`}
-                placeholder="your.email@example.com"
-              />
-              {errors.email && <span className="error-text">{errors.email}</span>}
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="subject" className="form-label">Subject</label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                className={`form-input ${errors.subject ? 'error' : ''}`}
-                placeholder="Project inquiry"
-              />
-              {errors.subject && <span className="error-text">{errors.subject}</span>}
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="message" className="form-label">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                className={`form-input ${errors.message ? 'error' : ''}`}
-                placeholder="Tell me about your project..."
-                rows="5"
-              />
-              {errors.message && <span className="error-text">{errors.message}</span>}
-            </div>
-
-            <button 
-              type="submit" 
-              className={`submit-button ${isSubmitting ? 'loading' : ''}`}
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? (
-                <span className="spinner"></span>
-              ) : (
-                <>
-                  <span>Send Message</span>
-                  <svg className="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
-                </>
-              )}
-            </button>
+        {/* Newsletter Signup */}
+        <div className="footer-col newsletter-col">
+          <h4 className="newsletter-heading">Stay Updated</h4>
+          <p className="newsletter-desc" data-field-id={newsletterSignup?.fieldId}>
+            {newsletterSignup?.content}
+          </p>
+          <form className="newsletter-form">
+            <input 
+              type="email" 
+              placeholder="Enter your email" 
+              className="newsletter-input"
+            />
+            <button type="submit" className="newsletter-btn">Subscribe</button>
           </form>
         </div>
       </div>
 
-      {/* Status Toast */}
-      {status === 'success' && (
-        <div className="toast success">
-          <svg className="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M20 6L9 17l-5-5"/>
-          </svg>
-          <span>{toastMessage}</span>
-        </div>
-      )}
+      {/* Copyright & Legal */}
+      <div className="footer-bottom">
+        <hr className="footer-divider" />
+        <p className="copyright" data-field-id={copyrightLegal?.fieldId}>
+          {copyrightLegal?.content}
+        </p>
+      </div>
     </section>
   );
 }
@@ -443,10 +293,10 @@ function ContactSection({ cmsData }) {
 export function GeneratedPage({ cmsData }) {
   return (
     <div className="generated-page-container">
-      <HeroSection cmsData={cmsData.heroSection} />
-      <ProjectShowcase cmsData={cmsData.projectShowcase} />
-      <ProfessionalBiography cmsData={cmsData.professionalBiography} />
-      <ContactSection cmsData={cmsData.contactSection} />
+      <NavigationHeroSection cmsData={cmsData.navigationHeroSection} />
+      <FeatureHighlightsGrid cmsData={cmsData.featureHighlightsGrid} />
+      <PricingSocialProofSection cmsData={cmsData.pricingSocialProofSection} />
+      <Footer cmsData={cmsData.footer} />
     </div>
   );
 }
@@ -458,7 +308,7 @@ export default function App() {
   const [pendingChanges, setPendingChanges] = useState({});
   const [loading, setLoading] = useState(true);
   
-  const projectId = "18a9caed-bbdb-4c7e-ac5f-fe80bccb333e";
+  const projectId = "c5949aed-2d12-462a-ac41-4a58a2c1634f";
 
   useEffect(() => {
     fetch(`http://localhost:5001/api/cms/${projectId}`)
@@ -618,6 +468,8 @@ export default function App() {
         .edit-mode-active [data-field-id] {
           outline: 1px dashed #38bdf8 !important;
           cursor: text !important;
+          position: relative !important;
+          z-index: 10000 !important;
         }
         .edit-mode-active [data-field-id]:hover {
           background: rgba(56, 189, 248, 0.1) !important;

@@ -2,215 +2,174 @@
   "db_records": [
     {
       "metadata": {
-        "sectionId": "8293746510",
-        "sectionName": "Hero Section",
+        "sectionId": "1dc363d7-ea7c-4648-858d-1a7d9b6d733a",
+        "sectionName": "Navigation & Hero Section",
         "sectionStatus": "Active",
         "variations": 1,
         "sectionType": "Hero",
-        "path": "/client/BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic./Hero Section/Variation1",
+        "path": "/client/BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional./Navigation & Hero Section/Variation1",
         "isAiGenerated": true,
         "pageName": "home",
         "index": 1
       },
       "elements": [
         {
-          "sectionId": "8293746510",
-          "elementName": "heroHeadline",
-          "fieldId": "1122334455",
-          "content": "Architecting Intelligence, One Model at a Time",
+          "sectionId": "1dc363d7-ea7c-4648-858d-1a7d9b6d733a",
+          "elementName": "navLogo",
+          "fieldId": "80891887-2a49-4cf3-923e-c275625dbc1c",
+          "content": "SyncEngine Logo",
           "contentType": "Text",
-          "section": "Hero Section",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "section": "Navigation & Hero Section",
+          "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true
         },
         {
-          "sectionId": "8293746510",
-          "elementName": "heroSubheadline",
-          "fieldId": "2233445566",
-          "content": "Specializing in Computer Vision, LLMs, and scalable machine learning infrastructure.",
-          "contentType": "Text",
-          "section": "Hero Section",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true
-        },
-        {
-          "sectionId": "8293746510",
-          "elementName": "primaryCta",
-          "fieldId": "3344556677",
-          "content": "View Projects",
-          "contentType": "Text",
-          "section": "Hero Section",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true
-        },
-        {
-          "sectionId": "8293746510",
-          "elementName": "secondaryCta",
-          "fieldId": "4455667788",
-          "content": "Contact Me",
-          "contentType": "Text",
-          "section": "Hero Section",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true
-        },
-        {
-          "sectionId": "8293746510",
-          "elementName": "dynamicVisual",
-          "fieldId": "5566778899",
-          "content": "neural-network-animation.svg",
-          "contentType": "Image",
-          "section": "Hero Section",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true
-        },
-        {
-          "sectionId": "8293746510",
-          "elementName": "techStackBadges",
-          "fieldId": "6677889900",
+          "sectionId": "1dc363d7-ea7c-4648-858d-1a7d9b6d733a",
+          "elementName": "navLinks",
+          "fieldId": "98451e42-87f3-476d-84a9-c212265086a9",
           "content": "",
           "contentType": "Cards",
-          "section": "Hero Section",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "section": "Navigation & Hero Section",
+          "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true,
           "loop": [
             {
-              "field1": "PyTorch",
+              "field1": "Features",
               "fieldType1": "Text",
-              "fieldId1": "7788990011",
-              "field2": "icon-pytorch.png",
-              "fieldType2": "Image",
-              "fieldId2": "8899001122"
+              "fieldId1": "ffd3371f-1536-4ebd-8580-8988d84cca2b",
+              "field2": "/features",
+              "fieldType2": "Text",
+              "fieldId2": "ed936363-821e-4eef-a194-e63da45e4361"
             },
             {
-              "field1": "TensorFlow",
+              "field1": "Pricing",
               "fieldType1": "Text",
-              "fieldId1": "9900112233",
-              "field2": "icon-tensorflow.png",
-              "fieldType2": "Image",
-              "fieldId2": "0011223344"
+              "fieldId1": "406be10e-dda0-4af6-b190-33d837fe6e9d",
+              "field2": "/pricing",
+              "fieldType2": "Text",
+              "fieldId2": "134bd276-f012-4486-8b86-67ac6353baee"
             },
             {
-              "field1": "AWS",
+              "field1": "Docs",
               "fieldType1": "Text",
-              "fieldId1": "1122334455",
-              "field2": "icon-aws.png",
-              "fieldType2": "Image",
-              "fieldId2": "2233445566"
+              "fieldId1": "05ce0593-9bd3-47f0-ac24-f627e60bf52f",
+              "field2": "/docs",
+              "fieldType2": "Text",
+              "fieldId2": "74531b02-7e9e-4147-9b64-6349817fccf8"
             }
           ]
+        },
+        {
+          "sectionId": "1dc363d7-ea7c-4648-858d-1a7d9b6d733a",
+          "elementName": "heroHeading",
+          "fieldId": "dc39cf8d-d68b-4e1b-828c-bcd4d330a918",
+          "content": "High-velocity project management for remote engineering teams.",
+          "contentType": "Text",
+          "section": "Navigation & Hero Section",
+          "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "1dc363d7-ea7c-4648-858d-1a7d9b6d733a",
+          "elementName": "heroSubtitle",
+          "fieldId": "6b57b8a5-0a2f-40ff-ab76-ef3811960fad",
+          "content": "Streamline your sprint cycles with asynchronous workflows. Built specifically for distributed teams to ship faster without the meeting fatigue.",
+          "contentType": "Text",
+          "section": "Navigation & Hero Section",
+          "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "1dc363d7-ea7c-4648-858d-1a7d9b6d733a",
+          "elementName": "heroVisual",
+          "fieldId": "54c3ed9b-7f57-4e0d-864a-11edf3bb6a3a",
+          "content": "https://example.com/hero-dashboard-screenshot.png",
+          "contentType": "Image",
+          "section": "Navigation & Hero Section",
+          "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
         }
       ]
     },
     {
       "metadata": {
-        "sectionId": "9283746511",
-        "sectionName": "Project Showcase",
+        "sectionId": "8980483a-4e6f-4f0a-9c5d-76c3b4b6ecda",
+        "sectionName": "Feature Highlights Grid",
         "sectionStatus": "Active",
         "variations": 1,
-        "sectionType": "Portfolio Grid",
-        "path": "/client/BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic./Project Showcase/Variation1",
+        "sectionType": "Features",
+        "path": "/client/BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional./Feature Highlights Grid/Variation1",
         "isAiGenerated": true,
         "pageName": "home",
         "index": 2
       },
       "elements": [
         {
-          "sectionId": "9283746511",
-          "elementName": "showcaseHeader",
-          "fieldId": "1122334455",
-          "content": "Selected Works: AI & ML Implementations",
+          "sectionId": "8980483a-4e6f-4f0a-9c5d-76c3b4b6ecda",
+          "elementName": "featureSectionHeader",
+          "fieldId": "b34b14a0-cac6-4e9b-a354-7f308bc0c813",
+          "content": "Built for the modern engineering stack. Streamline your remote development lifecycle with tools designed for high-velocity teams.",
           "contentType": "Text",
-          "section": "Project Showcase",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "section": "Feature Highlights Grid",
+          "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true
         },
         {
-          "sectionId": "9283746511",
-          "elementName": "projectFilters",
-          "fieldId": "2233445566",
+          "sectionId": "8980483a-4e6f-4f0a-9c5d-76c3b4b6ecda",
+          "elementName": "featureGrid",
+          "fieldId": "8e628240-02a4-4fee-abf1-79600b1d3bb4",
           "content": "",
           "contentType": "Cards",
-          "section": "Project Showcase",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "section": "Feature Highlights Grid",
+          "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true,
           "loop": [
             {
-              "field1": "Computer Vision",
-              "fieldType1": "Text",
-              "fieldId1": "3344556677"
-            },
-            {
-              "field1": "NLP",
-              "fieldType1": "Text",
-              "fieldId1": "4455667788"
-            },
-            {
-              "field1": "Deep Learning",
-              "fieldType1": "Text",
-              "fieldId1": "5566778899"
-            }
-          ]
-        },
-        {
-          "sectionId": "9283746511",
-          "elementName": "projectList",
-          "fieldId": "6677889900",
-          "content": "",
-          "contentType": "Cards",
-          "section": "Project Showcase",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true,
-          "loop": [
-            {
-              "field1": "Autonomous Navigation System",
-              "fieldType1": "Text",
-              "fieldId1": "7788990011",
-              "field2": "Real-time path planning using reinforcement learning in simulated environments.",
+              "field1": "icon-sprint-automation.svg",
+              "fieldType1": "Image",
+              "fieldId1": "efba2baf-4137-4f19-af2c-ebd870d5bc70",
+              "field2": "Automated Sprint Reporting",
               "fieldType2": "Text",
-              "fieldId2": "8899001122",
-              "field3": "PyTorch, ROS, OpenCV",
+              "fieldId2": "cc1e77f5-2135-425a-998a-022248a60fef",
+              "field3": "Eliminate manual status updates. Our engine syncs with your Git provider to generate real-time velocity reports automatically.",
               "fieldType3": "Text",
-              "fieldId3": "9900112233"
+              "fieldId3": "8ce30211-512b-43e0-b3d9-dcbecaed80a9"
             },
             {
-              "field1": "Sentiment Analysis Engine",
-              "fieldType1": "Text",
-              "fieldId1": "1011121314",
-              "field2": "Transformer-based model for multi-lingual sentiment classification at scale.",
+              "field1": "icon-code-tracking.svg",
+              "fieldType1": "Image",
+              "fieldId1": "bcb8d47f-5566-44ec-ab0f-49b9f3340ac5",
+              "field2": "Code-Deployment Tracking",
               "fieldType2": "Text",
-              "fieldId2": "1112131415",
-              "field3": "HuggingFace, FastAPI, Python",
+              "fieldId2": "e037ab26-c4c7-4716-9de5-5308d2d5bacd",
+              "field3": "Visualize your deployment pipeline directly within your project board. Track every commit from PR to production.",
               "fieldType3": "Text",
-              "fieldId3": "1213141516"
+              "fieldId3": "0aedbf66-81de-4115-90a2-1a91771f3bf2"
             },
             {
-              "field1": "Generative Art GAN",
-              "fieldType1": "Text",
-              "fieldId1": "1314151617",
-              "field2": "Custom GAN architecture trained on abstract datasets to generate unique textures.",
+              "field1": "icon-async-sync.svg",
+              "fieldType1": "Image",
+              "fieldId1": "aad957fa-0773-46e6-bed7-e612e7e4a707",
+              "field2": "Asynchronous Sync",
               "fieldType2": "Text",
-              "fieldId2": "1415161718",
-              "field3": "TensorFlow, Keras, CUDA",
+              "fieldId2": "439e6cee-cc57-44ba-b246-f573481b4381",
+              "field3": "Keep remote teams aligned without the meeting fatigue. Use threaded updates to maintain context across time zones.",
               "fieldType3": "Text",
-              "fieldId3": "1516171819"
+              "fieldId3": "105241fa-0b28-41c8-b6aa-606e63a980e4"
             }
           ]
         }
@@ -218,126 +177,103 @@
     },
     {
       "metadata": {
-        "sectionId": "4829103746",
-        "sectionName": "Professional Biography",
+        "sectionId": "756a5646-86d3-4c23-958d-953c66eae43c",
+        "sectionName": "Pricing & Social Proof Section",
         "sectionStatus": "Active",
         "variations": 1,
-        "sectionType": "Biography",
-        "path": "/client/BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic./Professional Biography/Variation1",
+        "sectionType": "Pricing & Testimonials",
+        "path": "/client/BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional./Pricing & Social Proof Section/Variation1",
         "isAiGenerated": true,
         "pageName": "home",
         "index": 3
       },
       "elements": [
         {
-          "sectionId": "4829103746",
-          "elementName": "bioHeading",
-          "fieldId": "1928374650",
-          "content": "The Mind Behind the Code",
+          "sectionId": "756a5646-86d3-4c23-958d-953c66eae43c",
+          "elementName": "pricingHeader",
+          "fieldId": "172903a4-fb29-4bc0-bdc6-64909ab5f548",
+          "content": "Choose the perfect plan for your engineering team",
           "contentType": "Text",
-          "section": "Professional Biography",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "section": "Pricing & Social Proof Section",
+          "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true
         },
         {
-          "sectionId": "4829103746",
-          "elementName": "profileImage",
-          "fieldId": "2938475610",
-          "content": "https://example.com/profile-portrait.jpg",
-          "contentType": "Image",
-          "section": "Professional Biography",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true
-        },
-        {
-          "sectionId": "4829103746",
-          "elementName": "bioBodyText",
-          "fieldId": "3948576120",
-          "content": "As an AI/ML Engineer, I specialize in building scalable neural architectures and deploying production-grade models. My journey spans from research-heavy computer vision projects to optimizing large language models for real-world efficiency.",
-          "contentType": "Text",
-          "section": "Professional Biography",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true
-        },
-        {
-          "sectionId": "4829103746",
-          "elementName": "skillTagCloud",
-          "fieldId": "4958671230",
+          "sectionId": "756a5646-86d3-4c23-958d-953c66eae43c",
+          "elementName": "pricingTiers",
+          "fieldId": "9376ee37-0e8a-49f6-921f-778c852ae5c8",
           "content": "",
           "contentType": "Cards",
-          "section": "Professional Biography",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "section": "Pricing & Social Proof Section",
+          "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true,
           "loop": [
             {
-              "field1": "PyTorch",
+              "field1": "Starter",
               "fieldType1": "Text",
-              "fieldId1": "5019283746"
+              "fieldId1": "09411ea6-b4b4-434b-b23e-d75c1914e2ef",
+              "field2": "$29/mo",
+              "fieldType2": "Text",
+              "fieldId2": "1df42148-8123-45d2-a9bf-73253a9e9681",
+              "field3": "Up to 5 users, Basic task tracking",
+              "fieldType3": "Text",
+              "fieldId3": "d57b907d-42f2-43f5-a65f-8b274344cac3"
             },
             {
-              "field1": "LLMs",
+              "field1": "Pro",
               "fieldType1": "Text",
-              "fieldId1": "5019283747"
+              "fieldId1": "1c8c0b4d-d913-46dc-9573-bd200261e5b5",
+              "field2": "$79/mo",
+              "fieldType2": "Text",
+              "fieldId2": "daccc989-a2f2-4b1d-b53b-d91ce07f483f",
+              "field3": "Unlimited users, Advanced analytics, API access",
+              "fieldType3": "Text",
+              "fieldId3": "9a803652-4a05-4374-8d03-65acaf780000"
             },
             {
-              "field1": "Computer Vision",
+              "field1": "Enterprise",
               "fieldType1": "Text",
-              "fieldId1": "5019283748"
-            },
-            {
-              "field1": "TensorFlow",
-              "fieldType1": "Text",
-              "fieldId1": "5019283749"
+              "fieldId1": "9f54302a-7b26-4198-88ca-abbd2100a25f",
+              "field2": "Custom",
+              "fieldType2": "Text",
+              "fieldId2": "261458c5-f077-4f09-85bf-f00cd93a331a",
+              "field3": "Dedicated support, SSO, Custom security",
+              "fieldType3": "Text",
+              "fieldId3": "199fe344-36b7-477e-897b-91348f9ba078"
             }
           ]
         },
         {
-          "sectionId": "4829103746",
-          "elementName": "resumeCta",
-          "fieldId": "6029384751",
-          "content": "Download Resume",
-          "contentType": "Text",
-          "section": "Professional Biography",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true
-        },
-        {
-          "sectionId": "4829103746",
-          "elementName": "quickFactsGrid",
-          "fieldId": "7039485762",
+          "sectionId": "756a5646-86d3-4c23-958d-953c66eae43c",
+          "elementName": "testimonialList",
+          "fieldId": "c4ba37e1-7853-44e9-94d8-906d0c713863",
           "content": "",
           "contentType": "Cards",
-          "section": "Professional Biography",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "section": "Pricing & Social Proof Section",
+          "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true,
           "loop": [
             {
-              "field1": "5+ Years",
+              "field1": "This tool transformed how our remote engineering team handles sprints. Absolute game changer.",
               "fieldType1": "Text",
-              "fieldId1": "8019283746",
-              "field2": "Experience",
+              "fieldId1": "434a0820-a667-471b-b6ed-3611108f1a8c",
+              "field2": "Sarah Jenkins, CTO at TechFlow",
               "fieldType2": "Text",
-              "fieldId2": "8019283747"
+              "fieldId2": "da975cec-e2f1-4745-ac77-3cee35b33b81"
             },
             {
-              "field1": "20+",
+              "field1": "Finally, a project management tool that understands the nuances of distributed development.",
               "fieldType1": "Text",
-              "fieldId1": "8019283748",
-              "field2": "Models Deployed",
+              "fieldId1": "b70033a0-b8c1-47ca-afcc-4f220e6bb52a",
+              "field2": "Mark Chen, Lead Engineer at CloudScale",
               "fieldType2": "Text",
-              "fieldId2": "8019283749"
+              "fieldId2": "c2cace78-4d29-4a6d-9346-ce61fba2ec4d"
             }
           ]
         }
@@ -345,99 +281,125 @@
     },
     {
       "metadata": {
-        "sectionId": "7738291045",
-        "sectionName": "Contact Section",
+        "sectionId": "f2652ad1-99e5-4cce-b9d0-26af82449fde",
+        "sectionName": "Footer",
         "sectionStatus": "Active",
         "variations": 1,
-        "sectionType": "Contact",
-        "path": "/client/BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic./Contact Section/Variation1",
+        "sectionType": "Footer",
+        "path": "/client/BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional./Footer/Variation1",
         "isAiGenerated": true,
         "pageName": "home",
         "index": 4
       },
       "elements": [
         {
-          "sectionId": "7738291045",
-          "elementName": "contactHeader",
-          "fieldId": "1122334455",
-          "content": "Let\u2019s Build the Future",
+          "sectionId": "f2652ad1-99e5-4cce-b9d0-26af82449fde",
+          "elementName": "brandIdentity",
+          "fieldId": "23b4d500-9445-46b1-be64-e3a790cab9ea",
+          "content": "Streamlining remote engineering workflows for high-performing teams.",
           "contentType": "Text",
-          "section": "Contact Section",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "section": "Footer",
+          "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true
         },
         {
-          "sectionId": "7738291045",
-          "elementName": "contactSubheadline",
-          "fieldId": "6677889900",
-          "content": "Have a project in mind? Let's discuss your next AI initiative.",
-          "contentType": "Text",
-          "section": "Contact Section",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true
-        },
-        {
-          "sectionId": "7738291045",
-          "elementName": "contactFormContainer",
-          "fieldId": "5544332211",
-          "content": "Name, Email, Subject, Message",
-          "contentType": "Text",
-          "section": "Contact Section",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true
-        },
-        {
-          "sectionId": "7738291045",
-          "elementName": "socialLinks",
-          "fieldId": "9988776655",
+          "sectionId": "f2652ad1-99e5-4cce-b9d0-26af82449fde",
+          "elementName": "navigationGroups",
+          "fieldId": "82d07099-4710-455f-8b0a-edfa3d56b4d7",
           "content": "",
           "contentType": "Cards",
-          "section": "Contact Section",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "section": "Footer",
+          "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true,
           "loop": [
             {
-              "field1": "LinkedIn",
+              "field1": "Product",
               "fieldType1": "Text",
-              "fieldId1": "1000000001",
-              "field2": "https://linkedin.com/in/username",
+              "fieldId1": "2ae1194f-e1a5-4dd9-9f58-85a4e69d68f4",
+              "field2": "Features, Pricing, Integrations, Roadmap",
               "fieldType2": "Text",
-              "fieldId2": "1000000002"
+              "fieldId2": "c622d197-a234-404b-bd47-2cfa4788915a"
             },
             {
-              "field1": "GitHub",
+              "field1": "Company",
               "fieldType1": "Text",
-              "fieldId1": "1000000003",
-              "field2": "https://github.com/username",
+              "fieldId1": "81dc7fe0-e207-4917-8bc8-bc5811d9b8ec",
+              "field2": "About Us, Careers, Press, Contact",
               "fieldType2": "Text",
-              "fieldId2": "1000000004"
+              "fieldId2": "4ad1dbba-f132-403a-b09f-2a66dcad85b9"
             },
             {
-              "field1": "Email",
+              "field1": "Resources",
               "fieldType1": "Text",
-              "fieldId1": "1000000005",
-              "field2": "mailto:hello@example.com",
+              "fieldId1": "593e3e4e-067b-4a2f-a282-b094c8010882",
+              "field2": "Blog, API Docs, Help Center, Security",
               "fieldType2": "Text",
-              "fieldId2": "1000000006"
+              "fieldId2": "7fec09c9-f527-4aa2-ad81-bccf39c2afc6"
             }
           ]
         },
         {
-          "sectionId": "7738291045",
-          "elementName": "statusToast",
-          "fieldId": "4433221100",
-          "content": "Message sent successfully!",
+          "sectionId": "f2652ad1-99e5-4cce-b9d0-26af82449fde",
+          "elementName": "newsletterSignup",
+          "fieldId": "e6c47218-23b2-4bc6-b022-418a1ebd4d99",
+          "content": "Subscribe to our newsletter for product updates and engineering insights.",
           "contentType": "Text",
-          "section": "Contact Section",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "section": "Footer",
+          "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "f2652ad1-99e5-4cce-b9d0-26af82449fde",
+          "elementName": "socialLinks",
+          "fieldId": "db305b8b-50a8-421e-a7bf-54719281bc80",
+          "content": "",
+          "contentType": "Cards",
+          "section": "Footer",
+          "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true,
+          "loop": [
+            {
+              "field1": "GitHub",
+              "fieldType1": "Text",
+              "fieldId1": "89fffee6-5f09-4c21-8a23-2052edf0e599",
+              "field2": "https://github.com/company",
+              "fieldType2": "Text",
+              "fieldId2": "9dc17b53-1d89-4219-8245-250308c864da"
+            },
+            {
+              "field1": "LinkedIn",
+              "fieldType1": "Text",
+              "fieldId1": "abbfcddc-1efb-4f11-8f55-cc61cf9715be",
+              "field2": "https://linkedin.com/company",
+              "fieldType2": "Text",
+              "fieldId2": "a9b5c9eb-c226-4f37-9d43-840e18842ccb"
+            },
+            {
+              "field1": "Twitter",
+              "fieldType1": "Text",
+              "fieldId1": "3d230217-52a3-498a-b632-73ea996052f9",
+              "field2": "https://twitter.com/company",
+              "fieldType2": "Text",
+              "fieldId2": "cddc5a16-e77c-4dc4-9d94-b830368d5949"
+            }
+          ]
+        },
+        {
+          "sectionId": "f2652ad1-99e5-4cce-b9d0-26af82449fde",
+          "elementName": "copyrightLegal",
+          "fieldId": "e69cfdcf-82b5-41b9-9394-7e4f3cf0e28d",
+          "content": "\u00a9 2023 RemoteFlow Inc. All rights reserved.",
+          "contentType": "Text",
+          "section": "Footer",
+          "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true
@@ -446,393 +408,355 @@
     }
   ],
   "resolved_cms": {
-    "heroSection": {
-      "heroHeadline": {
-        "sectionId": "8293746510",
-        "elementName": "heroHeadline",
-        "fieldId": "1122334455",
-        "content": "Architecting Intelligence, One Model at a Time",
+    "navigationHeroSection": {
+      "navLogo": {
+        "sectionId": "1dc363d7-ea7c-4648-858d-1a7d9b6d733a",
+        "elementName": "navLogo",
+        "fieldId": "80891887-2a49-4cf3-923e-c275625dbc1c",
+        "content": "SyncEngine Logo",
         "contentType": "Text",
-        "section": "Hero Section",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Navigation & Hero Section",
+        "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       },
-      "heroSubheadline": {
-        "sectionId": "8293746510",
-        "elementName": "heroSubheadline",
-        "fieldId": "2233445566",
-        "content": "Specializing in Computer Vision, LLMs, and scalable machine learning infrastructure.",
+      "navLinks": {
+        "sectionId": "1dc363d7-ea7c-4648-858d-1a7d9b6d733a",
+        "elementName": "navLinks",
+        "fieldId": "98451e42-87f3-476d-84a9-c212265086a9",
+        "content": "",
+        "contentType": "Cards",
+        "section": "Navigation & Hero Section",
+        "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true,
+        "loop": [
+          {
+            "field1": "Features",
+            "fieldType1": "Text",
+            "fieldId1": "ffd3371f-1536-4ebd-8580-8988d84cca2b",
+            "field2": "/features",
+            "fieldType2": "Text",
+            "fieldId2": "ed936363-821e-4eef-a194-e63da45e4361"
+          },
+          {
+            "field1": "Pricing",
+            "fieldType1": "Text",
+            "fieldId1": "406be10e-dda0-4af6-b190-33d837fe6e9d",
+            "field2": "/pricing",
+            "fieldType2": "Text",
+            "fieldId2": "134bd276-f012-4486-8b86-67ac6353baee"
+          },
+          {
+            "field1": "Docs",
+            "fieldType1": "Text",
+            "fieldId1": "05ce0593-9bd3-47f0-ac24-f627e60bf52f",
+            "field2": "/docs",
+            "fieldType2": "Text",
+            "fieldId2": "74531b02-7e9e-4147-9b64-6349817fccf8"
+          }
+        ]
+      },
+      "heroHeading": {
+        "sectionId": "1dc363d7-ea7c-4648-858d-1a7d9b6d733a",
+        "elementName": "heroHeading",
+        "fieldId": "dc39cf8d-d68b-4e1b-828c-bcd4d330a918",
+        "content": "High-velocity project management for remote engineering teams.",
         "contentType": "Text",
-        "section": "Hero Section",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Navigation & Hero Section",
+        "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       },
-      "primaryCta": {
-        "sectionId": "8293746510",
-        "elementName": "primaryCta",
-        "fieldId": "3344556677",
-        "content": "View Projects",
+      "heroSubtitle": {
+        "sectionId": "1dc363d7-ea7c-4648-858d-1a7d9b6d733a",
+        "elementName": "heroSubtitle",
+        "fieldId": "6b57b8a5-0a2f-40ff-ab76-ef3811960fad",
+        "content": "Streamline your sprint cycles with asynchronous workflows. Built specifically for distributed teams to ship faster without the meeting fatigue.",
         "contentType": "Text",
-        "section": "Hero Section",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Navigation & Hero Section",
+        "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       },
-      "secondaryCta": {
-        "sectionId": "8293746510",
-        "elementName": "secondaryCta",
-        "fieldId": "4455667788",
-        "content": "Contact Me",
-        "contentType": "Text",
-        "section": "Hero Section",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-        "pageName": "home",
-        "isCustom": true,
-        "isCustomEdit": true
-      },
-      "dynamicVisual": {
-        "sectionId": "8293746510",
-        "elementName": "dynamicVisual",
-        "fieldId": "5566778899",
-        "content": "neural-network-animation.svg",
+      "heroVisual": {
+        "sectionId": "1dc363d7-ea7c-4648-858d-1a7d9b6d733a",
+        "elementName": "heroVisual",
+        "fieldId": "54c3ed9b-7f57-4e0d-864a-11edf3bb6a3a",
+        "content": "https://example.com/hero-dashboard-screenshot.png",
         "contentType": "Image",
-        "section": "Hero Section",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Navigation & Hero Section",
+        "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      }
+    },
+    "featureHighlightsGrid": {
+      "featureSectionHeader": {
+        "sectionId": "8980483a-4e6f-4f0a-9c5d-76c3b4b6ecda",
+        "elementName": "featureSectionHeader",
+        "fieldId": "b34b14a0-cac6-4e9b-a354-7f308bc0c813",
+        "content": "Built for the modern engineering stack. Streamline your remote development lifecycle with tools designed for high-velocity teams.",
+        "contentType": "Text",
+        "section": "Feature Highlights Grid",
+        "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       },
-      "techStackBadges": {
-        "sectionId": "8293746510",
-        "elementName": "techStackBadges",
-        "fieldId": "6677889900",
+      "featureGrid": {
+        "sectionId": "8980483a-4e6f-4f0a-9c5d-76c3b4b6ecda",
+        "elementName": "featureGrid",
+        "fieldId": "8e628240-02a4-4fee-abf1-79600b1d3bb4",
         "content": "",
         "contentType": "Cards",
-        "section": "Hero Section",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Feature Highlights Grid",
+        "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true,
         "loop": [
           {
-            "field1": "PyTorch",
-            "fieldType1": "Text",
-            "fieldId1": "7788990011",
-            "field2": "icon-pytorch.png",
-            "fieldType2": "Image",
-            "fieldId2": "8899001122"
+            "field1": "icon-sprint-automation.svg",
+            "fieldType1": "Image",
+            "fieldId1": "efba2baf-4137-4f19-af2c-ebd870d5bc70",
+            "field2": "Automated Sprint Reporting",
+            "fieldType2": "Text",
+            "fieldId2": "cc1e77f5-2135-425a-998a-022248a60fef",
+            "field3": "Eliminate manual status updates. Our engine syncs with your Git provider to generate real-time velocity reports automatically.",
+            "fieldType3": "Text",
+            "fieldId3": "8ce30211-512b-43e0-b3d9-dcbecaed80a9"
           },
           {
-            "field1": "TensorFlow",
-            "fieldType1": "Text",
-            "fieldId1": "9900112233",
-            "field2": "icon-tensorflow.png",
-            "fieldType2": "Image",
-            "fieldId2": "0011223344"
+            "field1": "icon-code-tracking.svg",
+            "fieldType1": "Image",
+            "fieldId1": "bcb8d47f-5566-44ec-ab0f-49b9f3340ac5",
+            "field2": "Code-Deployment Tracking",
+            "fieldType2": "Text",
+            "fieldId2": "e037ab26-c4c7-4716-9de5-5308d2d5bacd",
+            "field3": "Visualize your deployment pipeline directly within your project board. Track every commit from PR to production.",
+            "fieldType3": "Text",
+            "fieldId3": "0aedbf66-81de-4115-90a2-1a91771f3bf2"
           },
           {
-            "field1": "AWS",
-            "fieldType1": "Text",
-            "fieldId1": "1122334455",
-            "field2": "icon-aws.png",
-            "fieldType2": "Image",
-            "fieldId2": "2233445566"
+            "field1": "icon-async-sync.svg",
+            "fieldType1": "Image",
+            "fieldId1": "aad957fa-0773-46e6-bed7-e612e7e4a707",
+            "field2": "Asynchronous Sync",
+            "fieldType2": "Text",
+            "fieldId2": "439e6cee-cc57-44ba-b246-f573481b4381",
+            "field3": "Keep remote teams aligned without the meeting fatigue. Use threaded updates to maintain context across time zones.",
+            "fieldType3": "Text",
+            "fieldId3": "105241fa-0b28-41c8-b6aa-606e63a980e4"
           }
         ]
       }
     },
-    "projectShowcase": {
-      "showcaseHeader": {
-        "sectionId": "9283746511",
-        "elementName": "showcaseHeader",
-        "fieldId": "1122334455",
-        "content": "Selected Works: AI & ML Implementations",
+    "pricingSocialProofSection": {
+      "pricingHeader": {
+        "sectionId": "756a5646-86d3-4c23-958d-953c66eae43c",
+        "elementName": "pricingHeader",
+        "fieldId": "172903a4-fb29-4bc0-bdc6-64909ab5f548",
+        "content": "Choose the perfect plan for your engineering team",
         "contentType": "Text",
-        "section": "Project Showcase",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Pricing & Social Proof Section",
+        "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       },
-      "projectFilters": {
-        "sectionId": "9283746511",
-        "elementName": "projectFilters",
-        "fieldId": "2233445566",
+      "pricingTiers": {
+        "sectionId": "756a5646-86d3-4c23-958d-953c66eae43c",
+        "elementName": "pricingTiers",
+        "fieldId": "9376ee37-0e8a-49f6-921f-778c852ae5c8",
         "content": "",
         "contentType": "Cards",
-        "section": "Project Showcase",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Pricing & Social Proof Section",
+        "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true,
         "loop": [
           {
-            "field1": "Computer Vision",
+            "field1": "Starter",
             "fieldType1": "Text",
-            "fieldId1": "3344556677"
+            "fieldId1": "09411ea6-b4b4-434b-b23e-d75c1914e2ef",
+            "field2": "$29/mo",
+            "fieldType2": "Text",
+            "fieldId2": "1df42148-8123-45d2-a9bf-73253a9e9681",
+            "field3": "Up to 5 users, Basic task tracking",
+            "fieldType3": "Text",
+            "fieldId3": "d57b907d-42f2-43f5-a65f-8b274344cac3"
           },
           {
-            "field1": "NLP",
+            "field1": "Pro",
             "fieldType1": "Text",
-            "fieldId1": "4455667788"
+            "fieldId1": "1c8c0b4d-d913-46dc-9573-bd200261e5b5",
+            "field2": "$79/mo",
+            "fieldType2": "Text",
+            "fieldId2": "daccc989-a2f2-4b1d-b53b-d91ce07f483f",
+            "field3": "Unlimited users, Advanced analytics, API access",
+            "fieldType3": "Text",
+            "fieldId3": "9a803652-4a05-4374-8d03-65acaf780000"
           },
           {
-            "field1": "Deep Learning",
+            "field1": "Enterprise",
             "fieldType1": "Text",
-            "fieldId1": "5566778899"
+            "fieldId1": "9f54302a-7b26-4198-88ca-abbd2100a25f",
+            "field2": "Custom",
+            "fieldType2": "Text",
+            "fieldId2": "261458c5-f077-4f09-85bf-f00cd93a331a",
+            "field3": "Dedicated support, SSO, Custom security",
+            "fieldType3": "Text",
+            "fieldId3": "199fe344-36b7-477e-897b-91348f9ba078"
           }
         ]
       },
-      "projectList": {
-        "sectionId": "9283746511",
-        "elementName": "projectList",
-        "fieldId": "6677889900",
+      "testimonialList": {
+        "sectionId": "756a5646-86d3-4c23-958d-953c66eae43c",
+        "elementName": "testimonialList",
+        "fieldId": "c4ba37e1-7853-44e9-94d8-906d0c713863",
         "content": "",
         "contentType": "Cards",
-        "section": "Project Showcase",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Pricing & Social Proof Section",
+        "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true,
         "loop": [
           {
-            "field1": "Autonomous Navigation System",
+            "field1": "This tool transformed how our remote engineering team handles sprints. Absolute game changer.",
             "fieldType1": "Text",
-            "fieldId1": "7788990011",
-            "field2": "Real-time path planning using reinforcement learning in simulated environments.",
+            "fieldId1": "434a0820-a667-471b-b6ed-3611108f1a8c",
+            "field2": "Sarah Jenkins, CTO at TechFlow",
             "fieldType2": "Text",
-            "fieldId2": "8899001122",
-            "field3": "PyTorch, ROS, OpenCV",
-            "fieldType3": "Text",
-            "fieldId3": "9900112233"
+            "fieldId2": "da975cec-e2f1-4745-ac77-3cee35b33b81"
           },
           {
-            "field1": "Sentiment Analysis Engine",
+            "field1": "Finally, a project management tool that understands the nuances of distributed development.",
             "fieldType1": "Text",
-            "fieldId1": "1011121314",
-            "field2": "Transformer-based model for multi-lingual sentiment classification at scale.",
+            "fieldId1": "b70033a0-b8c1-47ca-afcc-4f220e6bb52a",
+            "field2": "Mark Chen, Lead Engineer at CloudScale",
             "fieldType2": "Text",
-            "fieldId2": "1112131415",
-            "field3": "HuggingFace, FastAPI, Python",
-            "fieldType3": "Text",
-            "fieldId3": "1213141516"
-          },
-          {
-            "field1": "Generative Art GAN",
-            "fieldType1": "Text",
-            "fieldId1": "1314151617",
-            "field2": "Custom GAN architecture trained on abstract datasets to generate unique textures.",
-            "fieldType2": "Text",
-            "fieldId2": "1415161718",
-            "field3": "TensorFlow, Keras, CUDA",
-            "fieldType3": "Text",
-            "fieldId3": "1516171819"
+            "fieldId2": "c2cace78-4d29-4a6d-9346-ce61fba2ec4d"
           }
         ]
       }
     },
-    "professionalBiography": {
-      "bioHeading": {
-        "sectionId": "4829103746",
-        "elementName": "bioHeading",
-        "fieldId": "1928374650",
-        "content": "The Mind Behind the Code",
+    "footer": {
+      "brandIdentity": {
+        "sectionId": "f2652ad1-99e5-4cce-b9d0-26af82449fde",
+        "elementName": "brandIdentity",
+        "fieldId": "23b4d500-9445-46b1-be64-e3a790cab9ea",
+        "content": "Streamlining remote engineering workflows for high-performing teams.",
         "contentType": "Text",
-        "section": "Professional Biography",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Footer",
+        "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       },
-      "profileImage": {
-        "sectionId": "4829103746",
-        "elementName": "profileImage",
-        "fieldId": "2938475610",
-        "content": "https://example.com/profile-portrait.jpg",
-        "contentType": "Image",
-        "section": "Professional Biography",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-        "pageName": "home",
-        "isCustom": true,
-        "isCustomEdit": true
-      },
-      "bioBodyText": {
-        "sectionId": "4829103746",
-        "elementName": "bioBodyText",
-        "fieldId": "3948576120",
-        "content": "As an AI/ML Engineer, I specialize in building scalable neural architectures and deploying production-grade models. My journey spans from research-heavy computer vision projects to optimizing large language models for real-world efficiency.",
-        "contentType": "Text",
-        "section": "Professional Biography",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-        "pageName": "home",
-        "isCustom": true,
-        "isCustomEdit": true
-      },
-      "skillTagCloud": {
-        "sectionId": "4829103746",
-        "elementName": "skillTagCloud",
-        "fieldId": "4958671230",
+      "navigationGroups": {
+        "sectionId": "f2652ad1-99e5-4cce-b9d0-26af82449fde",
+        "elementName": "navigationGroups",
+        "fieldId": "82d07099-4710-455f-8b0a-edfa3d56b4d7",
         "content": "",
         "contentType": "Cards",
-        "section": "Professional Biography",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Footer",
+        "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true,
         "loop": [
           {
-            "field1": "PyTorch",
+            "field1": "Product",
             "fieldType1": "Text",
-            "fieldId1": "5019283746"
+            "fieldId1": "2ae1194f-e1a5-4dd9-9f58-85a4e69d68f4",
+            "field2": "Features, Pricing, Integrations, Roadmap",
+            "fieldType2": "Text",
+            "fieldId2": "c622d197-a234-404b-bd47-2cfa4788915a"
           },
           {
-            "field1": "LLMs",
+            "field1": "Company",
             "fieldType1": "Text",
-            "fieldId1": "5019283747"
+            "fieldId1": "81dc7fe0-e207-4917-8bc8-bc5811d9b8ec",
+            "field2": "About Us, Careers, Press, Contact",
+            "fieldType2": "Text",
+            "fieldId2": "4ad1dbba-f132-403a-b09f-2a66dcad85b9"
           },
           {
-            "field1": "Computer Vision",
+            "field1": "Resources",
             "fieldType1": "Text",
-            "fieldId1": "5019283748"
-          },
-          {
-            "field1": "TensorFlow",
-            "fieldType1": "Text",
-            "fieldId1": "5019283749"
+            "fieldId1": "593e3e4e-067b-4a2f-a282-b094c8010882",
+            "field2": "Blog, API Docs, Help Center, Security",
+            "fieldType2": "Text",
+            "fieldId2": "7fec09c9-f527-4aa2-ad81-bccf39c2afc6"
           }
         ]
       },
-      "resumeCta": {
-        "sectionId": "4829103746",
-        "elementName": "resumeCta",
-        "fieldId": "6029384751",
-        "content": "Download Resume",
+      "newsletterSignup": {
+        "sectionId": "f2652ad1-99e5-4cce-b9d0-26af82449fde",
+        "elementName": "newsletterSignup",
+        "fieldId": "e6c47218-23b2-4bc6-b022-418a1ebd4d99",
+        "content": "Subscribe to our newsletter for product updates and engineering insights.",
         "contentType": "Text",
-        "section": "Professional Biography",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-        "pageName": "home",
-        "isCustom": true,
-        "isCustomEdit": true
-      },
-      "quickFactsGrid": {
-        "sectionId": "4829103746",
-        "elementName": "quickFactsGrid",
-        "fieldId": "7039485762",
-        "content": "",
-        "contentType": "Cards",
-        "section": "Professional Biography",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-        "pageName": "home",
-        "isCustom": true,
-        "isCustomEdit": true,
-        "loop": [
-          {
-            "field1": "5+ Years",
-            "fieldType1": "Text",
-            "fieldId1": "8019283746",
-            "field2": "Experience",
-            "fieldType2": "Text",
-            "fieldId2": "8019283747"
-          },
-          {
-            "field1": "20+",
-            "fieldType1": "Text",
-            "fieldId1": "8019283748",
-            "field2": "Models Deployed",
-            "fieldType2": "Text",
-            "fieldId2": "8019283749"
-          }
-        ]
-      }
-    },
-    "contactSection": {
-      "contactHeader": {
-        "sectionId": "7738291045",
-        "elementName": "contactHeader",
-        "fieldId": "1122334455",
-        "content": "Let\u2019s Build the Future",
-        "contentType": "Text",
-        "section": "Contact Section",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-        "pageName": "home",
-        "isCustom": true,
-        "isCustomEdit": true
-      },
-      "contactSubheadline": {
-        "sectionId": "7738291045",
-        "elementName": "contactSubheadline",
-        "fieldId": "6677889900",
-        "content": "Have a project in mind? Let's discuss your next AI initiative.",
-        "contentType": "Text",
-        "section": "Contact Section",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-        "pageName": "home",
-        "isCustom": true,
-        "isCustomEdit": true
-      },
-      "contactFormContainer": {
-        "sectionId": "7738291045",
-        "elementName": "contactFormContainer",
-        "fieldId": "5544332211",
-        "content": "Name, Email, Subject, Message",
-        "contentType": "Text",
-        "section": "Contact Section",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Footer",
+        "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       },
       "socialLinks": {
-        "sectionId": "7738291045",
+        "sectionId": "f2652ad1-99e5-4cce-b9d0-26af82449fde",
         "elementName": "socialLinks",
-        "fieldId": "9988776655",
+        "fieldId": "db305b8b-50a8-421e-a7bf-54719281bc80",
         "content": "",
         "contentType": "Cards",
-        "section": "Contact Section",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Footer",
+        "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true,
         "loop": [
           {
-            "field1": "LinkedIn",
-            "fieldType1": "Text",
-            "fieldId1": "1000000001",
-            "field2": "https://linkedin.com/in/username",
-            "fieldType2": "Text",
-            "fieldId2": "1000000002"
-          },
-          {
             "field1": "GitHub",
             "fieldType1": "Text",
-            "fieldId1": "1000000003",
-            "field2": "https://github.com/username",
+            "fieldId1": "89fffee6-5f09-4c21-8a23-2052edf0e599",
+            "field2": "https://github.com/company",
             "fieldType2": "Text",
-            "fieldId2": "1000000004"
+            "fieldId2": "9dc17b53-1d89-4219-8245-250308c864da"
           },
           {
-            "field1": "Email",
+            "field1": "LinkedIn",
             "fieldType1": "Text",
-            "fieldId1": "1000000005",
-            "field2": "mailto:hello@example.com",
+            "fieldId1": "abbfcddc-1efb-4f11-8f55-cc61cf9715be",
+            "field2": "https://linkedin.com/company",
             "fieldType2": "Text",
-            "fieldId2": "1000000006"
+            "fieldId2": "a9b5c9eb-c226-4f37-9d43-840e18842ccb"
+          },
+          {
+            "field1": "Twitter",
+            "fieldType1": "Text",
+            "fieldId1": "3d230217-52a3-498a-b632-73ea996052f9",
+            "field2": "https://twitter.com/company",
+            "fieldType2": "Text",
+            "fieldId2": "cddc5a16-e77c-4dc4-9d94-b830368d5949"
           }
         ]
       },
-      "statusToast": {
-        "sectionId": "7738291045",
-        "elementName": "statusToast",
-        "fieldId": "4433221100",
-        "content": "Message sent successfully!",
+      "copyrightLegal": {
+        "sectionId": "f2652ad1-99e5-4cce-b9d0-26af82449fde",
+        "elementName": "copyrightLegal",
+        "fieldId": "e69cfdcf-82b5-41b9-9394-7e4f3cf0e28d",
+        "content": "\u00a9 2023 RemoteFlow Inc. All rights reserved.",
         "contentType": "Text",
-        "section": "Contact Section",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Footer",
+        "projectName": "BuildaUIlayoutforaprojectmanagementSaaSlandingpage.Itmustconsistofaherosectionwithaproducttagline,afeaturesbreakdownwithicons,andapricingtiercomparisontable.Thetoolisaimedatremoteengineeringteams.ItmustalsohaveatestimonialssectionandafreetrialCTA.Keeptheappealclean,modern,andprofessional.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
