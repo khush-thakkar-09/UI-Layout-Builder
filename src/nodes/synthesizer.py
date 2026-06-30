@@ -335,6 +335,8 @@ def run_synthesizer(state: GlobalState) -> Dict[str, Any]:
         .edit-mode-active [data-field-id] {
           outline: 1px dashed #38bdf8 !important;
           cursor: text !important;
+          position: relative !important;
+          z-index: 10000 !important;
         }
         .edit-mode-active [data-field-id]:hover {
           background: rgba(56, 189, 248, 0.1) !important;

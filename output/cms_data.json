@@ -16,8 +16,8 @@
         {
           "sectionId": "8293746510",
           "elementName": "heroHeadline",
-          "fieldId": "1928374650",
-          "content": "Architecting Intelligence: Bridging Data and Innovation",
+          "fieldId": "1122334455",
+          "content": "Architecting Intelligence, One Model at a Time",
           "contentType": "Text",
           "section": "Hero Section",
           "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
@@ -28,8 +28,8 @@
         {
           "sectionId": "8293746510",
           "elementName": "heroSubheadline",
-          "fieldId": "2938475611",
-          "content": "Specializing in Deep Learning, MLOps, and NLP. I transform complex datasets into scalable, intelligent solutions that drive real-world impact.",
+          "fieldId": "2233445566",
+          "content": "Specializing in Computer Vision, LLMs, and scalable machine learning infrastructure.",
           "contentType": "Text",
           "section": "Hero Section",
           "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
@@ -40,8 +40,8 @@
         {
           "sectionId": "8293746510",
           "elementName": "primaryCta",
-          "fieldId": "3948576622",
-          "content": "View My Projects",
+          "fieldId": "3344556677",
+          "content": "View Projects",
           "contentType": "Text",
           "section": "Hero Section",
           "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
@@ -52,7 +52,7 @@
         {
           "sectionId": "8293746510",
           "elementName": "secondaryCta",
-          "fieldId": "4958677733",
+          "fieldId": "4455667788",
           "content": "Contact Me",
           "contentType": "Text",
           "section": "Hero Section",
@@ -63,9 +63,9 @@
         },
         {
           "sectionId": "8293746510",
-          "elementName": "heroVisual",
-          "fieldId": "5968778844",
-          "content": "https://example.com/ai-generative-art-placeholder.png",
+          "elementName": "dynamicVisual",
+          "fieldId": "5566778899",
+          "content": "neural-network-animation.svg",
           "contentType": "Image",
           "section": "Hero Section",
           "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
@@ -75,8 +75,8 @@
         },
         {
           "sectionId": "8293746510",
-          "elementName": "techStackTicker",
-          "fieldId": "6978889955",
+          "elementName": "techStackBadges",
+          "fieldId": "6677889900",
           "content": "",
           "contentType": "Cards",
           "section": "Hero Section",
@@ -88,34 +88,26 @@
             {
               "field1": "PyTorch",
               "fieldType1": "Text",
-              "fieldId1": "7000000001",
-              "field2": "Icon_PyTorch",
+              "fieldId1": "7788990011",
+              "field2": "icon-pytorch.png",
               "fieldType2": "Image",
-              "fieldId2": "7000000002"
+              "fieldId2": "8899001122"
             },
             {
               "field1": "TensorFlow",
               "fieldType1": "Text",
-              "fieldId1": "7000000003",
-              "field2": "Icon_TF",
+              "fieldId1": "9900112233",
+              "field2": "icon-tensorflow.png",
               "fieldType2": "Image",
-              "fieldId2": "7000000004"
+              "fieldId2": "0011223344"
             },
             {
               "field1": "AWS",
               "fieldType1": "Text",
-              "fieldId1": "7000000005",
-              "field2": "Icon_AWS",
+              "fieldId1": "1122334455",
+              "field2": "icon-aws.png",
               "fieldType2": "Image",
-              "fieldId2": "7000000006"
-            },
-            {
-              "field1": "Python",
-              "fieldType1": "Text",
-              "fieldId1": "7000000007",
-              "field2": "Icon_Python",
-              "fieldType2": "Image",
-              "fieldId2": "7000000008"
+              "fieldId2": "2233445566"
             }
           ]
         }
@@ -138,7 +130,7 @@
           "sectionId": "9283746511",
           "elementName": "showcaseHeader",
           "fieldId": "1122334455",
-          "content": "Selected Works",
+          "content": "Selected Works: AI & ML Implementations",
           "contentType": "Text",
           "section": "Project Showcase",
           "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
@@ -148,7 +140,7 @@
         },
         {
           "sectionId": "9283746511",
-          "elementName": "filterCategories",
+          "elementName": "projectFilters",
           "fieldId": "2233445566",
           "content": "",
           "contentType": "Cards",
@@ -164,12 +156,12 @@
               "fieldId1": "3344556677"
             },
             {
-              "field1": "LLMs",
+              "field1": "NLP",
               "fieldType1": "Text",
               "fieldId1": "4455667788"
             },
             {
-              "field1": "Predictive Analytics",
+              "field1": "Deep Learning",
               "fieldType1": "Text",
               "fieldId1": "5566778899"
             }
@@ -177,7 +169,7 @@
         },
         {
           "sectionId": "9283746511",
-          "elementName": "projectGrid",
+          "elementName": "projectList",
           "fieldId": "6677889900",
           "content": "",
           "contentType": "Cards",
@@ -188,62 +180,50 @@
           "isCustomEdit": true,
           "loop": [
             {
-              "field1": "Neural Vision Engine",
+              "field1": "Autonomous Navigation System",
               "fieldType1": "Text",
               "fieldId1": "7788990011",
-              "field2": "Real-time object detection for autonomous logistics.",
+              "field2": "Real-time path planning using reinforcement learning in simulated environments.",
               "fieldType2": "Text",
               "fieldId2": "8899001122",
-              "field3": "PyTorch, OpenCV",
+              "field3": "PyTorch, ROS, OpenCV",
               "fieldType3": "Text",
               "fieldId3": "9900112233"
             },
             {
-              "field1": "Semantic Search LLM",
+              "field1": "Sentiment Analysis Engine",
               "fieldType1": "Text",
-              "fieldId1": "1011223344",
-              "field2": "Optimizing enterprise knowledge retrieval systems.",
+              "fieldId1": "1011121314",
+              "field2": "Transformer-based model for multi-lingual sentiment classification at scale.",
               "fieldType2": "Text",
-              "fieldId2": "2122334455",
-              "field3": "LangChain, Pinecone",
+              "fieldId2": "1112131415",
+              "field3": "HuggingFace, FastAPI, Python",
               "fieldType3": "Text",
-              "fieldId3": "3233445566"
+              "fieldId3": "1213141516"
             },
             {
-              "field1": "Demand Forecaster",
+              "field1": "Generative Art GAN",
               "fieldType1": "Text",
-              "fieldId1": "4344556677",
-              "field2": "Predictive modeling for retail supply chain efficiency.",
+              "fieldId1": "1314151617",
+              "field2": "Custom GAN architecture trained on abstract datasets to generate unique textures.",
               "fieldType2": "Text",
-              "fieldId2": "5455667788",
-              "field3": "XGBoost, AWS SageMaker",
+              "fieldId2": "1415161718",
+              "field3": "TensorFlow, Keras, CUDA",
               "fieldType3": "Text",
-              "fieldId3": "6566778899"
+              "fieldId3": "1516171819"
             }
           ]
-        },
-        {
-          "sectionId": "9283746511",
-          "elementName": "viewAllCta",
-          "fieldId": "7677889900",
-          "content": "View All Projects",
-          "contentType": "Text",
-          "section": "Project Showcase",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true
         }
       ]
     },
     {
       "metadata": {
         "sectionId": "4829103746",
-        "sectionName": "Professional Experience",
+        "sectionName": "Professional Biography",
         "sectionStatus": "Active",
         "variations": 1,
-        "sectionType": "Timeline",
-        "path": "/client/BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic./Professional Experience/Variation1",
+        "sectionType": "Biography",
+        "path": "/client/BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic./Professional Biography/Variation1",
         "isAiGenerated": true,
         "pageName": "home",
         "index": 3
@@ -251,11 +231,11 @@
       "elements": [
         {
           "sectionId": "4829103746",
-          "elementName": "experienceHeader",
+          "elementName": "bioHeading",
           "fieldId": "1928374650",
-          "content": "Engineering Milestones",
+          "content": "The Mind Behind the Code",
           "contentType": "Text",
-          "section": "Professional Experience",
+          "section": "Professional Biography",
           "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
           "pageName": "home",
           "isCustom": true,
@@ -263,66 +243,101 @@
         },
         {
           "sectionId": "4829103746",
-          "elementName": "experienceList",
-          "fieldId": "5748392011",
+          "elementName": "profileImage",
+          "fieldId": "2938475610",
+          "content": "https://example.com/profile-portrait.jpg",
+          "contentType": "Image",
+          "section": "Professional Biography",
+          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "4829103746",
+          "elementName": "bioBodyText",
+          "fieldId": "3948576120",
+          "content": "As an AI/ML Engineer, I specialize in building scalable neural architectures and deploying production-grade models. My journey spans from research-heavy computer vision projects to optimizing large language models for real-world efficiency.",
+          "contentType": "Text",
+          "section": "Professional Biography",
+          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "4829103746",
+          "elementName": "skillTagCloud",
+          "fieldId": "4958671230",
           "content": "",
           "contentType": "Cards",
-          "section": "Professional Experience",
+          "section": "Professional Biography",
           "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true,
           "loop": [
             {
-              "field1": "Senior AI Engineer",
+              "field1": "PyTorch",
               "fieldType1": "Text",
-              "fieldId1": "1029384756",
-              "field2": "TechCorp Solutions",
-              "fieldType2": "Text",
-              "fieldId2": "2938475610",
-              "field3": "2021 - Present",
-              "fieldType3": "Text",
-              "fieldId3": "3847561029",
-              "field4": "PyTorch, Kubernetes, AWS",
-              "fieldType4": "Text",
-              "fieldId4": "4756102938",
-              "field5": "Reduced inference latency by 40% through model quantization.",
-              "fieldType5": "Text",
-              "fieldId5": "5610293847"
+              "fieldId1": "5019283746"
             },
             {
-              "field1": "Machine Learning Researcher",
+              "field1": "LLMs",
               "fieldType1": "Text",
-              "fieldId1": "6758493021",
-              "field2": "Neural Dynamics Lab",
-              "fieldType2": "Text",
-              "fieldId2": "7649302158",
-              "field3": "2019 - 2021",
-              "fieldType3": "Text",
-              "fieldId3": "8530215849",
-              "field4": "TensorFlow, JAX, Python",
-              "fieldType4": "Text",
-              "fieldId4": "9421584930",
-              "field5": "Published 3 papers on transformer architecture optimization.",
-              "fieldType5": "Text",
-              "fieldId5": "0315849302"
+              "fieldId1": "5019283747"
             },
             {
-              "field1": "Data Scientist",
+              "field1": "Computer Vision",
               "fieldType1": "Text",
-              "fieldId1": "1234567890",
-              "field2": "DataStream Inc",
+              "fieldId1": "5019283748"
+            },
+            {
+              "field1": "TensorFlow",
+              "fieldType1": "Text",
+              "fieldId1": "5019283749"
+            }
+          ]
+        },
+        {
+          "sectionId": "4829103746",
+          "elementName": "resumeCta",
+          "fieldId": "6029384751",
+          "content": "Download Resume",
+          "contentType": "Text",
+          "section": "Professional Biography",
+          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "4829103746",
+          "elementName": "quickFactsGrid",
+          "fieldId": "7039485762",
+          "content": "",
+          "contentType": "Cards",
+          "section": "Professional Biography",
+          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true,
+          "loop": [
+            {
+              "field1": "5+ Years",
+              "fieldType1": "Text",
+              "fieldId1": "8019283746",
+              "field2": "Experience",
               "fieldType2": "Text",
-              "fieldId2": "2345678901",
-              "field3": "2017 - 2019",
-              "fieldType3": "Text",
-              "fieldId3": "3456789012",
-              "field4": "Scikit-Learn, SQL, Docker",
-              "fieldType4": "Text",
-              "fieldId4": "4567890123",
-              "field5": "Automated ETL pipelines saving 20 hours of manual work weekly.",
-              "fieldType5": "Text",
-              "fieldId5": "5678901234"
+              "fieldId2": "8019283747"
+            },
+            {
+              "field1": "20+",
+              "fieldType1": "Text",
+              "fieldId1": "8019283748",
+              "field2": "Models Deployed",
+              "fieldType2": "Text",
+              "fieldId2": "8019283749"
             }
           ]
         }
@@ -330,60 +345,60 @@
     },
     {
       "metadata": {
-        "sectionId": "7392018475",
-        "sectionName": "Contact Footer",
+        "sectionId": "7738291045",
+        "sectionName": "Contact Section",
         "sectionStatus": "Active",
         "variations": 1,
-        "sectionType": "Footer",
-        "path": "/client/BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic./Contact Footer/Variation1",
+        "sectionType": "Contact",
+        "path": "/client/BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic./Contact Section/Variation1",
         "isAiGenerated": true,
         "pageName": "home",
         "index": 4
       },
       "elements": [
         {
-          "sectionId": "7392018475",
-          "elementName": "contactHeading",
-          "fieldId": "1928374650",
+          "sectionId": "7738291045",
+          "elementName": "contactHeader",
+          "fieldId": "1122334455",
           "content": "Let\u2019s Build the Future",
           "contentType": "Text",
-          "section": "Contact Footer",
+          "section": "Contact Section",
           "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true
         },
         {
-          "sectionId": "7392018475",
+          "sectionId": "7738291045",
           "elementName": "contactSubheadline",
-          "fieldId": "2837465192",
-          "content": "Available for new projects and collaborations.",
+          "fieldId": "6677889900",
+          "content": "Have a project in mind? Let's discuss your next AI initiative.",
           "contentType": "Text",
-          "section": "Contact Footer",
+          "section": "Contact Section",
           "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true
         },
         {
-          "sectionId": "7392018475",
-          "elementName": "primaryCta",
-          "fieldId": "3746519283",
-          "content": "Start a Conversation",
+          "sectionId": "7738291045",
+          "elementName": "contactFormContainer",
+          "fieldId": "5544332211",
+          "content": "Name, Email, Subject, Message",
           "contentType": "Text",
-          "section": "Contact Footer",
+          "section": "Contact Section",
           "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true
         },
         {
-          "sectionId": "7392018475",
+          "sectionId": "7738291045",
           "elementName": "socialLinks",
-          "fieldId": "4651928374",
+          "fieldId": "9988776655",
           "content": "",
           "contentType": "Cards",
-          "section": "Contact Footer",
+          "section": "Contact Section",
           "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
           "pageName": "home",
           "isCustom": true,
@@ -392,48 +407,36 @@
             {
               "field1": "LinkedIn",
               "fieldType1": "Text",
-              "fieldId1": "5519283746",
+              "fieldId1": "1000000001",
               "field2": "https://linkedin.com/in/username",
               "fieldType2": "Text",
-              "fieldId2": "6628374651"
+              "fieldId2": "1000000002"
             },
             {
               "field1": "GitHub",
               "fieldType1": "Text",
-              "fieldId1": "7737465192",
+              "fieldId1": "1000000003",
               "field2": "https://github.com/username",
               "fieldType2": "Text",
-              "fieldId2": "8846519283"
+              "fieldId2": "1000000004"
             },
             {
-              "field1": "HuggingFace",
+              "field1": "Email",
               "fieldType1": "Text",
-              "fieldId1": "9951928374",
-              "field2": "https://huggingface.co/username",
+              "fieldId1": "1000000005",
+              "field2": "mailto:hello@example.com",
               "fieldType2": "Text",
-              "fieldId2": "1061928374"
+              "fieldId2": "1000000006"
             }
           ]
         },
         {
-          "sectionId": "7392018475",
-          "elementName": "emailDisplay",
-          "fieldId": "2072837465",
-          "content": "hello@example.com",
+          "sectionId": "7738291045",
+          "elementName": "statusToast",
+          "fieldId": "4433221100",
+          "content": "Message sent successfully!",
           "contentType": "Text",
-          "section": "Contact Footer",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true
-        },
-        {
-          "sectionId": "7392018475",
-          "elementName": "copyrightFooter",
-          "fieldId": "3083746519",
-          "content": "\u00a9 2024 AI/ML Engineer Portfolio. All rights reserved.",
-          "contentType": "Text",
-          "section": "Contact Footer",
+          "section": "Contact Section",
           "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
           "pageName": "home",
           "isCustom": true,
@@ -447,8 +450,8 @@
       "heroHeadline": {
         "sectionId": "8293746510",
         "elementName": "heroHeadline",
-        "fieldId": "1928374650",
-        "content": "Architecting Intelligence: Bridging Data and Innovation",
+        "fieldId": "1122334455",
+        "content": "Architecting Intelligence, One Model at a Time",
         "contentType": "Text",
         "section": "Hero Section",
         "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
@@ -459,8 +462,8 @@
       "heroSubheadline": {
         "sectionId": "8293746510",
         "elementName": "heroSubheadline",
-        "fieldId": "2938475611",
-        "content": "Specializing in Deep Learning, MLOps, and NLP. I transform complex datasets into scalable, intelligent solutions that drive real-world impact.",
+        "fieldId": "2233445566",
+        "content": "Specializing in Computer Vision, LLMs, and scalable machine learning infrastructure.",
         "contentType": "Text",
         "section": "Hero Section",
         "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
@@ -471,8 +474,8 @@
       "primaryCta": {
         "sectionId": "8293746510",
         "elementName": "primaryCta",
-        "fieldId": "3948576622",
-        "content": "View My Projects",
+        "fieldId": "3344556677",
+        "content": "View Projects",
         "contentType": "Text",
         "section": "Hero Section",
         "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
@@ -483,7 +486,7 @@
       "secondaryCta": {
         "sectionId": "8293746510",
         "elementName": "secondaryCta",
-        "fieldId": "4958677733",
+        "fieldId": "4455667788",
         "content": "Contact Me",
         "contentType": "Text",
         "section": "Hero Section",
@@ -492,11 +495,11 @@
         "isCustom": true,
         "isCustomEdit": true
       },
-      "heroVisual": {
+      "dynamicVisual": {
         "sectionId": "8293746510",
-        "elementName": "heroVisual",
-        "fieldId": "5968778844",
-        "content": "https://example.com/ai-generative-art-placeholder.png",
+        "elementName": "dynamicVisual",
+        "fieldId": "5566778899",
+        "content": "neural-network-animation.svg",
         "contentType": "Image",
         "section": "Hero Section",
         "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
@@ -504,10 +507,10 @@
         "isCustom": true,
         "isCustomEdit": true
       },
-      "techStackTicker": {
+      "techStackBadges": {
         "sectionId": "8293746510",
-        "elementName": "techStackTicker",
-        "fieldId": "6978889955",
+        "elementName": "techStackBadges",
+        "fieldId": "6677889900",
         "content": "",
         "contentType": "Cards",
         "section": "Hero Section",
@@ -519,34 +522,26 @@
           {
             "field1": "PyTorch",
             "fieldType1": "Text",
-            "fieldId1": "7000000001",
-            "field2": "Icon_PyTorch",
+            "fieldId1": "7788990011",
+            "field2": "icon-pytorch.png",
             "fieldType2": "Image",
-            "fieldId2": "7000000002"
+            "fieldId2": "8899001122"
           },
           {
             "field1": "TensorFlow",
             "fieldType1": "Text",
-            "fieldId1": "7000000003",
-            "field2": "Icon_TF",
+            "fieldId1": "9900112233",
+            "field2": "icon-tensorflow.png",
             "fieldType2": "Image",
-            "fieldId2": "7000000004"
+            "fieldId2": "0011223344"
           },
           {
             "field1": "AWS",
             "fieldType1": "Text",
-            "fieldId1": "7000000005",
-            "field2": "Icon_AWS",
+            "fieldId1": "1122334455",
+            "field2": "icon-aws.png",
             "fieldType2": "Image",
-            "fieldId2": "7000000006"
-          },
-          {
-            "field1": "Python",
-            "fieldType1": "Text",
-            "fieldId1": "7000000007",
-            "field2": "Icon_Python",
-            "fieldType2": "Image",
-            "fieldId2": "7000000008"
+            "fieldId2": "2233445566"
           }
         ]
       }
@@ -556,7 +551,7 @@
         "sectionId": "9283746511",
         "elementName": "showcaseHeader",
         "fieldId": "1122334455",
-        "content": "Selected Works",
+        "content": "Selected Works: AI & ML Implementations",
         "contentType": "Text",
         "section": "Project Showcase",
         "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
@@ -564,9 +559,9 @@
         "isCustom": true,
         "isCustomEdit": true
       },
-      "filterCategories": {
+      "projectFilters": {
         "sectionId": "9283746511",
-        "elementName": "filterCategories",
+        "elementName": "projectFilters",
         "fieldId": "2233445566",
         "content": "",
         "contentType": "Cards",
@@ -582,20 +577,20 @@
             "fieldId1": "3344556677"
           },
           {
-            "field1": "LLMs",
+            "field1": "NLP",
             "fieldType1": "Text",
             "fieldId1": "4455667788"
           },
           {
-            "field1": "Predictive Analytics",
+            "field1": "Deep Learning",
             "fieldType1": "Text",
             "fieldId1": "5566778899"
           }
         ]
       },
-      "projectGrid": {
+      "projectList": {
         "sectionId": "9283746511",
-        "elementName": "projectGrid",
+        "elementName": "projectList",
         "fieldId": "6677889900",
         "content": "",
         "contentType": "Cards",
@@ -606,176 +601,199 @@
         "isCustomEdit": true,
         "loop": [
           {
-            "field1": "Neural Vision Engine",
+            "field1": "Autonomous Navigation System",
             "fieldType1": "Text",
             "fieldId1": "7788990011",
-            "field2": "Real-time object detection for autonomous logistics.",
+            "field2": "Real-time path planning using reinforcement learning in simulated environments.",
             "fieldType2": "Text",
             "fieldId2": "8899001122",
-            "field3": "PyTorch, OpenCV",
+            "field3": "PyTorch, ROS, OpenCV",
             "fieldType3": "Text",
             "fieldId3": "9900112233"
           },
           {
-            "field1": "Semantic Search LLM",
+            "field1": "Sentiment Analysis Engine",
             "fieldType1": "Text",
-            "fieldId1": "1011223344",
-            "field2": "Optimizing enterprise knowledge retrieval systems.",
+            "fieldId1": "1011121314",
+            "field2": "Transformer-based model for multi-lingual sentiment classification at scale.",
             "fieldType2": "Text",
-            "fieldId2": "2122334455",
-            "field3": "LangChain, Pinecone",
+            "fieldId2": "1112131415",
+            "field3": "HuggingFace, FastAPI, Python",
             "fieldType3": "Text",
-            "fieldId3": "3233445566"
+            "fieldId3": "1213141516"
           },
           {
-            "field1": "Demand Forecaster",
+            "field1": "Generative Art GAN",
             "fieldType1": "Text",
-            "fieldId1": "4344556677",
-            "field2": "Predictive modeling for retail supply chain efficiency.",
+            "fieldId1": "1314151617",
+            "field2": "Custom GAN architecture trained on abstract datasets to generate unique textures.",
             "fieldType2": "Text",
-            "fieldId2": "5455667788",
-            "field3": "XGBoost, AWS SageMaker",
+            "fieldId2": "1415161718",
+            "field3": "TensorFlow, Keras, CUDA",
             "fieldType3": "Text",
-            "fieldId3": "6566778899"
+            "fieldId3": "1516171819"
           }
         ]
-      },
-      "viewAllCta": {
-        "sectionId": "9283746511",
-        "elementName": "viewAllCta",
-        "fieldId": "7677889900",
-        "content": "View All Projects",
-        "contentType": "Text",
-        "section": "Project Showcase",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-        "pageName": "home",
-        "isCustom": true,
-        "isCustomEdit": true
       }
     },
-    "professionalExperience": {
-      "experienceHeader": {
+    "professionalBiography": {
+      "bioHeading": {
         "sectionId": "4829103746",
-        "elementName": "experienceHeader",
+        "elementName": "bioHeading",
         "fieldId": "1928374650",
-        "content": "Engineering Milestones",
+        "content": "The Mind Behind the Code",
         "contentType": "Text",
-        "section": "Professional Experience",
+        "section": "Professional Biography",
         "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       },
-      "experienceList": {
+      "profileImage": {
         "sectionId": "4829103746",
-        "elementName": "experienceList",
-        "fieldId": "5748392011",
+        "elementName": "profileImage",
+        "fieldId": "2938475610",
+        "content": "https://example.com/profile-portrait.jpg",
+        "contentType": "Image",
+        "section": "Professional Biography",
+        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "bioBodyText": {
+        "sectionId": "4829103746",
+        "elementName": "bioBodyText",
+        "fieldId": "3948576120",
+        "content": "As an AI/ML Engineer, I specialize in building scalable neural architectures and deploying production-grade models. My journey spans from research-heavy computer vision projects to optimizing large language models for real-world efficiency.",
+        "contentType": "Text",
+        "section": "Professional Biography",
+        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "skillTagCloud": {
+        "sectionId": "4829103746",
+        "elementName": "skillTagCloud",
+        "fieldId": "4958671230",
         "content": "",
         "contentType": "Cards",
-        "section": "Professional Experience",
+        "section": "Professional Biography",
         "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true,
         "loop": [
           {
-            "field1": "Senior AI Engineer",
+            "field1": "PyTorch",
             "fieldType1": "Text",
-            "fieldId1": "1029384756",
-            "field2": "TechCorp Solutions",
-            "fieldType2": "Text",
-            "fieldId2": "2938475610",
-            "field3": "2021 - Present",
-            "fieldType3": "Text",
-            "fieldId3": "3847561029",
-            "field4": "PyTorch, Kubernetes, AWS",
-            "fieldType4": "Text",
-            "fieldId4": "4756102938",
-            "field5": "Reduced inference latency by 40% through model quantization.",
-            "fieldType5": "Text",
-            "fieldId5": "5610293847"
+            "fieldId1": "5019283746"
           },
           {
-            "field1": "Machine Learning Researcher",
+            "field1": "LLMs",
             "fieldType1": "Text",
-            "fieldId1": "6758493021",
-            "field2": "Neural Dynamics Lab",
-            "fieldType2": "Text",
-            "fieldId2": "7649302158",
-            "field3": "2019 - 2021",
-            "fieldType3": "Text",
-            "fieldId3": "8530215849",
-            "field4": "TensorFlow, JAX, Python",
-            "fieldType4": "Text",
-            "fieldId4": "9421584930",
-            "field5": "Published 3 papers on transformer architecture optimization.",
-            "fieldType5": "Text",
-            "fieldId5": "0315849302"
+            "fieldId1": "5019283747"
           },
           {
-            "field1": "Data Scientist",
+            "field1": "Computer Vision",
             "fieldType1": "Text",
-            "fieldId1": "1234567890",
-            "field2": "DataStream Inc",
+            "fieldId1": "5019283748"
+          },
+          {
+            "field1": "TensorFlow",
+            "fieldType1": "Text",
+            "fieldId1": "5019283749"
+          }
+        ]
+      },
+      "resumeCta": {
+        "sectionId": "4829103746",
+        "elementName": "resumeCta",
+        "fieldId": "6029384751",
+        "content": "Download Resume",
+        "contentType": "Text",
+        "section": "Professional Biography",
+        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "quickFactsGrid": {
+        "sectionId": "4829103746",
+        "elementName": "quickFactsGrid",
+        "fieldId": "7039485762",
+        "content": "",
+        "contentType": "Cards",
+        "section": "Professional Biography",
+        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true,
+        "loop": [
+          {
+            "field1": "5+ Years",
+            "fieldType1": "Text",
+            "fieldId1": "8019283746",
+            "field2": "Experience",
             "fieldType2": "Text",
-            "fieldId2": "2345678901",
-            "field3": "2017 - 2019",
-            "fieldType3": "Text",
-            "fieldId3": "3456789012",
-            "field4": "Scikit-Learn, SQL, Docker",
-            "fieldType4": "Text",
-            "fieldId4": "4567890123",
-            "field5": "Automated ETL pipelines saving 20 hours of manual work weekly.",
-            "fieldType5": "Text",
-            "fieldId5": "5678901234"
+            "fieldId2": "8019283747"
+          },
+          {
+            "field1": "20+",
+            "fieldType1": "Text",
+            "fieldId1": "8019283748",
+            "field2": "Models Deployed",
+            "fieldType2": "Text",
+            "fieldId2": "8019283749"
           }
         ]
       }
     },
-    "contactFooter": {
-      "contactHeading": {
-        "sectionId": "7392018475",
-        "elementName": "contactHeading",
-        "fieldId": "1928374650",
+    "contactSection": {
+      "contactHeader": {
+        "sectionId": "7738291045",
+        "elementName": "contactHeader",
+        "fieldId": "1122334455",
         "content": "Let\u2019s Build the Future",
         "contentType": "Text",
-        "section": "Contact Footer",
+        "section": "Contact Section",
         "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       },
       "contactSubheadline": {
-        "sectionId": "7392018475",
+        "sectionId": "7738291045",
         "elementName": "contactSubheadline",
-        "fieldId": "2837465192",
-        "content": "Available for new projects and collaborations.",
+        "fieldId": "6677889900",
+        "content": "Have a project in mind? Let's discuss your next AI initiative.",
         "contentType": "Text",
-        "section": "Contact Footer",
+        "section": "Contact Section",
         "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       },
-      "primaryCta": {
-        "sectionId": "7392018475",
-        "elementName": "primaryCta",
-        "fieldId": "3746519283",
-        "content": "Start a Conversation",
+      "contactFormContainer": {
+        "sectionId": "7738291045",
+        "elementName": "contactFormContainer",
+        "fieldId": "5544332211",
+        "content": "Name, Email, Subject, Message",
         "contentType": "Text",
-        "section": "Contact Footer",
+        "section": "Contact Section",
         "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       },
       "socialLinks": {
-        "sectionId": "7392018475",
+        "sectionId": "7738291045",
         "elementName": "socialLinks",
-        "fieldId": "4651928374",
+        "fieldId": "9988776655",
         "content": "",
         "contentType": "Cards",
-        "section": "Contact Footer",
+        "section": "Contact Section",
         "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
         "pageName": "home",
         "isCustom": true,
@@ -784,48 +802,36 @@
           {
             "field1": "LinkedIn",
             "fieldType1": "Text",
-            "fieldId1": "5519283746",
+            "fieldId1": "1000000001",
             "field2": "https://linkedin.com/in/username",
             "fieldType2": "Text",
-            "fieldId2": "6628374651"
+            "fieldId2": "1000000002"
           },
           {
             "field1": "GitHub",
             "fieldType1": "Text",
-            "fieldId1": "7737465192",
+            "fieldId1": "1000000003",
             "field2": "https://github.com/username",
             "fieldType2": "Text",
-            "fieldId2": "8846519283"
+            "fieldId2": "1000000004"
           },
           {
-            "field1": "HuggingFace",
+            "field1": "Email",
             "fieldType1": "Text",
-            "fieldId1": "9951928374",
-            "field2": "https://huggingface.co/username",
+            "fieldId1": "1000000005",
+            "field2": "mailto:hello@example.com",
             "fieldType2": "Text",
-            "fieldId2": "1061928374"
+            "fieldId2": "1000000006"
           }
         ]
       },
-      "emailDisplay": {
-        "sectionId": "7392018475",
-        "elementName": "emailDisplay",
-        "fieldId": "2072837465",
-        "content": "hello@example.com",
+      "statusToast": {
+        "sectionId": "7738291045",
+        "elementName": "statusToast",
+        "fieldId": "4433221100",
+        "content": "Message sent successfully!",
         "contentType": "Text",
-        "section": "Contact Footer",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-        "pageName": "home",
-        "isCustom": true,
-        "isCustomEdit": true
-      },
-      "copyrightFooter": {
-        "sectionId": "7392018475",
-        "elementName": "copyrightFooter",
-        "fieldId": "3083746519",
-        "content": "\u00a9 2024 AI/ML Engineer Portfolio. All rights reserved.",
-        "contentType": "Text",
-        "section": "Contact Footer",
+        "section": "Contact Section",
         "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
         "pageName": "home",
         "isCustom": true,

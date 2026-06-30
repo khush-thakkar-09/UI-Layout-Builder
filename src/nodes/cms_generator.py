@@ -109,7 +109,8 @@ def generate_cms_for_single_section(
             metadata["index"] = planned_index
             
         # propagate generated section ID to all elements
-        section_id_val = metadata.get("sectionId", str(section_id * 1000000000))
+        import uuid
+        section_id_val = str(uuid.uuid4())
         metadata["sectionId"] = section_id_val
         
         for elem in elements:
@@ -117,6 +118,17 @@ def generate_cms_for_single_section(
             elem["section"] = section_name
             elem["projectName"] = project_name
             elem["pageName"] = page_name
+            
+            # Ensure globally unique fieldId
+            elem["fieldId"] = str(uuid.uuid4())
+            
+            # Ensure globally unique fieldId inside loop arrays
+            if "loop" in elem and isinstance(elem["loop"], list):
+                for item in elem["loop"]:
+                    for i in range(1, 11):
+                        field_id_key = f"fieldId{i}"
+                        if field_id_key in item:
+                            item[field_id_key] = str(uuid.uuid4())
             
         cms_dict["metadata"] = metadata
         cms_dict["elements"] = elements
@@ -128,7 +140,8 @@ def generate_cms_for_single_section(
         error_msg = str(e)
         print(f"  [CMS Generator] ✗ CMS generation FAILED for section {section_id}: {error_msg}")
         # Fallback baseline CMS schema if model fails to parse or generate
-        fallback_sec_id = str(section_id * 1111111111)
+        import uuid
+        fallback_sec_id = str(uuid.uuid4())
         fallback_cms = {
             "metadata": {
                 "sectionId": fallback_sec_id,
@@ -145,7 +158,7 @@ def generate_cms_for_single_section(
                 {
                     "sectionId": fallback_sec_id,
                     "elementName": f"{section_name.lower().replace(' ', '')}Title",
-                    "fieldId": fallback_sec_id + "1",
+                    "fieldId": str(uuid.uuid4()),
                     "content": section_name,
                     "contentType": "Text",
                     "section": section_name,
