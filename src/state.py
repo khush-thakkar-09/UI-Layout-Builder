@@ -27,6 +27,8 @@ class GlobalState(TypedDict):
     planned_sections: List[str]
     sections: List[SectionInfo]
     current_section_index: int
+    current_section_name: str
+    current_description: str
     failure_reason: str
     # --- Part 5 & 6: Section Coding Agent + Synthesizer ---
     coded_sections: List[SectionCode]        # Individual coded section outputs

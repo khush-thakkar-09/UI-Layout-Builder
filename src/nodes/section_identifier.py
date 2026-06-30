@@ -26,61 +26,114 @@ def extract_content_text(content) -> str:
         return "".join(parts).strip()
     return str(content).strip()
 
-def run_section_identifier(state: GlobalState) -> Dict[str, Any]:
+def run_section_detailer(state: GlobalState) -> Dict[str, Any]:
     """
-    Identifies sections based on the enhanced prompt, generating them one by one using Gemini.
-    Handles human-in-the-loop per section.
+    Identifies sections based on the enhanced prompt (if not already planned),
+    then generates the description for the next unapproved section.
     """
     enhanced_prompt = state.get("enhanced_prompt", "")
-    print(f"\n[Section Identifier] Planning sections...")
+    planned_sections = state.get("planned_sections")
+    sections = state.get("sections", [])
     
-    # Initialize Gemini LLM
-    try:
-        # We use temperature 0.2 for planning and structured layout tasks for stability
-        llm = get_llm(temperature=0.3)
-    except ValueError as e:
-        print(f"Error initializing Gemini LLM: {e}")
-        return {"pipeline_status": "failed", "failure_reason": f"LLM initialization error: {e}"}
+    # Phase 1: Section Planning (only run once if not planned yet)
+    if not planned_sections:
+        print(f"\n[Section Detailer] Planning sections...")
+        try:
+            # We use temperature 0.3 for planning and structured layout tasks for stability
+            llm = get_llm(temperature=0.3)
+        except ValueError as e:
+            print(f"Error initializing Gemini LLM: {e}")
+            return {"pipeline_status": "failed", "failure_reason": f"LLM initialization error: {e}"}
 
-    # --- Phase 1: Section Planning ---
-    planner_messages = [
-        SystemMessage(content=SECTION_PLANNER_SYSTEM_PROMPT),
-        HumanMessage(content=f"Enhanced UI Prompt: {enhanced_prompt}")
-    ]
-    
-    try:
-        planner_response = llm.invoke(planner_messages)
-        log_token_usage("Section Planner", planner_response)
-        
-        # Parse sections
-        content = extract_content_text(planner_response.content)
-        planned_sections = [s.strip("- *1234567890.") for s in content.split("\n") if s.strip()]
-        
-        # Limit to max 5
-        if len(planned_sections) > 5:
-            planned_sections = planned_sections[:5]
+        planner_messages = [
+            SystemMessage(content=SECTION_PLANNER_SYSTEM_PROMPT),
+            HumanMessage(content=f"Enhanced UI Prompt: {enhanced_prompt}")
+        ]
+        try:
+            planner_response = llm.invoke(planner_messages)
+            log_token_usage("Section Planner", planner_response)
             
-        print(f"\n[Section Identifier] Planned {len(planned_sections)} sections:")
-        for idx, sec in enumerate(planned_sections):
-            print(f"  {idx+1}. {sec}")
+            content = extract_content_text(planner_response.content)
+            planned_sections = [s.strip("- *1234567890.") for s in content.split("\n") if s.strip()]
             
-    except Exception as e:
-        print(f"Error during section planning: {e}")
-        return {"pipeline_status": "failed", "failure_reason": f"Section planning failed: {e}"}
+            if len(planned_sections) > 5:
+                planned_sections = planned_sections[:5]
+                
+            print(f"\n[Section Detailer] Planned {len(planned_sections)} sections:")
+            for idx, sec in enumerate(planned_sections):
+                print(f"  {idx+1}. {sec}")
+        except Exception as e:
+            print(f"Error during section planning: {e}")
+            return {"pipeline_status": "failed", "failure_reason": f"Section planning failed: {e}"}
 
-    # --- Phase 2: Section Detailing (One by One) ---
-    approved_sections = []
+    # Determine which section to detail next
+    idx = len(sections)
+    if idx >= len(planned_sections):
+        return {"planned_sections": planned_sections}
+        
+    section_name = planned_sections[idx]
+    print(f"\n[Section Detailer] Generating details for section {idx+1}/{len(planned_sections)}: '{section_name}'...")
     
-    # Detailer can use slightly higher temperature for richer descriptions
     try:
         detailer_llm = get_llm(temperature=0.5)
     except ValueError as e:
         print(f"Error initializing Gemini LLM for detailer: {e}")
         return {"pipeline_status": "failed", "failure_reason": f"LLM initialization error: {e}"}
 
-    for idx, section_name in enumerate(planned_sections):
-        print(f"\n[Section Detailer] Generating details for section {idx+1}/{len(planned_sections)}: '{section_name}'...")
-        
+    detailer_prompt = SECTION_DETAILER_SYSTEM_PROMPT.format(
+        section_name=section_name,
+        enhanced_prompt=enhanced_prompt
+    )
+    
+    detailer_messages = [
+        SystemMessage(content=detailer_prompt),
+        HumanMessage(content="Please provide the detailed description for this section.")
+    ]
+    
+    try:
+        detail_response = detailer_llm.invoke(detailer_messages)
+        log_token_usage(f"Section Detailer ({section_name})", detail_response)
+        current_description = extract_content_text(detail_response.content)
+    except Exception as e:
+        print(f"Error generating details for '{section_name}': {e}")
+        return {"pipeline_status": "failed", "failure_reason": f"Generating details for '{section_name}' failed: {e}"}
+
+    return {
+        "planned_sections": planned_sections,
+        "current_section_name": section_name,
+        "current_description": current_description,
+        "pipeline_status": "running"
+    }
+
+def run_section_approval(state: GlobalState) -> Dict[str, Any]:
+    """
+    Handles human-in-the-loop per section and refines if feedback is provided.
+    """
+    section_name = state.get("current_section_name", "")
+    current_description = state.get("current_description", "")
+    enhanced_prompt = state.get("enhanced_prompt", "")
+    sections = state.get("sections", [])
+    
+    from langgraph.types import interrupt
+    
+    human_response = interrupt({
+        "type": "section_approval",
+        "section_name": section_name,
+        "description": current_description
+    })
+    
+    choice = human_response.get("choice")
+    feedback = human_response.get("feedback", "")
+    
+    if choice == "1":
+        print(f"\n[Section Approval] '{section_name}' approved.")
+    else:
+        print(f"\n[Section Approval] Re-generating '{section_name}' with feedback...")
+        try:
+            detailer_llm = get_llm(temperature=0.5)
+        except ValueError as e:
+            return {"pipeline_status": "failed", "failure_reason": f"LLM init error: {e}"}
+
         detailer_prompt = SECTION_DETAILER_SYSTEM_PROMPT.format(
             section_name=section_name,
             enhanced_prompt=enhanced_prompt
@@ -88,64 +141,35 @@ def run_section_identifier(state: GlobalState) -> Dict[str, Any]:
         
         detailer_messages = [
             SystemMessage(content=detailer_prompt),
-            HumanMessage(content="Please provide the detailed description for this section.")
+            HumanMessage(content="Please provide the detailed description for this section."),
+            # Using the previous description as context for the refinement
+            HumanMessage(content=f"Previous description: {current_description}\n\nThe user provided this feedback: '{feedback}'. Please update the description incorporating this feedback while adhering to the original rules. Output ONLY the updated description.")
         ]
         
         try:
-            detail_response = detailer_llm.invoke(detailer_messages)
-            log_token_usage(f"Section Detailer ({section_name})", detail_response)
-            current_description = extract_content_text(detail_response.content)
+            refined_response = detailer_llm.invoke(detailer_messages)
+            log_token_usage(f"Section Detailer Refine ({section_name})", refined_response)
+            current_description = extract_content_text(refined_response.content)
+            
+            print("\n" + "="*50)
+            print(f"UPDATED SECTION: {section_name.upper()}")
+            print("-" * 50)
+            print(current_description)
+            print("="*50 + "\n")
         except Exception as e:
-            print(f"Error generating details for '{section_name}': {e}")
-            return {"pipeline_status": "failed", "failure_reason": f"Generating details for '{section_name}' failed: {e}"}
-            
-        # LangGraph Native Human-in-the-Loop Interrupt
-        from langgraph.types import interrupt
-        
-        human_response = interrupt({
-            "type": "section_approval",
-            "section_name": section_name,
-            "description": current_description
-        })
-        
-        choice = human_response.get("choice")
-        feedback = human_response.get("feedback", "")
-        
-        if choice == "1":
-            print(f"\n[Section Identifier] '{section_name}' approved.")
-        else:
-            print(f"\n[Section Identifier] Re-generating '{section_name}' with feedback...")
-            
-            refine_messages = detailer_messages + [
-                detail_response,
-                HumanMessage(content=f"The user provided this feedback: '{feedback}'. Please update the description incorporating this feedback while adhering to the original rules. Output ONLY the updated description.")
-            ]
-            
-            try:
-                refined_response = detailer_llm.invoke(refine_messages)
-                log_token_usage(f"Section Detailer Refine ({section_name})", refined_response)
-                current_description = extract_content_text(refined_response.content)
-                
-                print("\n" + "="*50)
-                print(f"UPDATED SECTION: {section_name.upper()}")
-                print("-" * 50)
-                print(current_description)
-                print("="*50 + "\n")
-            except Exception as e:
-                print(f"Error refining section '{section_name}': {e}")
-                return {"pipeline_status": "failed", "failure_reason": f"Refining section '{section_name}' failed: {e}"}
+            print(f"Error refining section '{section_name}': {e}")
+            return {"pipeline_status": "failed", "failure_reason": f"Refining section '{section_name}' failed: {e}"}
 
-        # Store approved section
-        approved_sections.append({
-            "id": idx + 1,
-            "name": section_name,
-            "description": current_description
-        })
+    # Store approved section
+    sections.append({
+        "id": len(sections) + 1,
+        "name": section_name,
+        "description": current_description
+    })
 
     return {
-        "planned_sections": planned_sections,
-        "sections": approved_sections,
-        "current_section_index": len(approved_sections),
+        "sections": sections,
+        "current_section_index": len(sections),
         "pipeline_status": "running"
     }
 

@@ -2,7 +2,7 @@ from langgraph.graph import StateGraph, END
 from src.state import GlobalState
 from src.nodes.input_evaluator import evaluate_input
 from src.nodes.prompt_enhancer import run_prompt_enhancer
-from src.nodes.section_identifier import run_section_identifier
+from src.nodes.section_identifier import run_section_detailer, run_section_approval
 from src.nodes.section_coder import run_section_coder
 from src.nodes.synthesizer import run_synthesizer
 
@@ -14,6 +14,17 @@ def route_evaluation(state: GlobalState):
         return "prompt_enhancer"
     else:
         return "invalid_input"
+
+def route_section_approval(state: GlobalState):
+    """
+    Routes back to detailer if more sections are left, otherwise to coder.
+    """
+    planned_sections = state.get("planned_sections", [])
+    sections = state.get("sections", [])
+    if len(sections) < len(planned_sections):
+        return "section_detailer"
+    else:
+        return "section_coder"
 
 def handle_invalid_input(state: GlobalState):
     """
@@ -35,7 +46,8 @@ def build_graph(checkpointer=None):
     # Register nodes
     workflow.add_node("input_evaluator", evaluate_input)
     workflow.add_node("prompt_enhancer", run_prompt_enhancer)
-    workflow.add_node("section_identifier", run_section_identifier)
+    workflow.add_node("section_detailer", run_section_detailer)
+    workflow.add_node("section_approval", run_section_approval)
     workflow.add_node("section_coder", run_section_coder)
     workflow.add_node("synthesizer", run_synthesizer)
     workflow.add_node("invalid_input", handle_invalid_input)
@@ -54,8 +66,18 @@ def build_graph(checkpointer=None):
     )
     
     # Set terminal edges
-    workflow.add_edge("prompt_enhancer", "section_identifier")
-    workflow.add_edge("section_identifier", "section_coder")
+    workflow.add_edge("prompt_enhancer", "section_detailer")
+    workflow.add_edge("section_detailer", "section_approval")
+    
+    workflow.add_conditional_edges(
+        "section_approval",
+        route_section_approval,
+        {
+            "section_detailer": "section_detailer",
+            "section_coder": "section_coder"
+        }
+    )
+    
     workflow.add_edge("section_coder", "synthesizer")
     workflow.add_edge("synthesizer", END)
     workflow.add_edge("invalid_input", END)
