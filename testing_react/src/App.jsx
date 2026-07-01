@@ -428,7 +428,7 @@ export default function App() {
         fontFamily: 'sans-serif'
       }}>
         <span style={{ color: '#f8fafc', fontSize: '14px', fontWeight: 'bold' }}>
-          {editMode ? '✍️ Edit Mode Active (Double Click Text to Edit)' : '👁️ Preview Mode'}
+          {editMode ? 'Edit Mode Active (Double Click Text to Edit)' : 'Preview Mode'}
         </span>
         <button 
           onClick={() => setEditMode(!editMode)}

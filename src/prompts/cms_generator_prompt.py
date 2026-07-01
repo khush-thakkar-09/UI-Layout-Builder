@@ -73,6 +73,22 @@ Used for collections of repeated items (e.g., features, testimonials, FAQ lists)
 - If a card has multiple fields, you must increment the numbers sequentially (e.g., if fields 1 and 2 are defined, do not reuse 1 or 2; you must use `field3`, `fieldType3`, `fieldId3` if a third field is needed).
 - Provide 3 to 5 realistic items in the `loop` array.
 
+### WHAT MUST ALWAYS BE A CMS ELEMENT:
+Every piece of visible text that appears on screen MUST have its own CMS element 
+with a unique fieldId. This includes — without exception:
+- All button labels: "Log In", "Sign Up", "Submit", "Get Started", "View More", etc.
+- All navigation link labels: "Home", "About", "Contact", "Menu", etc.
+- All form labels, input placeholders, and helper text.
+- All headings, subheadings, taglines, and body text.
+- All card titles, descriptions, tags, and captions.
+- All footer text, copyright notices, and legal disclaimers.
+- All toast/alert/status messages visible to the user.
+
+The rule is simple: if a human user can READ it on the page, it must be in the CMS 
+with its own fieldId. There is NO such thing as text too small, too static, or too 
+"UI-like" to be a CMS element. A non-technical editor must be able to change every 
+word on the page without touching code.
+
 ---
 
 ### PREVIOUS SECTIONS CONTEXT:

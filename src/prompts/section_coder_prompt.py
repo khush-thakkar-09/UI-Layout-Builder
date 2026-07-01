@@ -48,12 +48,8 @@ export default function {section_component_name}({{ cmsData }}) {{
    - Typography: var(--font-family), var(--font-heading)
    - Spacing: var(--spacing-xs), var(--spacing-sm), var(--spacing-md), var(--spacing-lg), var(--spacing-xl)
    - Borders: var(--border-radius), var(--border-radius-lg)
-4. Make the section fully responsive:
-   - Mobile-first approach
-   - Use @media queries SCOPED under .section-{section_number}
-   - Breakpoints: 768px (tablet), 1024px (desktop)
-5. Use modern CSS: flexbox, grid, clamp(), gap, aspect-ratio. No floats.
-6. Write clean, well-structured CSS with logical grouping and comments.
+4. Use modern CSS: flexbox, grid, clamp(), gap, aspect-ratio. No floats.
+5. Write clean, well-structured CSS with logical grouping and comments.
 
 ### DYNAMIC DESIGN & ANIMATIONS:
 1. **Layout Variety**: Avoid boring, flat, vertical stacked blocks. Use creative grid systems, asymmetric layouts (e.g., 60/40 splits, overlapping elements, grid items with varying visual weight), and side-by-side structures where appropriate.
