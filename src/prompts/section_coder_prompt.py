@@ -43,13 +43,27 @@ export default function {section_component_name}({{ cmsData }}) {{
 ### CSS RULES:
 1. Scope ALL selectors under .section-{section_number}. Example: `.section-{section_number} h2 {{ font-size: 2rem; }}`
 2. NEVER write unscoped global selectors like `h1 {{ }}`, `* {{ }}`, or `body {{ }}`.
-3. Use CSS custom properties for theming (these will be defined globally by the synthesizer):
+3. **Global Theme (ALREADY DEFINED — USE THESE EXACTLY)**:
+   The following CSS custom properties have been pre-defined globally for the entire page. You MUST use them for all styling. Do NOT introduce new CSS custom property names, and do NOT hardcode hex/rgb color values for backgrounds, text, or accents.
+   
+   **Active Design Tokens:**
+   ```css
+   __THEME_CSS__
+   ```
+   
+   **Variable Reference:**
    - Colors: var(--bg-primary), var(--bg-secondary), var(--bg-tertiary), var(--text-primary), var(--text-secondary), var(--accent-color), var(--accent-hover)
    - Typography: var(--font-family), var(--font-heading)
    - Spacing: var(--spacing-xs), var(--spacing-sm), var(--spacing-md), var(--spacing-lg), var(--spacing-xl)
    - Borders: var(--border-radius), var(--border-radius-lg)
-4. Use modern CSS: flexbox, grid, clamp(), gap, aspect-ratio. No floats.
-5. Write clean, well-structured CSS with logical grouping and comments.
+   
+   **Shade Adjustments**: If you need a slightly different shade for depth or contrast (e.g., a card shadow, a subtle border, a gradient overlay), you may use `rgba()` or `hsla()` based on the existing palette colors with adjusted opacity. Do NOT pick arbitrary new colors — derive from the palette.
+4. Make the section fully responsive:
+   - Mobile-first approach
+   - Use @media queries SCOPED under .section-{section_number}
+   - Breakpoints: 768px (tablet), 1024px (desktop)
+5. Use modern CSS: flexbox, grid, clamp(), gap, aspect-ratio. No floats.
+6. Write clean, well-structured CSS with logical grouping and comments.
 
 ### DYNAMIC DESIGN & ANIMATIONS:
 1. **Layout Variety**: Avoid boring, flat, vertical stacked blocks. Use creative grid systems, asymmetric layouts (e.g., 60/40 splits, overlapping elements, grid items with varying visual weight), and side-by-side structures where appropriate.

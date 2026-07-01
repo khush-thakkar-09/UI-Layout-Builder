@@ -45,7 +45,7 @@ def parse_code_blocks(response_text: str) -> tuple:
     return jsx, css
 
 
-async def code_single_section(section_info: dict, enhanced_prompt: str) -> SectionCode:
+async def code_single_section(section_info: dict, enhanced_prompt: str, theme_css: str = "") -> SectionCode:
     """
     Codes a single section by calling Qwen via Bedrock.
     Runs in an executor since invoke_qwen is synchronous HTTP.
@@ -63,6 +63,9 @@ async def code_single_section(section_info: dict, enhanced_prompt: str) -> Secti
         section_number=section_id,
         section_component_name=section_component_name
     )
+    # Inject the actual theme CSS tokens (done via .replace() to avoid
+    # .format() conflicts with CSS curly braces in the token values)
+    system_prompt = system_prompt.replace("__THEME_CSS__", theme_css)
     
     import json
     user_prompt = f"""Build the following section:
@@ -179,6 +182,7 @@ def run_section_coder(state: GlobalState) -> Dict[str, Any]:
     """
     sections = state.get("sections", [])
     enhanced_prompt = state.get("enhanced_prompt", "")
+    theme_css = state.get("theme_css", "")
     project_name = state.get("user_prompt", "LayoutBuilder").replace(" ", "")
     
     if not sections:
@@ -202,7 +206,7 @@ def run_section_coder(state: GlobalState) -> Dict[str, Any]:
     # Run all section coding tasks concurrently
     async def code_all():
         tasks = [
-            code_single_section(section, enhanced_prompt)
+            code_single_section(section, enhanced_prompt, theme_css)
             for section in sections
         ]
         return await asyncio.gather(*tasks)

@@ -30,6 +30,8 @@ class GlobalState(TypedDict):
     current_section_name: str
     current_description: str
     failure_reason: str
+    # --- Part 4.5: Theme Extraction ---
+    theme_css: str                           # Global :root CSS design tokens
     # --- Part 5 & 6: Section Coding Agent + Synthesizer ---
     coded_sections: List[SectionCode]        # Individual coded section outputs
     final_html: str                          # Assembled full-page HTML
