@@ -42,7 +42,7 @@ def run_section_detailer(state: GlobalState) -> Dict[str, Any]:
             # We use temperature 0.3 for planning and structured layout tasks for stability
             llm = get_llm(temperature=0.3)
         except ValueError as e:
-            print(f"Error initializing Gemini LLM: {e}")
+            print(f"Error initializing Qwen LLM: {e}")
             return {"pipeline_status": "failed", "failure_reason": f"LLM initialization error: {e}"}
 
         planner_messages = [
@@ -77,7 +77,7 @@ def run_section_detailer(state: GlobalState) -> Dict[str, Any]:
     try:
         detailer_llm = get_llm(temperature=0.5)
     except ValueError as e:
-        print(f"Error initializing Gemini LLM for detailer: {e}")
+        print(f"Error initializing Qwen LLM for detailer: {e}")
         return {"pipeline_status": "failed", "failure_reason": f"LLM initialization error: {e}"}
 
     detailer_prompt = SECTION_DETAILER_SYSTEM_PROMPT.format(

@@ -4,28 +4,85 @@ import requests
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_openai import ChatOpenAI
-from langchain_core.messages import AIMessage
+from langchain_core.messages import AIMessage, SystemMessage
+import re
 
 # Load environment variables
 load_dotenv()
 
-def get_llm(temperature: float = 0.7, max_tokens: int = None) -> ChatGoogleGenerativeAI:
+class ChatQwen:
     """
-    Initializes and returns the ChatGoogleGenerativeAI client.
+    LangChain compatible wrapper for invoking Qwen.
+    """
+    def __init__(self, temperature: float = 0.2, max_tokens: int = None):
+        self.temperature = temperature
+        self.max_tokens = max_tokens or 8192
+
+    def invoke(self, messages: list, **kwargs) -> AIMessage:
+        res = invoke_qwen(messages, temperature=self.temperature, max_tokens=self.max_tokens)
+        ai_msg = AIMessage(content=res.content)
+        ai_msg.usage_metadata = res.usage_metadata
+        return ai_msg
+
+    def with_structured_output(self, schema):
+        return StructuredQwen(self, schema)
+
+class StructuredQwen:
+    def __init__(self, chat_model: ChatQwen, schema):
+        self.chat_model = chat_model
+        self.schema = schema
+
+    def invoke(self, messages: list, **kwargs):
+        # Handle both Pydantic v1 & v2 schemas
+        if hasattr(self.schema, "schema"):
+            schema_json = json.dumps(self.schema.schema(), indent=2)
+        else:
+            schema_json = json.dumps(self.schema.model_json_schema(), indent=2)
+            
+        system_instructions = f"\n\nYou MUST respond with a single JSON block matching this JSON schema:\n{schema_json}\nReturn ONLY the JSON and nothing else."
+        
+        new_messages = []
+        has_system = False
+        for msg in messages:
+            if isinstance(msg, SystemMessage) or (hasattr(msg, 'type') and msg.type == 'system'):
+                new_messages.append(SystemMessage(content=msg.content + system_instructions))
+                has_system = True
+            else:
+                new_messages.append(msg)
+        if not has_system:
+            new_messages.insert(0, SystemMessage(content=system_instructions))
+            
+        res_message = self.chat_model.invoke(new_messages)
+        content = res_message.content.strip()
+        
+        json_match = re.search(r'```json\s*\n(.*?)```', content, re.DOTALL)
+        if json_match:
+            content = json_match.group(1).strip()
+        else:
+            code_match = re.search(r'```\s*\n(.*?)```', content, re.DOTALL)
+            if code_match:
+                content = code_match.group(1).strip()
+        
+        content = content.replace("```json", "").replace("```", "").strip()
+        
+        try:
+            parsed_data = json.loads(content)
+        except Exception:
+            parsed_data = {}
+            
+        pydantic_res = self.schema(**parsed_data)
+        object.__setattr__(pydantic_res, "usage_metadata", res_message.usage_metadata)
+        return pydantic_res
+
+def get_llm(temperature: float = 0.7, max_tokens: int = None) -> ChatQwen:
+    """
+    Initializes and returns the ChatQwen client wrapper.
     Uses credentials from environment variables.
     """
-    model_name = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
-    api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
-    
+    api_key = os.getenv("QWEN_API_KEY")
     if not api_key:
-        raise ValueError("GEMINI_API_KEY or GOOGLE_API_KEY environment variable is not set.")
-    
-    return ChatGoogleGenerativeAI(
-        model=model_name,
-        google_api_key=api_key,
-        temperature=temperature,
-        max_output_tokens=max_tokens,
-    )
+        raise ValueError("QWEN_API_KEY environment variable is not set.")
+    return ChatQwen(temperature=temperature, max_tokens=max_tokens)
 
 def get_openrouter_llm(model_name: str = None, temperature: float = 0.7, max_tokens: int = None, timeout: float = 60.0) -> ChatOpenAI:
     """

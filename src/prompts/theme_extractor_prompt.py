@@ -5,10 +5,9 @@ Output ONLY a single ```css fenced code block containing a :root {{ ... }} decla
 
 ### REQUIRED VARIABLES (you MUST define ALL of these):
 :root {{
-  /* Colors */
-  --bg-primary: <main page background>;
-  --bg-secondary: <slightly contrasting surface for alternating sections>;
-  --bg-tertiary: <card / elevated surface background>;
+  --bg-primary: <main page background. Avoid pure black #000000 or pure white #ffffff; use rich, modern, off-black, slate, cream, or themed tints>;
+  --bg-secondary: <contrasting surface color. Must be visibly distinct from --bg-primary to allow sections to alternate cleanly>;
+  --bg-tertiary: <card / container background. Must provide distinct contrast and depth against both backgrounds>;
   --text-primary: <main body text color>;
   --text-secondary: <muted / secondary text color>;
   --accent-color: <primary brand / accent highlight>;
@@ -33,7 +32,7 @@ Output ONLY a single ```css fenced code block containing a :root {{ ... }} decla
 ### DESIGN CONSISTENCY RULES (CRITICAL):
 1. **Holistic Vision**: You are designing the color palette, typography, and spacing for an ENTIRE page, not a single section. Every section will use these exact tokens — the page must feel like one cohesive product.
 2. **Smooth Visual Flow**: Sections should transition into each other naturally. Avoid jarring contrasts between adjacent sections. Think of the page as a gradient of visual energy — sections can alternate between --bg-primary and --bg-secondary, but the shift should feel intentional and rhythmic, not random.
-3. **Header/Footer Anchoring (example pattern)**: A common and effective pattern is to use the same color scheme for the header and footer (e.g., both dark or both matching --bg-primary) to "bookend" the page, with the inner sections using complementary shades (--bg-secondary, --bg-tertiary) for variety. This is just ONE example of how to imagine a consistent UI — feel free to use your own imagination, as long as the final result is coherent.
+3. **Header/Footer Anchoring (example pattern)**: A common and effective pattern is to use the similar color scheme for the header and footer (e.g., both dark or both matching --bg-primary) to "bookend" the page, with the inner sections using complementary shades (--bg-secondary, --bg-tertiary) for variety. This is just ONE example of how to imagine a consistent UI — feel free to use your own imagination, as long as the final result is coherent.
 4. **Color Harmony**: Choose colors from the same family or analogous hues. Do NOT mix clashing palettes (e.g., neon green accent on a warm burgundy background). Use curated, modern palettes — deep slates, indigos, warm neutrals, subtle accent highlights — rather than basic primaries (plain red, green, blue).
 5. **Typography Consistency**: The heading and body fonts should pair well together. Use real, widely-available Google Fonts names. Do not invent font names.
 6. **Dark vs Light**: If the page description implies a dark theme, use dark backgrounds with light text (and vice versa). The accent color should stand out clearly against both --bg-primary and --bg-secondary.

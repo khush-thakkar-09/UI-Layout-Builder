@@ -64,7 +64,7 @@ def generate_cms_for_single_section(
     else:
         previous_cms_summary = "\n".join(prev_summary_items)
 
-    # 2. Initialize Gemini LLM (using low temperature for strict schema adherence)
+    # 2. Initialize Qwen LLM (using low temperature for strict schema adherence)
     llm = get_llm(temperature=0.2)
     
     # 3. Format the prompts

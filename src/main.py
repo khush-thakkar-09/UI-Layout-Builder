@@ -29,10 +29,10 @@ def main():
     load_dotenv()
     
     # Check if keys are loaded
-    api_key = os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY")
+    api_key = os.getenv("QWEN_API_KEY")
     if not api_key:
-        print(f"{RED}{BOLD}Error:{RESET} Google/Gemini API key is not configured in .env!")
-        print("Please configure GOOGLE_API_KEY or GEMINI_API_KEY first.\n")
+        print(f"{RED}{BOLD}Error:{RESET} QWEN_API_KEY is not configured in .env!")
+        print("Please configure QWEN_API_KEY first.\n")
         sys.exit(1)
         
     mongodb_uri = os.getenv("MONGODB_URI")

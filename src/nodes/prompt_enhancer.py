@@ -12,7 +12,7 @@ class EnhancedPromptResult(BaseModel):
 
 def run_prompt_enhancer(state: GlobalState) -> Dict[str, Any]:
     """
-    Enhances the user prompt using Gemini and handles CLI human-in-the-loop approval.
+    Enhances the user prompt using Qwen and handles CLI human-in-the-loop approval.
     """
     raw_prompt = state.get("user_prompt", "")
     print(f"\n[Prompt Enhancer] Enhancing raw prompt: '{raw_prompt}'...")

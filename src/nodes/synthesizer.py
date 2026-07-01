@@ -390,7 +390,7 @@ def run_synthesizer(state: GlobalState) -> Dict[str, Any]:
         if mongodb_uri:
             try:
                 from pymongo import MongoClient
-                client = MongoClient(mongodb_uri)
+                client = MongoClient(mongodb_uri, tlsAllowInvalidCertificates=True)
                 db = client["UI-Layout-DB"]
                 collection = db["cms_data"]
                 

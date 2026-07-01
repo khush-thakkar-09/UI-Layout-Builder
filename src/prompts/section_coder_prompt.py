@@ -43,8 +43,8 @@ export default function {section_component_name}({{ cmsData }}) {{
 ### CSS RULES:
 1. Scope ALL selectors under .section-{section_number}. Example: `.section-{section_number} h2 {{ font-size: 2rem; }}`
 2. NEVER write unscoped global selectors like `h1 {{ }}`, `* {{ }}`, or `body {{ }}`.
-3. **Global Theme (ALREADY DEFINED — USE THESE EXACTLY)**:
-   The following CSS custom properties have been pre-defined globally for the entire page. You MUST use them for all styling. Do NOT introduce new CSS custom property names, and do NOT hardcode hex/rgb color values for backgrounds, text, or accents.
+3. **Global Theme (ALREADY DEFINED — USE THESE AS YOUR BASE)**:
+   The following CSS custom properties have been pre-defined globally for the entire page. You should use them as your primary visual foundation (especially for fonts, primary typography colors, and spacing).
    
    **Active Design Tokens:**
    ```css
@@ -57,7 +57,9 @@ export default function {section_component_name}({{ cmsData }}) {{
    - Spacing: var(--spacing-xs), var(--spacing-sm), var(--spacing-md), var(--spacing-lg), var(--spacing-xl)
    - Borders: var(--border-radius), var(--border-radius-lg)
    
-   **Shade Adjustments**: If you need a slightly different shade for depth or contrast (e.g., a card shadow, a subtle border, a gradient overlay), you may use `rgba()` or `hsla()` based on the existing palette colors with adjusted opacity. Do NOT pick arbitrary new colors — derive from the palette.
+   **Design Distinction & Creative Freedom**:
+   - **Section Alternation**: Use either `var(--bg-primary)` or `var(--bg-secondary)` as the base background for your section wrapper to keep the page visually dynamic and alternate layout segments cleanly.
+   - **Creative Freedom**: You are encouraged to add custom section-specific local styles (such as background gradients, soft color overlays, glassmorphism backdrops, subtle accent borders, or glowing element drop-shadows) using opacity adjustments (e.g., `rgba()`, `hsla()`) or matching highlight colors to prevent the layout from looking plain or flat. Avoid pure black/white backdrops unless requested.
 4. Make the section fully responsive:
    - Mobile-first approach
    - Use @media queries SCOPED under .section-{section_number}
