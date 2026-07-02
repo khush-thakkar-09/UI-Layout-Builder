@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { MongoClient } from "mongodb";
 import { GlobalState } from "../state.js";
 import { logTokenUsage } from "../utils/token_tracker.js";
+import camelCase from "lodash.camelcase";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -99,11 +100,7 @@ export async function runSynthesizer(state: Partial<GlobalState>): Promise<Parti
       const cms = sectionState.cms;
       dbRecords.push(cms);
 
-      const componentKeyCamel = sectionName
-        .split(/[^a-zA-Z0-9]/)
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join("");
-      const componentKey = componentKeyCamel.charAt(0).toLowerCase() + componentKeyCamel.slice(1);
+      const componentKey = camelCase(sectionName);
 
       const elementsMap: Record<string, any> = {};
       for (const elem of cms.elements || []) {
@@ -125,11 +122,8 @@ export async function runSynthesizer(state: Partial<GlobalState>): Promise<Parti
 
   for (const secCode of successfulSections) {
     const sectionName = secCode.section_name;
-    const componentName = sectionName
-      .split(/[^a-zA-Z0-9]/)
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join("");
-    const propKey = componentName.charAt(0).toLowerCase() + componentName.slice(1);
+    const propKey = camelCase(sectionName);
+    const componentName = propKey.charAt(0).toUpperCase() + propKey.slice(1);
     wrapperLines.push(`      <${componentName} cmsData={cmsData.${propKey}} />`);
   }
 
@@ -206,11 +200,21 @@ export async function runSynthesizer(state: Partial<GlobalState>): Promise<Parti
       }
     };
 
+    const handleClick = (e) => {
+      if (!editMode) return;
+      const fieldId = e.target.getAttribute('data-field-id');
+      if (fieldId) {
+        e.preventDefault();
+      }
+    };
+
     document.addEventListener('dblclick', handleDblClick);
     document.addEventListener('focusout', handleBlur);
+    document.addEventListener('click', handleClick, true);
     return () => {
       document.removeEventListener('dblclick', handleDblClick);
       document.removeEventListener('focusout', handleBlur);
+      document.removeEventListener('click', handleClick, true);
     };
   }, [editMode]);
 

@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { getCollection } from './db.js';
+import camelCase from 'lodash.camelcase';
 
 const app = express();
 const PORT = process.env.PORT || 5001;
@@ -46,11 +47,7 @@ app.get('/api/cms/:projectId', async (req, res) => {
       // Map to resolved_cms format (camelCase key of sectionName)
       const sectionName = sec.metadata.sectionName;
       // Clean section name to camelCase
-      const camelKey = sectionName
-        .replace(/[^a-zA-Z0-9 ]/g, '')
-        .split(' ')
-        .map((word, i) => i === 0 ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1))
-        .join('');
+      const camelKey = camelCase(sectionName);
 
       const elementsMap = {};
       for (const elem of sec.elements) {

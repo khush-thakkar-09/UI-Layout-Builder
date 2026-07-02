@@ -3,6 +3,7 @@ import { GlobalState, SectionCode, SectionInfo } from "../state.js";
 import { invokeQwen } from "../llm.js";
 import { SECTION_CODER_SYSTEM_PROMPT } from "../prompts/section_coder_prompt.js";
 import { logTokenUsage } from "../utils/token_tracker.js";
+import camelCase from "lodash.camelcase";
 import { generateCmsForSingleSection } from "./cms_generator.js";
 
 function parseCodeBlocks(responseText: string): [string, string] {
@@ -48,10 +49,8 @@ async function codeSingleSection(
   const sectionDescription = sectionInfo.description;
   const cmsData = sectionInfo.cms || {};
 
-  const sectionComponentName = sectionName
-    .split(/[^a-zA-Z0-9]/)
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join("");
+  const camelName = camelCase(sectionName);
+  const sectionComponentName = camelName.charAt(0).toUpperCase() + camelName.slice(1);
 
   console.log(`  [Coding Agent] Starting section ${sectionId}: '${sectionName}'...`);
 
