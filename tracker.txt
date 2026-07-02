@@ -30,3 +30,22 @@
 [2026-07-02T09:26:59.975Z] Section Coder (Reservation & Location Section) | Input: 5651 | Output: 2500 | Total: 8151
 [2026-07-02T09:27:12.726Z] Section Coder (Hero Section) | Input: 3906 | Output: 1552 | Total: 5458
 [2026-07-02T09:27:33.857Z] Section Coder (Chef’s Story Section) | Input: 4282 | Output: 2196 | Total: 6478
+[2026-07-02T10:13:24.453Z] Prompt Enhancer Pass 1 | Input: 358 | Output: 115 | Total: 473
+[2026-07-02T10:13:52.461Z] Prompt Enhancer Pass 1 | Input: 358 | Output: 113 | Total: 471
+[2026-07-02T10:13:59.856Z] Section Planner | Input: 229 | Output: 22 | Total: 251
+[2026-07-02T10:14:06.383Z] Section Detailer (Hero Section) | Input: 424 | Output: 493 | Total: 917
+[2026-07-02T10:14:49.915Z] Section Detailer (Training Programs Grid) | Input: 425 | Output: 557 | Total: 982
+[2026-07-02T10:15:22.291Z] Section Detailer (Coach Profile Section) | Input: 425 | Output: 567 | Total: 992
+[2026-07-02T10:16:36.568Z] Section Detailer (Client Testimonials Carousel) | Input: 426 | Output: 507 | Total: 933
+[2026-07-02T10:16:54.973Z] Section Detailer (Enrollment CTA Section) | Input: 426 | Output: 551 | Total: 977
+[2026-07-02T10:17:01.992Z] Theme Extractor | Input: 3740 | Output: 296 | Total: 4036
+[2026-07-02T10:17:46.169Z] CMS Generator (Hero Section) | Input: 1682 | Output: 1179 | Total: 2861
+[2026-07-02T10:17:58.497Z] CMS Generator (Training Programs Grid) | Input: 1809 | Output: 1629 | Total: 3438
+[2026-07-02T10:19:01.696Z] CMS Generator (Coach Profile Section) | Input: 1899 | Output: 1416 | Total: 3315
+[2026-07-02T10:19:23.889Z] CMS Generator (Client Testimonials Carousel) | Input: 1920 | Output: 2176 | Total: 4096
+[2026-07-02T10:19:52.508Z] CMS Generator (Enrollment CTA Section) | Input: 2036 | Output: 1376 | Total: 3412
+[2026-07-02T10:20:38.372Z] Section Coder (Coach Profile Section) | Input: 4898 | Output: 2050 | Total: 6948
+[2026-07-02T10:20:53.151Z] Section Coder (Hero Section) | Input: 4420 | Output: 2063 | Total: 6483
+[2026-07-02T10:20:59.351Z] Section Coder (Enrollment CTA Section) | Input: 4790 | Output: 2463 | Total: 7253
+[2026-07-02T10:21:07.458Z] Section Coder (Training Programs Grid) | Input: 5169 | Output: 2195 | Total: 7364
+[2026-07-02T10:21:38.088Z] Section Coder (Client Testimonials Carousel) | Input: 5611 | Output: 3306 | Total: 8917
