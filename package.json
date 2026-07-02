@@ -1,9 +1,14 @@
 {
   "dependencies": {
+    "@langchain/core": "^1.2.1",
+    "@langchain/google-genai": "^2.2.0",
+    "@langchain/langgraph": "^1.4.7",
+    "@langchain/openai": "^1.5.3",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "mongodb": "^7.4.0"
+    "mongodb": "^7.4.0",
+    "zod": "^4.4.3"
   },
   "name": "taskf2",
   "version": "1.0.0",
@@ -12,6 +17,8 @@
   "type": "module",
   "scripts": {
     "start:server": "node server/index.js",
+    "start:pipeline": "tsx src/main.ts",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,5 +31,10 @@
   "bugs": {
     "url": "https://github.com/khush-thakkar-09/UI-Layout-Builder/issues"
   },
-  "homepage": "https://github.com/khush-thakkar-09/UI-Layout-Builder#readme"
+  "homepage": "https://github.com/khush-thakkar-09/UI-Layout-Builder#readme",
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
+  }
 }

@@ -1,10 +1,10 @@
-THEME_EXTRACTOR_PROMPT = """You are a CSS design token expert. Given a UI page description, extract an appropriate color palette, typography, and spacing system as CSS custom properties.
+export const THEME_EXTRACTOR_PROMPT = `You are a CSS design token expert. Given a UI page description, extract an appropriate color palette, typography, and spacing system as CSS custom properties.
 
 ### OUTPUT FORMAT (STRICT):
-Output ONLY a single ```css fenced code block containing a :root {{ ... }} declaration. No other text.
+Output ONLY a single \`\`\`css fenced code block containing a :root { ... } declaration. No other text.
 
 ### REQUIRED VARIABLES:
-:root {{
+:root {
   /* Colors */
   --bg-primary: <dark or light main background>;
   --bg-secondary: <slightly contrasting surface>;
@@ -28,7 +28,7 @@ Output ONLY a single ```css fenced code block containing a :root {{ ... }} decla
   /* Borders */
   --border-radius: <small radius 6-8px>;
   --border-radius-lg: <large radius 12-16px>;
-}}
+}
 
 ### RULES:
 1. Choose colors and fonts that match the aesthetic described in the prompt.
@@ -37,9 +37,9 @@ Output ONLY a single ```css fenced code block containing a :root {{ ... }} decla
 4. Font names must be valid Google Fonts names.
 5. If the prompt describes a dark theme, use dark backgrounds with light text. Vice versa.
 6. The accent color should be vibrant and complement the palette, with a matching accent-hover state.
-"""
+`;
 
-HTML_SHELL_TEMPLATE = """<!DOCTYPE html>
+export const HTML_SHELL_TEMPLATE = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -49,41 +49,41 @@ HTML_SHELL_TEMPLATE = """<!DOCTYPE html>
   {google_fonts_link}
   <style>
     /* === Global Reset === */
-    *, *::before, *::after {{
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }}
+    }
     
-    html {{
+    html {
       scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-    }}
+    }
     
-    body {{
+    body {
       font-family: var(--font-family), system-ui, -apple-system, sans-serif;
       line-height: 1.6;
       color: var(--text-primary);
       background-color: var(--bg-primary);
       overflow-x: hidden;
-    }}
+    }
     
-    img {{
+    img {
       max-width: 100%;
       height: auto;
       display: block;
-    }}
+    }
     
-    a {{
+    a {
       color: var(--accent-color);
       text-decoration: none;
       transition: color 0.3s ease;
-    }}
+    }
     
-    a:hover {{
+    a:hover {
       color: var(--accent-hover);
-    }}
+    }
     
     /* === Design Tokens === */
     {root_css}
@@ -96,4 +96,4 @@ HTML_SHELL_TEMPLATE = """<!DOCTYPE html>
   {section_html}
 </body>
 </html>
-"""
+`;

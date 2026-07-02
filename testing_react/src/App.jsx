@@ -3,49 +3,107 @@ import cmsDataRaw from './cms_data.json';
 import './index.css';
 
 // --- Section 1: Hero Section ---
+
 function HeroSection({ cmsData }) {
+  const techStack = cmsData.techStackTicker?.loop || [];
+
+  // Generate random positions for the neural network nodes only once
+  const nodePositions = useMemo(() => {
+    return Array.from({ length: 20 }, () => ({
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 4 + 2,
+      speed: Math.random() * 0.5 + 0.2
+    }));
+  }, []);
+
   return (
     <section className="section-1">
       <div className="hero-container">
-        <div
-          className="hero-background"
-          style={{ backgroundImage: `url(${cmsData.heroBackgroundImage?.content})` }}
-        >
-          <div
-            className="hero-overlay"
-            style={{ background: cmsData.heroOverlayGradient?.content }}
-          />
+        {/* Left Column: Text Content */}
+        <div className="hero-text">
+          <h1 data-field-id={cmsData.heroHeadline?.fieldId}>
+            {cmsData.heroHeadline?.content}
+          </h1>
+          <p className="hero-subheadline" data-field-id={cmsData.heroSubheadline?.fieldId}>
+            {cmsData.heroSubheadline?.content}
+          </p>
+          <div className="hero-cta-group">
+            <button className="btn-primary" data-field-id={cmsData.primaryCta?.fieldId}>
+              {cmsData.primaryCta?.content}
+            </button>
+            <button className="btn-secondary" data-field-id={cmsData.secondaryCta?.fieldId}>
+              {cmsData.secondaryCta?.content}
+            </button>
+          </div>
         </div>
 
-        <div className="hero-content">
-          <h1
-            className="hero-heading"
-            data-field-id={cmsData.heroMainHeading?.fieldId}
-          >
-            {cmsData.heroMainHeading?.content}
-          </h1>
+        {/* Right Column: Dynamic Visual Element */}
+        <div className="hero-visual">
+          <div className="neural-network-canvas">
+            {nodePositions.map((node, index) => (
+              <div
+                key={index}
+                className="node"
+                style={{
+                  left: `${node.x}%`,
+                  top: `${node.y}%`,
+                  width: `${node.size}px`,
+                  height: `${node.size}px`,
+                  animationDuration: `${2 / node.speed}s`
+                }}
+              />
+            ))}
+            {nodePositions.map((node, i) =>
+              nodePositions.slice(i + 1).map((otherNode, j) => {
+                const dx = node.x - otherNode.x;
+                const dy = node.y - otherNode.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < 35) {
+                  return (
+                    <div
+                      key={`link-${i}-${j}`}
+                      className="connection-line"
+                      style={{
+                        left: `${node.x}%`,
+                        top: `${node.y}%`,
+                        width: `${distance}%`,
+                        transform: `rotate(${Math.atan2(dy, dx) * (180 / Math.PI)}deg)`,
+                        opacity: 1 - distance / 35
+                      }}
+                    />
+                  );
+                }
+                return null;
+              })
+            )}
+          </div>
+        </div>
+      </div>
 
-          <p
-            className="hero-subheading"
-            data-field-id={cmsData.heroSubheading?.fieldId}
-          >
-            {cmsData.heroSubheading?.content}
-          </p>
-
-          <div className="hero-cta-group">
-            <button
-              className="hero-primary-btn"
-              data-field-id={cmsData.heroPrimaryCta?.fieldId}
-            >
-              {cmsData.heroPrimaryCta?.content}
-            </button>
-
-            <button
-              className="hero-secondary-btn"
-              data-field-id={cmsData.heroSecondaryCta?.fieldId}
-            >
-              {cmsData.heroSecondaryCta?.content}
-            </button>
+      {/* Tech Stack Ticker */}
+      <div className="tech-stack-ticker">
+        <div className="ticker-wrap">
+          <div className="ticker-content">
+            {techStack.map((tech, index) => (
+              <span
+                key={index}
+                className="tech-badge"
+                data-field-id={tech.fieldId1}
+              >
+                {tech.field1}
+              </span>
+            ))}
+            {/* Duplicate for infinite scroll effect */}
+            {techStack.map((tech, index) => (
+              <span
+                key={`dup-${index}`}
+                className="tech-badge"
+                data-field-id={tech.fieldId1}
+              >
+                {tech.field1}
+              </span>
+            ))}
           </div>
         </div>
       </div>
@@ -53,89 +111,101 @@ function HeroSection({ cmsData }) {
   );
 }
 
-// --- Section 2: Curated Menu Section ---
+// --- Section 2: Project Showcase ---
 
-function CuratedMenuSection({ cmsData }) {
-  const [activeTab, setActiveTab] = useState(0);
-
-  const tabs = useMemo(() => {
-    const tabData = cmsData.menuCategoryTabs?.loop?.[0] || {};
-    return Object.values(tabData).filter((v, i) => i % 2 === 0 && typeof v === 'string');
-  }, [cmsData]);
-
-  const dishes = useMemo(() => {
-    return cmsData.dishCards?.loop?.map((item) => ({
-      image: item.field1,
-      title: item.field2,
-      description: item.field3,
-      price: item.field4,
-      indicator: item.field5
-    })) || [];
-  }, [cmsData]);
-
-  const filteredDishes = useMemo(() => {
-    // In a real app, we would filter based on activeTab
-    // For now, we'll just return all dishes as the schema doesn't map tabs to dishes
-    return dishes;
-  }, [dishes, activeTab]);
+function ProjectShowcase({ cmsData }) {
+  const [activeFilter, setActiveFilter] = useState('All');
+  
+  const filterTabs = cmsData.filterTabs?.loop || [];
+  const projectList = cmsData.projectList?.loop || [];
+  
+  const filteredProjects = useMemo(() => {
+    if (activeFilter === 'All') return projectList;
+    return projectList.filter(project => 
+      project.field1.toLowerCase().includes(activeFilter.toLowerCase()) ||
+      project.field2.toLowerCase().includes(activeFilter.toLowerCase())
+    );
+  }, [activeFilter, projectList]);
 
   return (
     <section className="section-2">
       <div className="container">
-        <div className="header">
-          <h1 data-field-id={cmsData.curatedMenuSectionTitle?.fieldId}>
-            {cmsData.curatedMenuSectionTitle?.content}
+        {/* Header Section */}
+        <div className="header-section">
+          <h1 data-field-id={cmsData.showcaseHeadline?.fieldId}>
+            {cmsData.showcaseHeadline?.content}
           </h1>
-          <p className="subtitle" data-field-id={cmsData.curatedMenuSectionSubtitle?.fieldId}>
-            {cmsData.curatedMenuSectionSubtitle?.content}
+          <p className="subheadline" data-field-id={cmsData.showcaseSubheadline?.fieldId}>
+            {cmsData.showcaseSubheadline?.content}
           </p>
         </div>
 
-        <div className="tabs">
-          {tabs.map((tab, index) => (
+        {/* Filter Tabs */}
+        <div className="filter-container">
+          <button 
+            className={`filter-btn ${activeFilter === 'All' ? 'active' : ''}`}
+            onClick={() => setActiveFilter('All')}
+          >
+            All
+          </button>
+          {filterTabs.map((tab, index) => (
             <button
               key={index}
-              className={`tab-btn ${activeTab === index ? 'active' : ''}`}
-              onClick={() => setActiveTab(index)}
-              data-field-id={cmsData.menuCategoryTabs?.loop?.[0][`fieldId${index + 1}`]}
+              className={`filter-btn ${activeFilter === tab.field1 ? 'active' : ''}`}
+              onClick={() => setActiveFilter(tab.field1)}
+              data-field-id={tab.fieldId1}
             >
-              {tab}
+              {tab.field1}
             </button>
           ))}
         </div>
 
-        <div className="dish-grid">
-          {filteredDishes.map((dish, index) => (
-            <div key={index} className="dish-card">
-              <div className="image-container">
-                <img
-                  src={dish.image}
-                  alt={dish.title}
-                  className="dish-image"
-                  onError={(e) => {
-                    e.target.src = 'https://placehold.co/600x400/f8f5f0/2b2926?text=Dish+Image';
-                  }}
+        {/* Project Grid */}
+        <div className="project-grid">
+          {filteredProjects.map((project, index) => (
+            <div key={index} className="project-card">
+              <div className="card-image">
+                <img 
+                  src={`https://placehold.co/600x400/1a1a21/6366f1?text=${encodeURIComponent(project.field1)}`}
+                  alt={project.field1}
+                  className="project-image"
                 />
-                {dish.indicator && (
-                  <span className="indicator-badge">
-                    {dish.indicator}
-                  </span>
-                )}
-              </div>
-              <div className="card-content">
-                <h3 data-field-id={dish.fieldId2}>{dish.title}</h3>
-                <p className="description" data-field-id={dish.fieldId3}>{dish.description}</p>
-                <div className="price-container">
-                  <span className="price" data-field-id={dish.fieldId4}>{dish.price}</span>
+                <div className="card-overlay">
+                  <a href="#" className="icon-btn" aria-label="GitHub Repository">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                    </svg>
+                  </a>
+                  <a href="#" className="icon-btn" aria-label="Live Demo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <circle cx="12" cy="12" r="10" />
+                      <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" />
+                    </svg>
+                  </a>
                 </div>
+              </div>
+              
+              <div className="card-content">
+                <h3 data-field-id={project.fieldId1} className="project-title">
+                  {project.field1}
+                </h3>
+                <div className="tech-stack" data-field-id={project.fieldId2}>
+                  {project.field2.split(',').map((tech, idx) => (
+                    <span key={idx} className="tech-tag">{tech.trim()}</span>
+                  ))}
+                </div>
+                <p className="project-description" data-field-id={project.fieldId3}>
+                  {project.field3}
+                </p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="cta-container">
-          <button className="cta-button" data-field-id={cmsData.curatedMenuCtaButton?.fieldId}>
-            {cmsData.curatedMenuCtaButton?.content}
+        {/* View All CTA */}
+        <div className="cta-section">
+          <button className="view-all-btn" data-field-id={cmsData.viewAllCta?.fieldId}>
+            {cmsData.viewAllCta?.content}
           </button>
         </div>
       </div>
@@ -143,170 +213,170 @@ function CuratedMenuSection({ cmsData }) {
   );
 }
 
-// --- Section 3: Chef’s Story Section ---
-function ChefStorySection({ cmsData }) {
+// --- Section 3: Professional Experience ---
+function ProfessionalExperience({ cmsData }) {
+  const experienceList = cmsData.experienceList?.loop || [];
+
   return (
     <section className="section-3">
       <div className="container">
-        <h2 data-field-id={cmsData.chefStorySectionTitle?.fieldId} className="section-title">
-          {cmsData.chefStorySectionTitle?.content}
-        </h2>
+        <header className="section-header">
+          <h2 data-field-id={cmsData.experienceHeadline?.fieldId}>
+            {cmsData.experienceHeadline?.content}
+          </h2>
+          <p 
+            className="subheadline"
+            data-field-id={cmsData.experienceSubheadline?.fieldId}
+          >
+            {cmsData.experienceSubheadline?.content}
+          </p>
+        </header>
 
-        <div className="chef-content-grid">
-          <div className="chef-portrait-wrapper">
-            <img
-              src={cmsData.chefPortrait?.content}
-              alt="Chef Kenji Sato"
-              className="chef-portrait"
-              data-field-id={cmsData.chefPortrait?.fieldId}
-            />
-          </div>
+        <div className="timeline">
+          <div className="timeline-spine"></div>
+          
+          {experienceList.map((item, index) => (
+            <ExperienceCard key={index} item={item} />
+          ))}
+        </div>
 
-          <div className="chef-text-content">
-            <p
-              className="narrative-teaser"
-              data-field-id={cmsData.chefNarrativeTeaser?.fieldId}
-            >
-              {cmsData.chefNarrativeTeaser?.content}
-            </p>
-
-            <div
-              className="biography"
-              data-field-id={cmsData.chefBiography?.fieldId}
-              dangerouslySetInnerHTML={{
-                __html: cmsData.chefBiography?.content?.replace(/\*/g, '<em>') || ''
-              }}
-            />
-
-            <div className="signature-dish-wrapper">
-              <img
-                src={cmsData.signatureDishImage?.content}
-                alt="Signature Dish"
-                className="signature-dish"
-                data-field-id={cmsData.signatureDishImage?.fieldId}
-              />
-            </div>
-
-            <a
-              href="#reservation"
-              className="cta-button"
-              data-field-id={cmsData.chefStoryCtaButton?.fieldId}
-            >
-              {cmsData.chefStoryCtaButton?.content}
-            </a>
-          </div>
+        <div className="cta-container">
+          <a 
+            href="#"
+            className="resume-cta"
+            data-field-id={cmsData.downloadResumeCta?.fieldId}
+          >
+            {cmsData.downloadResumeCta?.content}
+          </a>
         </div>
       </div>
     </section>
   );
 }
 
-// --- Section 4: Reservation & Location Section ---
-function ReservationLocationSection({ cmsData }) {
-  const heading = cmsData.reservationLocationSectionHeading?.content || "Reserve Your Table & Find Us";
-  const mapEmbed = cmsData.mapEmbed?.content || "";
-  const formFields = cmsData.reservationForm?.loop?.[0] || {};
-  const locationDetails = cmsData.locationDetailsCard?.loop?.[0] || {};
+function ExperienceCard({ item }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  
+  // Parse metadata
+  const roleMetadata = item.field1?.split('|').map(part => part.trim());
+  const jobTitle = roleMetadata?.[0] || '';
+  const company = roleMetadata?.[1] || '';
+  const dates = roleMetadata?.[2] || '';
+  
+  // Parse tech stack
+  const techStack = item.field2?.split(',').map(tag => tag.trim()) || [];
+  
+  // Parse achievements (assuming field3 contains the first achievement, and we might need more fields)
+  // For this implementation, we'll treat field3 as the first achievement and assume additional achievements
+  // could be in field5, field7, etc. But based on the schema, only field3 is provided.
+  // We'll use a fallback to create a list with one item.
+  const achievements = [item.field3].filter(Boolean);
 
+  return (
+    <div className={`experience-card ${isExpanded ? 'expanded' : ''}`}>
+      <div className="card-content">
+        <div className="card-header">
+          <div className="role-info">
+            <h3 data-field-id={item.fieldId1}>{jobTitle}</h3>
+            <div className="company-dates">
+              <span>{company}</span>
+              <span className="separator">•</span>
+              <span>{dates}</span>
+            </div>
+          </div>
+          
+          <div className="tech-stack">
+            {techStack.map((tech, idx) => (
+              <span 
+                key={idx} 
+                className="tech-tag"
+                data-field-id={item.fieldId2}
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+        
+        <div className="achievements">
+          {achievements.map((achievement, idx) => (
+            <p 
+              key={idx} 
+              className="achievement-item"
+              data-field-id={item.fieldId3}
+            >
+              {achievement}
+            </p>
+          ))}
+        </div>
+        
+        <button 
+          className="expand-toggle"
+          onClick={() => setIsExpanded(!isExpanded)}
+          aria-label={isExpanded ? "Collapse details" : "Expand details"}
+        >
+          <span data-field-id={item.fieldId4}>
+            {isExpanded ? "Hide Details" : item.field4 || "View Details"}
+          </span>
+          <span className={`arrow-icon ${isExpanded ? 'rotated' : ''}`}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </span>
+        </button>
+      </div>
+      
+      {isExpanded && (
+        <div className="expanded-content">
+          <p className="expanded-text">
+            Detailed project description would appear here. This section expands to show 
+            comprehensive information about the role, responsibilities, and specific 
+            contributions to AI/ML projects. The content would be dynamically populated 
+            from additional CMS fields when available.
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// --- Section 4: Contact Footer ---
+function ContactFooter({ cmsData }) {
   return (
     <section className="section-4">
       <div className="container">
-        <h2 data-field-id={cmsData.reservationLocationSectionHeading?.fieldId}>{heading}</h2>
-
-        <div className="grid-container">
-          {/* Reservation Form */}
-          <div className="form-section">
-            <form className="reservation-form" onSubmit={(e) => e.preventDefault()}>
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="date" data-field-id={formFields.fieldId1}>Date</label>
-                  <input type="date" id="date" name="date" required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="time" data-field-id={formFields.fieldId2}>Time</label>
-                  <select id="time" name="time" required>
-                    <option value="">Select time</option>
-                    <option value="17:30">5:30 PM</option>
-                    <option value="18:00">6:00 PM</option>
-                    <option value="18:30">6:30 PM</option>
-                    <option value="19:00">7:00 PM</option>
-                    <option value="19:30">7:30 PM</option>
-                    <option value="20:00">8:00 PM</option>
-                    <option value="20:30">8:30 PM</option>
-                    <option value="21:00">9:00 PM</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="guests" data-field-id={formFields.fieldId3}>Guests</label>
-                  <select id="guests" name="guests" required>
-                    <option value="1">1 Person</option>
-                    <option value="2">2 People</option>
-                    <option value="3">3 People</option>
-                    <option value="4">4 People</option>
-                    <option value="5">5 People</option>
-                    <option value="6">6 People</option>
-                    <option value="7">7 People</option>
-                    <option value="8">8+ People</option>
-                  </select>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="name" data-field-id={formFields.fieldId4}>Name</label>
-                  <input type="text" id="name" name="name" placeholder="Your full name" required />
-                </div>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="contact" data-field-id={formFields.fieldId5}>Email or Phone</label>
-                <input type="text" id="contact" name="contact" placeholder="Email or phone number" required />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="requests" data-field-id={formFields.fieldId6}>Special Requests</label>
-                <textarea id="requests" name="requests" rows="3" placeholder="Allergies, dietary restrictions, special occasions..."></textarea>
-              </div>
-
-              <button type="submit" className="submit-btn" data-field-id={formFields.fieldId7}>
-                {formFields.field7 || "Confirm Reservation"}
-              </button>
-            </form>
+        <div className="content-wrapper">
+          <h1 data-field-id={cmsData.contactHeading?.fieldId}>
+            {cmsData.contactHeading?.content}
+          </h1>
+          <p className="subheadline" data-field-id={cmsData.contactSubheadline?.fieldId}>
+            {cmsData.contactSubheadline?.content}
+          </p>
+          <a 
+            href="mailto:contact@example.com" 
+            className="cta-button"
+            data-field-id={cmsData.emailCta?.fieldId}
+          >
+            {cmsData.emailCta?.content}
+          </a>
+          
+          <div className="social-links">
+            {cmsData.socialLinks?.loop?.map((item, index) => (
+              <a 
+                key={index} 
+                href={item.field2} 
+                className="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span data-field-id={item.fieldId1}>{item.field1}</span>
+              </a>
+            ))}
           </div>
-
-          {/* Map & Location Details */}
-          <div className="map-section">
-            <div className="map-container">
-              <div className="map-iframe-wrapper">
-                <iframe
-                  title="Restaurant Location"
-                  srcDoc={mapEmbed}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                ></iframe>
-              </div>
-            </div>
-
-            <div className="location-card">
-              <div className="location-content">
-                <div className="location-item">
-                  <span className="label">Address</span>
-                  <p data-field-id={locationDetails.fieldId1}>{locationDetails.field1}</p>
-                </div>
-                <div className="location-item">
-                  <span className="label">Phone</span>
-                  <p data-field-id={locationDetails.fieldId2}>{locationDetails.field2}</p>
-                </div>
-                <div className="location-item">
-                  <span className="label">Hours</span>
-                  <p data-field-id={locationDetails.fieldId3}>{locationDetails.field3}</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        </div>
+        
+        <div className="copyright" data-field-id={cmsData.copyrightText?.fieldId}>
+          {cmsData.copyrightText?.content}
         </div>
       </div>
     </section>
@@ -317,9 +387,9 @@ export function GeneratedPage({ cmsData }) {
   return (
     <div className="generated-page-container">
       <HeroSection cmsData={cmsData.heroSection} />
-      <CuratedMenuSection cmsData={cmsData.curatedMenuSection} />
-      <ChefStorySection cmsData={cmsData.chefSStorySection || cmsData.chefStorySection} />
-      <ReservationLocationSection cmsData={cmsData.reservationLocationSection} />
+      <ProjectShowcase cmsData={cmsData.projectShowcase} />
+      <ProfessionalExperience cmsData={cmsData.professionalExperience} />
+      <ContactFooter cmsData={cmsData.contactFooter} />
     </div>
   );
 }
@@ -330,8 +400,8 @@ export default function App() {
   const [hasChanges, setHasChanges] = useState(false);
   const [pendingChanges, setPendingChanges] = useState({});
   const [loading, setLoading] = useState(true);
-
-  const projectId = "bad36f5e-3c6b-4b4f-833a-6b71b2f02770";
+  
+  const projectId = "a31aa36c-79ee-4fc2-b0a0-fb6e08aaeaaf";
 
   useEffect(() => {
     fetch(`http://localhost:5001/api/cms/${projectId}`)
@@ -388,7 +458,7 @@ export default function App() {
       let updatedCount = 0;
       for (const record of records) {
         let sectionUpdated = false;
-
+        
         for (const elem of record.elements) {
           if (pendingChanges[elem.fieldId] !== undefined) {
             elem.content = pendingChanges[elem.fieldId];
@@ -423,7 +493,7 @@ export default function App() {
       alert(`Successfully saved ${updatedCount} changes to MongoDB!`);
       setHasChanges(false);
       setPendingChanges({});
-
+      
       const refreshRes = await fetch(`http://localhost:5001/api/cms/${projectId}`);
       const refreshData = await refreshRes.json();
       setCmsData(refreshData.resolved_cms);
@@ -453,7 +523,7 @@ export default function App() {
         <span style={{ color: '#f8fafc', fontSize: '14px', fontWeight: 'bold' }}>
           {editMode ? '✍️ Edit Mode Active (Double Click Text to Edit)' : '👁️ Preview Mode'}
         </span>
-        <button
+        <button 
           onClick={() => setEditMode(!editMode)}
           style={{
             background: editMode ? '#ef4444' : '#38bdf8',
@@ -469,7 +539,7 @@ export default function App() {
           {editMode ? 'Disable Edit' : 'Enable Edit'}
         </button>
         {hasChanges && (
-          <button
+          <button 
             onClick={handleSave}
             style={{
               background: '#22c55e',
