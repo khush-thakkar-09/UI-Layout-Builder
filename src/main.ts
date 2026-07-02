@@ -32,9 +32,9 @@ const askQuestion = (query: string): Promise<string> => {
 };
 
 async function main() {
-  const apiKey = process.env.GOOGLE_API_KEY || process.env.GEMINI_API_KEY;
+  const apiKey = process.env.QWEN_API_KEY;
   if (!apiKey) {
-    console.error(`${RED}${BOLD}Error:${RESET} Google/Gemini API key is not configured in .env!`);
+    console.error(`${RED}${BOLD}Error:${RESET} Qwen API key (QWEN_API_KEY) is not configured in .env!`);
     process.exit(1);
   }
 

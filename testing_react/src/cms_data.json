@@ -2,246 +2,206 @@
   "db_records": [
     {
       "metadata": {
-        "sectionId": "30183b72-41dc-4c5f-bc04-cacf1509c258",
+        "sectionId": "dc21572c-30f1-43aa-a0e1-b61d9ece3817",
         "sectionName": "Hero Section",
         "sectionStatus": "Active",
         "variations": 1,
-        "sectionType": "Hero",
-        "path": "/client/BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic./Hero Section/Variation1",
+        "sectionType": "",
+        "path": "/client/BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant./Hero Section/Variation1",
         "isAiGenerated": true,
         "pageName": "home",
         "index": 1
       },
       "elements": [
         {
-          "sectionId": "30183b72-41dc-4c5f-bc04-cacf1509c258",
-          "elementName": "heroHeadline",
-          "fieldId": "dea273bf-075f-46b4-aa82-e596ac9cd3e2",
-          "content": "Architecting Intelligence",
-          "contentType": "Text",
-          "section": "Hero Section",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true
-        },
-        {
-          "sectionId": "30183b72-41dc-4c5f-bc04-cacf1509c258",
-          "elementName": "heroSubheadline",
-          "fieldId": "e986c7b0-e93a-4973-9ea3-cad57ec1e6ea",
-          "content": "Bridging the gap between complex neural architectures and scalable production systems.",
-          "contentType": "Text",
-          "section": "Hero Section",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true
-        },
-        {
-          "sectionId": "30183b72-41dc-4c5f-bc04-cacf1509c258",
-          "elementName": "primaryCta",
-          "fieldId": "13c317ec-b595-444b-b5cd-b76855a121ba",
-          "content": "View Projects",
-          "contentType": "Text",
-          "section": "Hero Section",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true
-        },
-        {
-          "sectionId": "30183b72-41dc-4c5f-bc04-cacf1509c258",
-          "elementName": "secondaryCta",
-          "fieldId": "77884e2b-47f6-4587-9fa8-7d8c157508f6",
-          "content": "Contact Me",
-          "contentType": "Text",
-          "section": "Hero Section",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true
-        },
-        {
-          "sectionId": "30183b72-41dc-4c5f-bc04-cacf1509c258",
-          "elementName": "heroVisualElement",
-          "fieldId": "64e506fd-4d58-4a05-a907-575b8c4e13ad",
-          "content": "neural-network-animation.svg",
+          "sectionId": "dc21572c-30f1-43aa-a0e1-b61d9ece3817",
+          "elementName": "heroBackgroundImage",
+          "fieldId": "4c990c9d-f692-4fa7-b31b-bbb7040a85bd",
+          "content": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
           "contentType": "Image",
           "section": "Hero Section",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true
         },
         {
-          "sectionId": "30183b72-41dc-4c5f-bc04-cacf1509c258",
-          "elementName": "techStackTicker",
-          "fieldId": "9e0e9c49-d494-4f15-ba4f-b43ddcf7377e",
-          "content": "",
-          "contentType": "Cards",
+          "sectionId": "dc21572c-30f1-43aa-a0e1-b61d9ece3817",
+          "elementName": "heroPrimaryHeading",
+          "fieldId": "87b4fa6c-5cb5-4f87-8894-7a5f0ae393ac",
+          "content": "Where Tradition Meets Innovation",
+          "contentType": "Text",
           "section": "Hero Section",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
           "pageName": "home",
           "isCustom": true,
-          "isCustomEdit": true,
-          "loop": [
-            {
-              "field1": "PyTorch",
-              "fieldType1": "Text",
-              "fieldId1": "9e651bfa-2fc1-4a91-8dc7-6db9a4ec5c52",
-              "field2": "pytorch-logo.png",
-              "fieldType2": "Image",
-              "fieldId2": "9cccb703-f2d3-4735-9b37-cf9926ef20e1"
-            },
-            {
-              "field1": "TensorFlow",
-              "fieldType1": "Text",
-              "fieldId1": "94a66272-91a4-4195-802b-250d82149d00",
-              "field2": "tensorflow-logo.png",
-              "fieldType2": "Image",
-              "fieldId2": "cb8e9851-71be-4fa8-b01d-f1b7464f5d36"
-            },
-            {
-              "field1": "AWS",
-              "fieldType1": "Text",
-              "fieldId1": "3075dc05-c033-4ab9-bf9b-e8d47784c89d",
-              "field2": "aws-logo.png",
-              "fieldType2": "Image",
-              "fieldId2": "aa91ac66-4588-4521-b5b5-7b56e9aa6074"
-            },
-            {
-              "field1": "Kubernetes",
-              "fieldType1": "Text",
-              "fieldId1": "9b46dfb1-7f47-469f-9e6e-bfb32dd89aef",
-              "field2": "k8s-logo.png",
-              "fieldType2": "Image",
-              "fieldId2": "86340167-7cfd-4835-a462-81d3c0376b6d"
-            }
-          ]
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "dc21572c-30f1-43aa-a0e1-b61d9ece3817",
+          "elementName": "heroSubtitle",
+          "fieldId": "0dcf6485-d20a-4a48-b730-39500a0e0031",
+          "content": "A Curated Japanese Fusion Experience",
+          "contentType": "Text",
+          "section": "Hero Section",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "dc21572c-30f1-43aa-a0e1-b61d9ece3817",
+          "elementName": "heroPrimaryCtaLabel",
+          "fieldId": "4cd2db17-84f0-488e-adc2-d98b5fb92142",
+          "content": "Reserve a Table",
+          "contentType": "Text",
+          "section": "Hero Section",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "dc21572c-30f1-43aa-a0e1-b61d9ece3817",
+          "elementName": "heroSecondaryCtaLabel",
+          "fieldId": "e674254b-db27-4b63-841c-0e41304aa45a",
+          "content": "View Menu",
+          "contentType": "Text",
+          "section": "Hero Section",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "dc21572c-30f1-43aa-a0e1-b61d9ece3817",
+          "elementName": "heroScrollIndicator",
+          "fieldId": "5107fa3a-8d13-4ea7-8bad-93d4d76e18f4",
+          "content": "↓",
+          "contentType": "Text",
+          "section": "Hero Section",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
         }
       ]
     },
     {
       "metadata": {
-        "sectionId": "83c2c50a-b3e3-4c43-a7c6-3d1051c73bdd",
-        "sectionName": "Project Showcase",
+        "sectionId": "1f487c01-6915-4253-b6e6-ca11eb935518",
+        "sectionName": "Curated Menu Section",
         "sectionStatus": "Active",
         "variations": 1,
-        "sectionType": "Portfolio Grid",
-        "path": "/client/BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic./Project Showcase/Variation1",
+        "sectionType": "",
+        "path": "/client/BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant./Curated Menu Section/Variation1",
         "isAiGenerated": true,
         "pageName": "home",
         "index": 2
       },
       "elements": [
         {
-          "sectionId": "83c2c50a-b3e3-4c43-a7c6-3d1051c73bdd",
-          "elementName": "showcaseHeadline",
-          "fieldId": "62c996da-b688-42b4-8ffa-44351ea8f634",
-          "content": "Selected Works",
+          "sectionId": "1f487c01-6915-4253-b6e6-ca11eb935518",
+          "elementName": "curatedMenuSectionHeading",
+          "fieldId": "3e392978-4ecb-41c3-81ba-d7a9080e5b14",
+          "content": "The Curated Menu",
           "contentType": "Text",
-          "section": "Project Showcase",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "section": "Curated Menu Section",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true
         },
         {
-          "sectionId": "83c2c50a-b3e3-4c43-a7c6-3d1051c73bdd",
-          "elementName": "showcaseSubheadline",
-          "fieldId": "94f43f72-b6b0-4c2f-b8a2-9606712e1b5e",
-          "content": "Building intelligent systems at the intersection of data and design.",
+          "sectionId": "1f487c01-6915-4253-b6e6-ca11eb935518",
+          "elementName": "menuCategoryTabs",
+          "fieldId": "c3400209-82dd-4a12-ac0b-f57921a1f1ba",
+          "content": "Starters,Mains,Sushi & Sashimi,Desserts,Pairings",
           "contentType": "Text",
-          "section": "Project Showcase",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "section": "Curated Menu Section",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true
         },
         {
-          "sectionId": "83c2c50a-b3e3-4c43-a7c6-3d1051c73bdd",
-          "elementName": "filterTabs",
-          "fieldId": "e0c015eb-aa3e-466d-982e-2ff36cdb24f5",
+          "sectionId": "1f487c01-6915-4253-b6e6-ca11eb935518",
+          "elementName": "menuCards",
+          "fieldId": "159d5692-60a0-4039-944c-6f7ecf7cc19b",
           "content": "",
           "contentType": "Cards",
-          "section": "Project Showcase",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "section": "Curated Menu Section",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true,
           "loop": [
             {
-              "field1": "Computer Vision",
+              "field1": "Truffle Uni Toast",
               "fieldType1": "Text",
-              "fieldId1": "31845e8d-7939-4b83-9213-d35dd614fb91"
+              "fieldId1": "2337ea20-759a-4c86-8e82-03e591d309eb",
+              "field2": "A delicate brioche toast topped with fresh sea urchin, black truffle shavings, and a whisper of truffle oil.",
+              "fieldType2": "Text",
+              "fieldId2": "7bf57106-9197-47ed-a8d7-5fe4661692f7",
+              "field3": "¥2,800",
+              "fieldType3": "Text",
+              "fieldId3": "6ba3a7de-48a0-4a5b-b9f3-db385090fc55",
+              "field4": "chef’s recommendation",
+              "fieldType4": "Text",
+              "fieldId4": "510328c1-6b9d-410b-a172-d8a93c1ba123"
             },
             {
-              "field1": "NLP",
+              "field1": "Sake-Infused Duck Confit",
               "fieldType1": "Text",
-              "fieldId1": "5caf12eb-4a2d-4592-ba18-9cabc338067b"
+              "fieldId1": "7c0c5a50-f9ec-4e64-978a-f44dc6bc9d68",
+              "field2": "Slow-cooked duck leg in junmai sake, served with pickled daikon and yuzu kosho glaze.",
+              "fieldType2": "Text",
+              "fieldId2": "14bca112-0e7b-4d4f-9f22-8b8cd4cca085",
+              "field3": "¥3,200",
+              "fieldType3": "Text",
+              "fieldId3": "db39b8be-b7e0-45a8-bff1-357a6264c8b4",
+              "field4": "gluten-free",
+              "fieldType4": "Text",
+              "fieldId4": "c2d98803-e4df-4ccf-aaaf-c42db4f7c902"
             },
             {
-              "field1": "Generative AI",
+              "field1": "Miso-Grilled Eggplant",
               "fieldType1": "Text",
-              "fieldId1": "466d5931-172f-44b9-9666-096a0dbeb679"
+              "fieldId1": "0092aab7-05aa-4529-93c1-d8e0794a0461",
+              "field2": "Charred Japanese eggplant glazed with red miso, topped with toasted sesame and scallions.",
+              "fieldType2": "Text",
+              "fieldId2": "cf43b5db-a2c8-44bb-88e3-d06e2a557643",
+              "field3": "¥1,600",
+              "fieldType3": "Text",
+              "fieldId3": "be459308-d480-4d09-837f-89218c85c0d7",
+              "field4": "vegetarian,gluten-free",
+              "fieldType4": "Text",
+              "fieldId4": "6cef63c4-4ef7-4a8e-abe8-d74a640451a5"
+            },
+            {
+              "field1": "Kombu-Cured Salmon Sashimi",
+              "fieldType1": "Text",
+              "fieldId1": "9c4a0b34-8e20-4e43-b9d2-57d305b34fa8",
+              "field2": "Thinly sliced salmon cured in kombu, served with grated wasabi and yuzu zest.",
+              "fieldType2": "Text",
+              "fieldId2": "9d212f9f-e9af-4139-99e1-21fea49debd9",
+              "field3": "¥3,500",
+              "fieldType3": "Text",
+              "fieldId3": "996165f9-e771-4e99-8dd6-6627d57d95e0",
+              "field4": "spicy",
+              "fieldType4": "Text",
+              "fieldId4": "6200f4f8-bfaf-4ade-819e-d68d4978abd2"
             }
           ]
         },
         {
-          "sectionId": "83c2c50a-b3e3-4c43-a7c6-3d1051c73bdd",
-          "elementName": "projectList",
-          "fieldId": "c92c7a7c-f195-400e-ac68-b85d3c150c82",
-          "content": "",
-          "contentType": "Cards",
-          "section": "Project Showcase",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true,
-          "loop": [
-            {
-              "field1": "Neural Style Transfer",
-              "fieldType1": "Text",
-              "fieldId1": "cfced20b-3651-4117-bd53-b5abc423c373",
-              "field2": "PyTorch, OpenCV",
-              "fieldType2": "Text",
-              "fieldId2": "7b50a693-ef92-403b-af2c-cb5a91aa27ca",
-              "field3": "Real-time artistic style transformation using deep convolutional networks.",
-              "fieldType3": "Text",
-              "fieldId3": "2dfb9bec-558e-4060-83b2-a534f254b6af"
-            },
-            {
-              "field1": "LLM Chatbot Interface",
-              "fieldType1": "Text",
-              "fieldId1": "0b8e9d6c-c152-45af-8be0-c187f1483f5c",
-              "field2": "FastAPI, LangChain",
-              "fieldType2": "Text",
-              "fieldId2": "c0b34b5e-5fec-4877-af88-d5b45f5d8dc4",
-              "field3": "Custom RAG pipeline for domain-specific document analysis.",
-              "fieldType3": "Text",
-              "fieldId3": "57702bc3-fe05-41dd-a86b-710496f04fd1"
-            },
-            {
-              "field1": "Object Detection Suite",
-              "fieldType1": "Text",
-              "fieldId1": "8a19c849-4aa1-436a-841b-39c93b901202",
-              "field2": "TensorFlow, YOLOv8",
-              "fieldType2": "Text",
-              "fieldId2": "18d6b570-ddc7-409f-a89d-32745a3910c6",
-              "field3": "High-precision detection for autonomous warehouse navigation.",
-              "fieldType3": "Text",
-              "fieldId3": "4342b367-5044-4392-b9e0-dda9bd2589ea"
-            }
-          ]
-        },
-        {
-          "sectionId": "83c2c50a-b3e3-4c43-a7c6-3d1051c73bdd",
-          "elementName": "viewAllCta",
-          "fieldId": "cff61f04-2102-4956-a4e7-1c9eae3c7452",
-          "content": "View All Projects",
+          "sectionId": "1f487c01-6915-4253-b6e6-ca11eb935518",
+          "elementName": "viewFullMenuCtaLabel",
+          "fieldId": "2a6ef924-4de1-4eb0-a269-19156b4dad02",
+          "content": "View Full Menu",
           "contentType": "Text",
-          "section": "Project Showcase",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "section": "Curated Menu Section",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true
@@ -250,200 +210,288 @@
     },
     {
       "metadata": {
-        "sectionId": "eeb7f768-a67a-445c-b500-3d8e833fe87a",
-        "sectionName": "Professional Experience",
+        "sectionId": "8bc7f85c-e1af-4930-88ce-ccb083974bf5",
+        "sectionName": "Chef’s Story Section",
         "sectionStatus": "Active",
         "variations": 1,
-        "sectionType": "Experience Timeline",
-        "path": "/client/BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic./Professional Experience/Variation1",
+        "sectionType": "",
+        "path": "/client/BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant./Chef’s Story Section/Variation1",
         "isAiGenerated": true,
         "pageName": "home",
         "index": 3
       },
       "elements": [
         {
-          "sectionId": "eeb7f768-a67a-445c-b500-3d8e833fe87a",
-          "elementName": "experienceHeadline",
-          "fieldId": "f485e7f5-ca0b-4eaa-becf-a9fe0dd83374",
-          "content": "EXPERIENCE",
+          "sectionId": "8bc7f85c-e1af-4930-88ce-ccb083974bf5",
+          "elementName": "chefStorySectionHeading",
+          "fieldId": "3d2cdb9d-0aa4-42fa-a197-a2d6a66bb87e",
+          "content": "The Chef’s Journey",
           "contentType": "Text",
-          "section": "Professional Experience",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "section": "Chef’s Story Section",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true
         },
         {
-          "sectionId": "eeb7f768-a67a-445c-b500-3d8e833fe87a",
-          "elementName": "experienceSubheadline",
-          "fieldId": "127467cf-a2b5-4154-8fd5-71a2e324e593",
-          "content": "My professional journey in building scalable AI solutions and machine learning models.",
-          "contentType": "Text",
-          "section": "Professional Experience",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "sectionId": "8bc7f85c-e1af-4930-88ce-ccb083974bf5",
+          "elementName": "chefPortraitImage",
+          "fieldId": "184a4027-6355-40ac-9d60-a3af9b7ef43a",
+          "content": "https://images.unsplash.com/photo-1556906781-9a412961c28c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+          "contentType": "Image",
+          "section": "Chef’s Story Section",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true
         },
         {
-          "sectionId": "eeb7f768-a67a-445c-b500-3d8e833fe87a",
-          "elementName": "experienceList",
-          "fieldId": "d308a2ba-5d01-4b24-b4b5-eeb61eac8b0f",
+          "sectionId": "8bc7f85c-e1af-4930-88ce-ccb083974bf5",
+          "elementName": "chefBiographicalNarrative",
+          "fieldId": "24a5f88e-0ef3-482d-b8c8-fcdb4732db27",
+          "content": "Born in Kyoto and trained under masters in Tokyo, Chef Hiroshi began his career in traditional kaiseki before venturing across the globe—from Paris to San Francisco—to absorb new techniques and perspectives. His philosophy centers on *seasonality, balance, and reverence for ingredients*—honor the ingredient, serve the season, and let tradition guide innovation. At our table, every dish is a quiet conversation between heritage and modernity.",
+          "contentType": "Text",
+          "section": "Chef’s Story Section",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "8bc7f85c-e1af-4930-88ce-ccb083974bf5",
+          "elementName": "chefSignaturePhilosophyStatement",
+          "fieldId": "e409c22e-3798-4712-a7c8-cb8b0b6b133f",
+          "content": "“Food is memory made edible.”",
+          "contentType": "Text",
+          "section": "Chef’s Story Section",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "8bc7f85c-e1af-4930-88ce-ccb083974bf5",
+          "elementName": "chefLifestyleGallery",
+          "fieldId": "68b54f52-6c26-4eb6-8d1d-40744bdafc7b",
           "content": "",
           "contentType": "Cards",
-          "section": "Professional Experience",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "section": "Chef’s Story Section",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true,
           "loop": [
             {
-              "field1": "Senior AI Engineer | TechCorp | 2021 - Present",
+              "field1": "Sourcing fresh seafood at Toyosu Market",
               "fieldType1": "Text",
-              "fieldId1": "13008362-6ae3-46eb-990d-f7728e262050",
-              "field2": "PyTorch, AWS, Kubernetes",
-              "fieldType2": "Text",
-              "fieldId2": "209d73e7-2507-4332-b292-9d2b612ff069",
-              "field3": "Reduced inference latency by 40% through model quantization.",
-              "fieldType3": "Text",
-              "fieldId3": "44191e66-50c5-420b-b322-ca17019aab9d",
-              "field4": "View Details",
-              "fieldType4": "Text",
-              "fieldId4": "70de7d94-a49c-435a-974c-27f07e925335"
+              "fieldId1": "3c32e35d-2200-4c39-93e7-4dd0edc2d6e0",
+              "field2": "https://images.unsplash.com/photo-1599839575945-c4313593963c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+              "fieldType2": "Image",
+              "fieldId2": "d6cee187-4083-48a4-8262-56c4c879884d"
             },
             {
-              "field1": "ML Researcher | DataLabs | 2018 - 2021",
+              "field1": "Hand-selecting seasonal vegetables",
               "fieldType1": "Text",
-              "fieldId1": "37a30ba7-5270-4f2d-b80e-b10dbc262e3f",
-              "field2": "TensorFlow, Python, GCP",
-              "fieldType2": "Text",
-              "fieldId2": "c00cde5c-0785-49e6-9104-c9d0b7c00d72",
-              "field3": "Developed a proprietary NLP pipeline for sentiment analysis.",
-              "fieldType3": "Text",
-              "fieldId3": "8e5e2447-1804-42b9-9ff8-a391573ab93b",
-              "field4": "View Details",
-              "fieldType4": "Text",
-              "fieldId4": "30b74034-2e77-4250-a745-810f6b4e48a7"
+              "fieldId1": "5b155f45-7183-41b1-bbc9-cd17767962df",
+              "field2": "https://images.unsplash.com/photo-1542259686-dc5082583c10?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+              "fieldType2": "Image",
+              "fieldId2": "e6c661f9-a20a-422b-883b-bb448f68896d"
+            },
+            {
+              "field1": "Precision in plating technique",
+              "fieldType1": "Text",
+              "fieldId1": "6e1bb085-af99-45ff-9908-778df8a8abc2",
+              "field2": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+              "fieldType2": "Image",
+              "fieldId2": "51f19e73-d990-4372-91c1-c44b0341147f"
             }
           ]
-        },
-        {
-          "sectionId": "eeb7f768-a67a-445c-b500-3d8e833fe87a",
-          "elementName": "downloadResumeCta",
-          "fieldId": "e29fae04-af3a-43a0-ab83-19cf538eef57",
-          "content": "Download Resume",
-          "contentType": "Text",
-          "section": "Professional Experience",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true
         }
       ]
     },
     {
       "metadata": {
-        "sectionId": "5d3b4b67-fc2d-4d05-83cb-0c60f26c6e4a",
-        "sectionName": "Contact Footer",
+        "sectionId": "521343ce-8f29-4ba3-bf76-e286918ee42e",
+        "sectionName": "Reservation & Location Section",
         "sectionStatus": "Active",
         "variations": 1,
-        "sectionType": "Footer",
-        "path": "/client/BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic./Contact Footer/Variation1",
+        "sectionType": "",
+        "path": "/client/BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant./Reservation & Location Section/Variation1",
         "isAiGenerated": true,
         "pageName": "home",
         "index": 4
       },
       "elements": [
         {
-          "sectionId": "5d3b4b67-fc2d-4d05-83cb-0c60f26c6e4a",
-          "elementName": "contactHeading",
-          "fieldId": "290dd900-0902-4595-b695-a952a3acfb52",
-          "content": "Let’s Build the Future",
+          "sectionId": "521343ce-8f29-4ba3-bf76-e286918ee42e",
+          "elementName": "reservationLocationSectionHeading",
+          "fieldId": "afebd0e1-004a-43f9-be92-39edd63e6f64",
+          "content": "Reserve Your Table & Find Us",
           "contentType": "Text",
-          "section": "Contact Footer",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "section": "Reservation & Location Section",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true
         },
         {
-          "sectionId": "5d3b4b67-fc2d-4d05-83cb-0c60f26c6e4a",
-          "elementName": "contactSubheadline",
-          "fieldId": "96274d8d-7f55-464d-bc7b-c1ef59e1a732",
-          "content": "Open for freelance projects or coffee chats.",
-          "contentType": "Text",
-          "section": "Contact Footer",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true
-        },
-        {
-          "sectionId": "5d3b4b67-fc2d-4d05-83cb-0c60f26c6e4a",
-          "elementName": "emailCta",
-          "fieldId": "19578b01-8d46-4b69-8f30-d15c5bc7fc43",
-          "content": "Send an Email",
-          "contentType": "Text",
-          "section": "Contact Footer",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-          "pageName": "home",
-          "isCustom": true,
-          "isCustomEdit": true
-        },
-        {
-          "sectionId": "5d3b4b67-fc2d-4d05-83cb-0c60f26c6e4a",
-          "elementName": "socialLinks",
-          "fieldId": "81e4486a-80c2-474b-b99f-84e480113132",
+          "sectionId": "521343ce-8f29-4ba3-bf76-e286918ee42e",
+          "elementName": "reservationForm",
+          "fieldId": "7cd907e3-692a-4a39-983f-a25d897653a7",
           "content": "",
           "contentType": "Cards",
-          "section": "Contact Footer",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "section": "Reservation & Location Section",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true,
           "loop": [
             {
-              "field1": "GitHub",
+              "field1": "Date",
               "fieldType1": "Text",
-              "fieldId1": "61ac91c1-51a7-4785-8243-264fac223c48",
-              "field2": "https://github.com/username",
+              "fieldId1": "d33aa158-8fcd-46a9-8368-f67c2a4341c1",
+              "field2": "Select your preferred date",
               "fieldType2": "Text",
-              "fieldId2": "10e5d6b3-f804-4aba-8ceb-ccdbb91c44e3"
+              "fieldId2": "41a2e9fc-8fa2-47dc-9394-1c7790907961",
+              "field3": "Date",
+              "fieldType3": "Text",
+              "fieldId3": "8f220bb6-3130-4943-91b5-c4b88195c5ac"
             },
             {
-              "field1": "LinkedIn",
+              "field1": "Time",
               "fieldType1": "Text",
-              "fieldId1": "f87bc67d-cbd2-44ca-b297-ae95c0366ba0",
-              "field2": "https://linkedin.com/in/username",
+              "fieldId1": "83948eac-41b2-4d08-aaa3-bf7a926b3f7b",
+              "field2": "Select your preferred time",
               "fieldType2": "Text",
-              "fieldId2": "0e07c69d-1381-46e8-a921-8bf987d6c242"
+              "fieldId2": "692cef43-e340-4e4d-904e-ed98f702a29a",
+              "field3": "Time",
+              "fieldType3": "Text",
+              "fieldId3": "c8861e54-5b69-470a-843e-3f1ded3e64db"
             },
             {
-              "field1": "HuggingFace",
+              "field1": "Party Size",
               "fieldType1": "Text",
-              "fieldId1": "aff1a7d9-479f-456e-93e2-21ab51f0e54b",
-              "field2": "https://huggingface.co/username",
+              "fieldId1": "cd575758-8eb0-4557-9ef1-1718879cfb38",
+              "field2": "Number of guests",
               "fieldType2": "Text",
-              "fieldId2": "2d3b1171-6da4-4d40-9dd7-86c952dfca5a"
+              "fieldId2": "8f1d2b5d-59cd-4483-9573-a78f21bf10cd",
+              "field3": "Party Size",
+              "fieldType3": "Text",
+              "fieldId3": "2d6b80a2-1d5e-4ffe-94de-dfb51da73c22"
             },
             {
-              "field1": "Twitter",
+              "field1": "Name",
               "fieldType1": "Text",
-              "fieldId1": "72e18c8c-f22e-44e7-b4fd-981b433c150f",
-              "field2": "https://twitter.com/username",
+              "fieldId1": "892bf7c9-68e2-4e63-bb49-246f364ba834",
+              "field2": "Your full name",
               "fieldType2": "Text",
-              "fieldId2": "6e837e2a-af49-4a54-a3b9-ab4a65244121"
+              "fieldId2": "f0a7112e-6e52-4eff-994e-133a405fcf17",
+              "field3": "Name",
+              "fieldType3": "Text",
+              "fieldId3": "417677e1-4285-45a5-9189-f4c6bbcd097a"
+            },
+            {
+              "field1": "Email",
+              "fieldType1": "Text",
+              "fieldId1": "9ffea17f-337f-4df5-9431-4b567a7c5021",
+              "field2": "Your email address",
+              "fieldType2": "Text",
+              "fieldId2": "39c07af5-96f5-467f-8cd6-8d574a73b762",
+              "field3": "Email",
+              "fieldType3": "Text",
+              "fieldId3": "39bc14df-581e-48ea-b395-ef963c5e353d"
+            },
+            {
+              "field1": "Special Requests",
+              "fieldType1": "Text",
+              "fieldId1": "d780e7c0-8556-4850-ab90-4facd9e115f1",
+              "field2": "Allergies, celebrations, or other notes",
+              "fieldType2": "Text",
+              "fieldId2": "5e084791-a1a3-43a0-a980-c69a86caac8f",
+              "field3": "Special Requests",
+              "fieldType3": "Text",
+              "fieldId3": "b591dbfb-788c-4035-b4e7-0f890aca3266"
             }
           ]
         },
         {
-          "sectionId": "5d3b4b67-fc2d-4d05-83cb-0c60f26c6e4a",
-          "elementName": "copyrightText",
-          "fieldId": "2c0d9203-bd51-44e7-89f8-af96957c50eb",
-          "content": "© 2023 AI/ML Engineer Portfolio. Built with passion.",
+          "sectionId": "521343ce-8f29-4ba3-bf76-e286918ee42e",
+          "elementName": "confirmReservationCtaLabel",
+          "fieldId": "6681b462-aeab-4c70-ab06-6a200fa76c61",
+          "content": "Confirm Reservation",
           "contentType": "Text",
-          "section": "Contact Footer",
-          "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+          "section": "Reservation & Location Section",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "521343ce-8f29-4ba3-bf76-e286918ee42e",
+          "elementName": "contactHoursCard",
+          "fieldId": "d1d9c71f-e7fc-4a0c-a88b-c5d777b154be",
+          "content": "",
+          "contentType": "Cards",
+          "section": "Reservation & Location Section",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true,
+          "loop": [
+            {
+              "field1": "Address",
+              "fieldType1": "Text",
+              "fieldId1": "50190b09-7af9-4e4c-91c2-0dad7a487de9",
+              "field2": "1-2-3 Ginza, Chuo-ku, Tokyo 104-0061",
+              "fieldType2": "Text",
+              "fieldId2": "c03c26c2-c151-4cf1-b391-d7a2e2c1b994"
+            },
+            {
+              "field1": "Phone",
+              "fieldType1": "Text",
+              "fieldId1": "75972319-ab40-491b-9b86-9d36380e1661",
+              "field2": "+81 3-1234-5678",
+              "fieldType2": "Text",
+              "fieldId2": "07f3df56-3a32-4ad7-bea7-4fe82d11b698"
+            },
+            {
+              "field1": "Hours",
+              "fieldType1": "Text",
+              "fieldId1": "14601a50-c1f0-40d7-a8c0-2beb33cfd335",
+              "field2": "Mon–Thu: 5–10pm, Fri–Sun: 5–11pm",
+              "fieldType2": "Text",
+              "fieldId2": "03cfc432-1b07-4c4b-9f13-5f93c3410c02"
+            },
+            {
+              "field1": "Full Contact Details",
+              "fieldType1": "Text",
+              "fieldId1": "c75c8e10-d03d-4d45-893c-1c2745167b2e",
+              "field2": "View Contact Info",
+              "fieldType2": "Text",
+              "fieldId2": "13e22e99-c55f-48c3-8af9-9074d8cd1e00"
+            }
+          ]
+        },
+        {
+          "sectionId": "521343ce-8f29-4ba3-bf76-e286918ee42e",
+          "elementName": "embeddedMap",
+          "fieldId": "e2654fab-ef77-4763-8fef-a2d241723a06",
+          "content": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.4!2d139.766084!3d35.676184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b5c2d8305e5%3A0x724919378e0b0a0a!2sGinza!5e0!3m2!1sen!2sjp!4v1698765432100!5m2!1sen!2sjp",
+          "contentType": "Image",
+          "section": "Reservation & Location Section",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
+          "pageName": "home",
+          "isCustom": true,
+          "isCustomEdit": true
+        },
+        {
+          "sectionId": "521343ce-8f29-4ba3-bf76-e286918ee42e",
+          "elementName": "mapCtaLink",
+          "fieldId": "2f3f411b-be05-479e-84c7-cf4a99b55c31",
+          "content": "Open in Google Maps",
+          "contentType": "Text",
+          "section": "Reservation & Location Section",
+          "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
           "pageName": "home",
           "isCustom": true,
           "isCustomEdit": true
@@ -453,398 +501,446 @@
   ],
   "resolved_cms": {
     "heroSection": {
-      "heroHeadline": {
-        "sectionId": "30183b72-41dc-4c5f-bc04-cacf1509c258",
-        "elementName": "heroHeadline",
-        "fieldId": "dea273bf-075f-46b4-aa82-e596ac9cd3e2",
-        "content": "Architecting Intelligence",
-        "contentType": "Text",
-        "section": "Hero Section",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-        "pageName": "home",
-        "isCustom": true,
-        "isCustomEdit": true
-      },
-      "heroSubheadline": {
-        "sectionId": "30183b72-41dc-4c5f-bc04-cacf1509c258",
-        "elementName": "heroSubheadline",
-        "fieldId": "e986c7b0-e93a-4973-9ea3-cad57ec1e6ea",
-        "content": "Bridging the gap between complex neural architectures and scalable production systems.",
-        "contentType": "Text",
-        "section": "Hero Section",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-        "pageName": "home",
-        "isCustom": true,
-        "isCustomEdit": true
-      },
-      "primaryCta": {
-        "sectionId": "30183b72-41dc-4c5f-bc04-cacf1509c258",
-        "elementName": "primaryCta",
-        "fieldId": "13c317ec-b595-444b-b5cd-b76855a121ba",
-        "content": "View Projects",
-        "contentType": "Text",
-        "section": "Hero Section",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-        "pageName": "home",
-        "isCustom": true,
-        "isCustomEdit": true
-      },
-      "secondaryCta": {
-        "sectionId": "30183b72-41dc-4c5f-bc04-cacf1509c258",
-        "elementName": "secondaryCta",
-        "fieldId": "77884e2b-47f6-4587-9fa8-7d8c157508f6",
-        "content": "Contact Me",
-        "contentType": "Text",
-        "section": "Hero Section",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-        "pageName": "home",
-        "isCustom": true,
-        "isCustomEdit": true
-      },
-      "heroVisualElement": {
-        "sectionId": "30183b72-41dc-4c5f-bc04-cacf1509c258",
-        "elementName": "heroVisualElement",
-        "fieldId": "64e506fd-4d58-4a05-a907-575b8c4e13ad",
-        "content": "neural-network-animation.svg",
+      "heroBackgroundImage": {
+        "sectionId": "dc21572c-30f1-43aa-a0e1-b61d9ece3817",
+        "elementName": "heroBackgroundImage",
+        "fieldId": "4c990c9d-f692-4fa7-b31b-bbb7040a85bd",
+        "content": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
         "contentType": "Image",
         "section": "Hero Section",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       },
-      "techStackTicker": {
-        "sectionId": "30183b72-41dc-4c5f-bc04-cacf1509c258",
-        "elementName": "techStackTicker",
-        "fieldId": "9e0e9c49-d494-4f15-ba4f-b43ddcf7377e",
-        "content": "",
-        "contentType": "Cards",
+      "heroPrimaryHeading": {
+        "sectionId": "dc21572c-30f1-43aa-a0e1-b61d9ece3817",
+        "elementName": "heroPrimaryHeading",
+        "fieldId": "87b4fa6c-5cb5-4f87-8894-7a5f0ae393ac",
+        "content": "Where Tradition Meets Innovation",
+        "contentType": "Text",
         "section": "Hero Section",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-        "pageName": "home",
-        "isCustom": true,
-        "isCustomEdit": true,
-        "loop": [
-          {
-            "field1": "PyTorch",
-            "fieldType1": "Text",
-            "fieldId1": "9e651bfa-2fc1-4a91-8dc7-6db9a4ec5c52",
-            "field2": "pytorch-logo.png",
-            "fieldType2": "Image",
-            "fieldId2": "9cccb703-f2d3-4735-9b37-cf9926ef20e1"
-          },
-          {
-            "field1": "TensorFlow",
-            "fieldType1": "Text",
-            "fieldId1": "94a66272-91a4-4195-802b-250d82149d00",
-            "field2": "tensorflow-logo.png",
-            "fieldType2": "Image",
-            "fieldId2": "cb8e9851-71be-4fa8-b01d-f1b7464f5d36"
-          },
-          {
-            "field1": "AWS",
-            "fieldType1": "Text",
-            "fieldId1": "3075dc05-c033-4ab9-bf9b-e8d47784c89d",
-            "field2": "aws-logo.png",
-            "fieldType2": "Image",
-            "fieldId2": "aa91ac66-4588-4521-b5b5-7b56e9aa6074"
-          },
-          {
-            "field1": "Kubernetes",
-            "fieldType1": "Text",
-            "fieldId1": "9b46dfb1-7f47-469f-9e6e-bfb32dd89aef",
-            "field2": "k8s-logo.png",
-            "fieldType2": "Image",
-            "fieldId2": "86340167-7cfd-4835-a462-81d3c0376b6d"
-          }
-        ]
-      }
-    },
-    "projectShowcase": {
-      "showcaseHeadline": {
-        "sectionId": "83c2c50a-b3e3-4c43-a7c6-3d1051c73bdd",
-        "elementName": "showcaseHeadline",
-        "fieldId": "62c996da-b688-42b4-8ffa-44351ea8f634",
-        "content": "Selected Works",
-        "contentType": "Text",
-        "section": "Project Showcase",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       },
-      "showcaseSubheadline": {
-        "sectionId": "83c2c50a-b3e3-4c43-a7c6-3d1051c73bdd",
-        "elementName": "showcaseSubheadline",
-        "fieldId": "94f43f72-b6b0-4c2f-b8a2-9606712e1b5e",
-        "content": "Building intelligent systems at the intersection of data and design.",
+      "heroSubtitle": {
+        "sectionId": "dc21572c-30f1-43aa-a0e1-b61d9ece3817",
+        "elementName": "heroSubtitle",
+        "fieldId": "0dcf6485-d20a-4a48-b730-39500a0e0031",
+        "content": "A Curated Japanese Fusion Experience",
         "contentType": "Text",
-        "section": "Project Showcase",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Hero Section",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       },
-      "filterTabs": {
-        "sectionId": "83c2c50a-b3e3-4c43-a7c6-3d1051c73bdd",
-        "elementName": "filterTabs",
-        "fieldId": "e0c015eb-aa3e-466d-982e-2ff36cdb24f5",
-        "content": "",
-        "contentType": "Cards",
-        "section": "Project Showcase",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-        "pageName": "home",
-        "isCustom": true,
-        "isCustomEdit": true,
-        "loop": [
-          {
-            "field1": "Computer Vision",
-            "fieldType1": "Text",
-            "fieldId1": "31845e8d-7939-4b83-9213-d35dd614fb91"
-          },
-          {
-            "field1": "NLP",
-            "fieldType1": "Text",
-            "fieldId1": "5caf12eb-4a2d-4592-ba18-9cabc338067b"
-          },
-          {
-            "field1": "Generative AI",
-            "fieldType1": "Text",
-            "fieldId1": "466d5931-172f-44b9-9666-096a0dbeb679"
-          }
-        ]
-      },
-      "projectList": {
-        "sectionId": "83c2c50a-b3e3-4c43-a7c6-3d1051c73bdd",
-        "elementName": "projectList",
-        "fieldId": "c92c7a7c-f195-400e-ac68-b85d3c150c82",
-        "content": "",
-        "contentType": "Cards",
-        "section": "Project Showcase",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
-        "pageName": "home",
-        "isCustom": true,
-        "isCustomEdit": true,
-        "loop": [
-          {
-            "field1": "Neural Style Transfer",
-            "fieldType1": "Text",
-            "fieldId1": "cfced20b-3651-4117-bd53-b5abc423c373",
-            "field2": "PyTorch, OpenCV",
-            "fieldType2": "Text",
-            "fieldId2": "7b50a693-ef92-403b-af2c-cb5a91aa27ca",
-            "field3": "Real-time artistic style transformation using deep convolutional networks.",
-            "fieldType3": "Text",
-            "fieldId3": "2dfb9bec-558e-4060-83b2-a534f254b6af"
-          },
-          {
-            "field1": "LLM Chatbot Interface",
-            "fieldType1": "Text",
-            "fieldId1": "0b8e9d6c-c152-45af-8be0-c187f1483f5c",
-            "field2": "FastAPI, LangChain",
-            "fieldType2": "Text",
-            "fieldId2": "c0b34b5e-5fec-4877-af88-d5b45f5d8dc4",
-            "field3": "Custom RAG pipeline for domain-specific document analysis.",
-            "fieldType3": "Text",
-            "fieldId3": "57702bc3-fe05-41dd-a86b-710496f04fd1"
-          },
-          {
-            "field1": "Object Detection Suite",
-            "fieldType1": "Text",
-            "fieldId1": "8a19c849-4aa1-436a-841b-39c93b901202",
-            "field2": "TensorFlow, YOLOv8",
-            "fieldType2": "Text",
-            "fieldId2": "18d6b570-ddc7-409f-a89d-32745a3910c6",
-            "field3": "High-precision detection for autonomous warehouse navigation.",
-            "fieldType3": "Text",
-            "fieldId3": "4342b367-5044-4392-b9e0-dda9bd2589ea"
-          }
-        ]
-      },
-      "viewAllCta": {
-        "sectionId": "83c2c50a-b3e3-4c43-a7c6-3d1051c73bdd",
-        "elementName": "viewAllCta",
-        "fieldId": "cff61f04-2102-4956-a4e7-1c9eae3c7452",
-        "content": "View All Projects",
+      "heroPrimaryCtaLabel": {
+        "sectionId": "dc21572c-30f1-43aa-a0e1-b61d9ece3817",
+        "elementName": "heroPrimaryCtaLabel",
+        "fieldId": "4cd2db17-84f0-488e-adc2-d98b5fb92142",
+        "content": "Reserve a Table",
         "contentType": "Text",
-        "section": "Project Showcase",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Hero Section",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "heroSecondaryCtaLabel": {
+        "sectionId": "dc21572c-30f1-43aa-a0e1-b61d9ece3817",
+        "elementName": "heroSecondaryCtaLabel",
+        "fieldId": "e674254b-db27-4b63-841c-0e41304aa45a",
+        "content": "View Menu",
+        "contentType": "Text",
+        "section": "Hero Section",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "heroScrollIndicator": {
+        "sectionId": "dc21572c-30f1-43aa-a0e1-b61d9ece3817",
+        "elementName": "heroScrollIndicator",
+        "fieldId": "5107fa3a-8d13-4ea7-8bad-93d4d76e18f4",
+        "content": "↓",
+        "contentType": "Text",
+        "section": "Hero Section",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       }
     },
-    "professionalExperience": {
-      "experienceHeadline": {
-        "sectionId": "eeb7f768-a67a-445c-b500-3d8e833fe87a",
-        "elementName": "experienceHeadline",
-        "fieldId": "f485e7f5-ca0b-4eaa-becf-a9fe0dd83374",
-        "content": "EXPERIENCE",
+    "curatedMenuSection": {
+      "curatedMenuSectionHeading": {
+        "sectionId": "1f487c01-6915-4253-b6e6-ca11eb935518",
+        "elementName": "curatedMenuSectionHeading",
+        "fieldId": "3e392978-4ecb-41c3-81ba-d7a9080e5b14",
+        "content": "The Curated Menu",
         "contentType": "Text",
-        "section": "Professional Experience",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Curated Menu Section",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       },
-      "experienceSubheadline": {
-        "sectionId": "eeb7f768-a67a-445c-b500-3d8e833fe87a",
-        "elementName": "experienceSubheadline",
-        "fieldId": "127467cf-a2b5-4154-8fd5-71a2e324e593",
-        "content": "My professional journey in building scalable AI solutions and machine learning models.",
+      "menuCategoryTabs": {
+        "sectionId": "1f487c01-6915-4253-b6e6-ca11eb935518",
+        "elementName": "menuCategoryTabs",
+        "fieldId": "c3400209-82dd-4a12-ac0b-f57921a1f1ba",
+        "content": "Starters,Mains,Sushi & Sashimi,Desserts,Pairings",
         "contentType": "Text",
-        "section": "Professional Experience",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Curated Menu Section",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       },
-      "experienceList": {
-        "sectionId": "eeb7f768-a67a-445c-b500-3d8e833fe87a",
-        "elementName": "experienceList",
-        "fieldId": "d308a2ba-5d01-4b24-b4b5-eeb61eac8b0f",
+      "menuCards": {
+        "sectionId": "1f487c01-6915-4253-b6e6-ca11eb935518",
+        "elementName": "menuCards",
+        "fieldId": "159d5692-60a0-4039-944c-6f7ecf7cc19b",
         "content": "",
         "contentType": "Cards",
-        "section": "Professional Experience",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Curated Menu Section",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true,
         "loop": [
           {
-            "field1": "Senior AI Engineer | TechCorp | 2021 - Present",
+            "field1": "Truffle Uni Toast",
             "fieldType1": "Text",
-            "fieldId1": "13008362-6ae3-46eb-990d-f7728e262050",
-            "field2": "PyTorch, AWS, Kubernetes",
+            "fieldId1": "2337ea20-759a-4c86-8e82-03e591d309eb",
+            "field2": "A delicate brioche toast topped with fresh sea urchin, black truffle shavings, and a whisper of truffle oil.",
             "fieldType2": "Text",
-            "fieldId2": "209d73e7-2507-4332-b292-9d2b612ff069",
-            "field3": "Reduced inference latency by 40% through model quantization.",
+            "fieldId2": "7bf57106-9197-47ed-a8d7-5fe4661692f7",
+            "field3": "¥2,800",
             "fieldType3": "Text",
-            "fieldId3": "44191e66-50c5-420b-b322-ca17019aab9d",
-            "field4": "View Details",
+            "fieldId3": "6ba3a7de-48a0-4a5b-b9f3-db385090fc55",
+            "field4": "chef’s recommendation",
             "fieldType4": "Text",
-            "fieldId4": "70de7d94-a49c-435a-974c-27f07e925335"
+            "fieldId4": "510328c1-6b9d-410b-a172-d8a93c1ba123"
           },
           {
-            "field1": "ML Researcher | DataLabs | 2018 - 2021",
+            "field1": "Sake-Infused Duck Confit",
             "fieldType1": "Text",
-            "fieldId1": "37a30ba7-5270-4f2d-b80e-b10dbc262e3f",
-            "field2": "TensorFlow, Python, GCP",
+            "fieldId1": "7c0c5a50-f9ec-4e64-978a-f44dc6bc9d68",
+            "field2": "Slow-cooked duck leg in junmai sake, served with pickled daikon and yuzu kosho glaze.",
             "fieldType2": "Text",
-            "fieldId2": "c00cde5c-0785-49e6-9104-c9d0b7c00d72",
-            "field3": "Developed a proprietary NLP pipeline for sentiment analysis.",
+            "fieldId2": "14bca112-0e7b-4d4f-9f22-8b8cd4cca085",
+            "field3": "¥3,200",
             "fieldType3": "Text",
-            "fieldId3": "8e5e2447-1804-42b9-9ff8-a391573ab93b",
-            "field4": "View Details",
+            "fieldId3": "db39b8be-b7e0-45a8-bff1-357a6264c8b4",
+            "field4": "gluten-free",
             "fieldType4": "Text",
-            "fieldId4": "30b74034-2e77-4250-a745-810f6b4e48a7"
+            "fieldId4": "c2d98803-e4df-4ccf-aaaf-c42db4f7c902"
+          },
+          {
+            "field1": "Miso-Grilled Eggplant",
+            "fieldType1": "Text",
+            "fieldId1": "0092aab7-05aa-4529-93c1-d8e0794a0461",
+            "field2": "Charred Japanese eggplant glazed with red miso, topped with toasted sesame and scallions.",
+            "fieldType2": "Text",
+            "fieldId2": "cf43b5db-a2c8-44bb-88e3-d06e2a557643",
+            "field3": "¥1,600",
+            "fieldType3": "Text",
+            "fieldId3": "be459308-d480-4d09-837f-89218c85c0d7",
+            "field4": "vegetarian,gluten-free",
+            "fieldType4": "Text",
+            "fieldId4": "6cef63c4-4ef7-4a8e-abe8-d74a640451a5"
+          },
+          {
+            "field1": "Kombu-Cured Salmon Sashimi",
+            "fieldType1": "Text",
+            "fieldId1": "9c4a0b34-8e20-4e43-b9d2-57d305b34fa8",
+            "field2": "Thinly sliced salmon cured in kombu, served with grated wasabi and yuzu zest.",
+            "fieldType2": "Text",
+            "fieldId2": "9d212f9f-e9af-4139-99e1-21fea49debd9",
+            "field3": "¥3,500",
+            "fieldType3": "Text",
+            "fieldId3": "996165f9-e771-4e99-8dd6-6627d57d95e0",
+            "field4": "spicy",
+            "fieldType4": "Text",
+            "fieldId4": "6200f4f8-bfaf-4ade-819e-d68d4978abd2"
           }
         ]
       },
-      "downloadResumeCta": {
-        "sectionId": "eeb7f768-a67a-445c-b500-3d8e833fe87a",
-        "elementName": "downloadResumeCta",
-        "fieldId": "e29fae04-af3a-43a0-ab83-19cf538eef57",
-        "content": "Download Resume",
+      "viewFullMenuCtaLabel": {
+        "sectionId": "1f487c01-6915-4253-b6e6-ca11eb935518",
+        "elementName": "viewFullMenuCtaLabel",
+        "fieldId": "2a6ef924-4de1-4eb0-a269-19156b4dad02",
+        "content": "View Full Menu",
         "contentType": "Text",
-        "section": "Professional Experience",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Curated Menu Section",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       }
     },
-    "contactFooter": {
-      "contactHeading": {
-        "sectionId": "5d3b4b67-fc2d-4d05-83cb-0c60f26c6e4a",
-        "elementName": "contactHeading",
-        "fieldId": "290dd900-0902-4595-b695-a952a3acfb52",
-        "content": "Let’s Build the Future",
+    "chefSStorySection": {
+      "chefStorySectionHeading": {
+        "sectionId": "8bc7f85c-e1af-4930-88ce-ccb083974bf5",
+        "elementName": "chefStorySectionHeading",
+        "fieldId": "3d2cdb9d-0aa4-42fa-a197-a2d6a66bb87e",
+        "content": "The Chef’s Journey",
         "contentType": "Text",
-        "section": "Contact Footer",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Chef’s Story Section",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       },
-      "contactSubheadline": {
-        "sectionId": "5d3b4b67-fc2d-4d05-83cb-0c60f26c6e4a",
-        "elementName": "contactSubheadline",
-        "fieldId": "96274d8d-7f55-464d-bc7b-c1ef59e1a732",
-        "content": "Open for freelance projects or coffee chats.",
-        "contentType": "Text",
-        "section": "Contact Footer",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+      "chefPortraitImage": {
+        "sectionId": "8bc7f85c-e1af-4930-88ce-ccb083974bf5",
+        "elementName": "chefPortraitImage",
+        "fieldId": "184a4027-6355-40ac-9d60-a3af9b7ef43a",
+        "content": "https://images.unsplash.com/photo-1556906781-9a412961c28c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "contentType": "Image",
+        "section": "Chef’s Story Section",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       },
-      "emailCta": {
-        "sectionId": "5d3b4b67-fc2d-4d05-83cb-0c60f26c6e4a",
-        "elementName": "emailCta",
-        "fieldId": "19578b01-8d46-4b69-8f30-d15c5bc7fc43",
-        "content": "Send an Email",
+      "chefBiographicalNarrative": {
+        "sectionId": "8bc7f85c-e1af-4930-88ce-ccb083974bf5",
+        "elementName": "chefBiographicalNarrative",
+        "fieldId": "24a5f88e-0ef3-482d-b8c8-fcdb4732db27",
+        "content": "Born in Kyoto and trained under masters in Tokyo, Chef Hiroshi began his career in traditional kaiseki before venturing across the globe—from Paris to San Francisco—to absorb new techniques and perspectives. His philosophy centers on *seasonality, balance, and reverence for ingredients*—honor the ingredient, serve the season, and let tradition guide innovation. At our table, every dish is a quiet conversation between heritage and modernity.",
         "contentType": "Text",
-        "section": "Contact Footer",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Chef’s Story Section",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true
       },
-      "socialLinks": {
-        "sectionId": "5d3b4b67-fc2d-4d05-83cb-0c60f26c6e4a",
-        "elementName": "socialLinks",
-        "fieldId": "81e4486a-80c2-474b-b99f-84e480113132",
+      "chefSignaturePhilosophyStatement": {
+        "sectionId": "8bc7f85c-e1af-4930-88ce-ccb083974bf5",
+        "elementName": "chefSignaturePhilosophyStatement",
+        "fieldId": "e409c22e-3798-4712-a7c8-cb8b0b6b133f",
+        "content": "“Food is memory made edible.”",
+        "contentType": "Text",
+        "section": "Chef’s Story Section",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "chefLifestyleGallery": {
+        "sectionId": "8bc7f85c-e1af-4930-88ce-ccb083974bf5",
+        "elementName": "chefLifestyleGallery",
+        "fieldId": "68b54f52-6c26-4eb6-8d1d-40744bdafc7b",
         "content": "",
         "contentType": "Cards",
-        "section": "Contact Footer",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Chef’s Story Section",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true,
         "loop": [
           {
-            "field1": "GitHub",
+            "field1": "Sourcing fresh seafood at Toyosu Market",
             "fieldType1": "Text",
-            "fieldId1": "61ac91c1-51a7-4785-8243-264fac223c48",
-            "field2": "https://github.com/username",
-            "fieldType2": "Text",
-            "fieldId2": "10e5d6b3-f804-4aba-8ceb-ccdbb91c44e3"
+            "fieldId1": "3c32e35d-2200-4c39-93e7-4dd0edc2d6e0",
+            "field2": "https://images.unsplash.com/photo-1599839575945-c4313593963c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            "fieldType2": "Image",
+            "fieldId2": "d6cee187-4083-48a4-8262-56c4c879884d"
           },
           {
-            "field1": "LinkedIn",
+            "field1": "Hand-selecting seasonal vegetables",
             "fieldType1": "Text",
-            "fieldId1": "f87bc67d-cbd2-44ca-b297-ae95c0366ba0",
-            "field2": "https://linkedin.com/in/username",
-            "fieldType2": "Text",
-            "fieldId2": "0e07c69d-1381-46e8-a921-8bf987d6c242"
+            "fieldId1": "5b155f45-7183-41b1-bbc9-cd17767962df",
+            "field2": "https://images.unsplash.com/photo-1542259686-dc5082583c10?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            "fieldType2": "Image",
+            "fieldId2": "e6c661f9-a20a-422b-883b-bb448f68896d"
           },
           {
-            "field1": "HuggingFace",
+            "field1": "Precision in plating technique",
             "fieldType1": "Text",
-            "fieldId1": "aff1a7d9-479f-456e-93e2-21ab51f0e54b",
-            "field2": "https://huggingface.co/username",
+            "fieldId1": "6e1bb085-af99-45ff-9908-778df8a8abc2",
+            "field2": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+            "fieldType2": "Image",
+            "fieldId2": "51f19e73-d990-4372-91c1-c44b0341147f"
+          }
+        ]
+      }
+    },
+    "reservationLocationSection": {
+      "reservationLocationSectionHeading": {
+        "sectionId": "521343ce-8f29-4ba3-bf76-e286918ee42e",
+        "elementName": "reservationLocationSectionHeading",
+        "fieldId": "afebd0e1-004a-43f9-be92-39edd63e6f64",
+        "content": "Reserve Your Table & Find Us",
+        "contentType": "Text",
+        "section": "Reservation & Location Section",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "reservationForm": {
+        "sectionId": "521343ce-8f29-4ba3-bf76-e286918ee42e",
+        "elementName": "reservationForm",
+        "fieldId": "7cd907e3-692a-4a39-983f-a25d897653a7",
+        "content": "",
+        "contentType": "Cards",
+        "section": "Reservation & Location Section",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true,
+        "loop": [
+          {
+            "field1": "Date",
+            "fieldType1": "Text",
+            "fieldId1": "d33aa158-8fcd-46a9-8368-f67c2a4341c1",
+            "field2": "Select your preferred date",
             "fieldType2": "Text",
-            "fieldId2": "2d3b1171-6da4-4d40-9dd7-86c952dfca5a"
+            "fieldId2": "41a2e9fc-8fa2-47dc-9394-1c7790907961",
+            "field3": "Date",
+            "fieldType3": "Text",
+            "fieldId3": "8f220bb6-3130-4943-91b5-c4b88195c5ac"
           },
           {
-            "field1": "Twitter",
+            "field1": "Time",
             "fieldType1": "Text",
-            "fieldId1": "72e18c8c-f22e-44e7-b4fd-981b433c150f",
-            "field2": "https://twitter.com/username",
+            "fieldId1": "83948eac-41b2-4d08-aaa3-bf7a926b3f7b",
+            "field2": "Select your preferred time",
             "fieldType2": "Text",
-            "fieldId2": "6e837e2a-af49-4a54-a3b9-ab4a65244121"
+            "fieldId2": "692cef43-e340-4e4d-904e-ed98f702a29a",
+            "field3": "Time",
+            "fieldType3": "Text",
+            "fieldId3": "c8861e54-5b69-470a-843e-3f1ded3e64db"
+          },
+          {
+            "field1": "Party Size",
+            "fieldType1": "Text",
+            "fieldId1": "cd575758-8eb0-4557-9ef1-1718879cfb38",
+            "field2": "Number of guests",
+            "fieldType2": "Text",
+            "fieldId2": "8f1d2b5d-59cd-4483-9573-a78f21bf10cd",
+            "field3": "Party Size",
+            "fieldType3": "Text",
+            "fieldId3": "2d6b80a2-1d5e-4ffe-94de-dfb51da73c22"
+          },
+          {
+            "field1": "Name",
+            "fieldType1": "Text",
+            "fieldId1": "892bf7c9-68e2-4e63-bb49-246f364ba834",
+            "field2": "Your full name",
+            "fieldType2": "Text",
+            "fieldId2": "f0a7112e-6e52-4eff-994e-133a405fcf17",
+            "field3": "Name",
+            "fieldType3": "Text",
+            "fieldId3": "417677e1-4285-45a5-9189-f4c6bbcd097a"
+          },
+          {
+            "field1": "Email",
+            "fieldType1": "Text",
+            "fieldId1": "9ffea17f-337f-4df5-9431-4b567a7c5021",
+            "field2": "Your email address",
+            "fieldType2": "Text",
+            "fieldId2": "39c07af5-96f5-467f-8cd6-8d574a73b762",
+            "field3": "Email",
+            "fieldType3": "Text",
+            "fieldId3": "39bc14df-581e-48ea-b395-ef963c5e353d"
+          },
+          {
+            "field1": "Special Requests",
+            "fieldType1": "Text",
+            "fieldId1": "d780e7c0-8556-4850-ab90-4facd9e115f1",
+            "field2": "Allergies, celebrations, or other notes",
+            "fieldType2": "Text",
+            "fieldId2": "5e084791-a1a3-43a0-a980-c69a86caac8f",
+            "field3": "Special Requests",
+            "fieldType3": "Text",
+            "fieldId3": "b591dbfb-788c-4035-b4e7-0f890aca3266"
           }
         ]
       },
-      "copyrightText": {
-        "sectionId": "5d3b4b67-fc2d-4d05-83cb-0c60f26c6e4a",
-        "elementName": "copyrightText",
-        "fieldId": "2c0d9203-bd51-44e7-89f8-af96957c50eb",
-        "content": "© 2023 AI/ML Engineer Portfolio. Built with passion.",
+      "confirmReservationCtaLabel": {
+        "sectionId": "521343ce-8f29-4ba3-bf76-e286918ee42e",
+        "elementName": "confirmReservationCtaLabel",
+        "fieldId": "6681b462-aeab-4c70-ab06-6a200fa76c61",
+        "content": "Confirm Reservation",
         "contentType": "Text",
-        "section": "Contact Footer",
-        "projectName": "BuildaUIlayoutformyportfoliowebsite.Itmustconsistofmydescriptionandtheprojectsihaveworkedon.IamanAI/MLEngineer.Itmustalsohaveacontactme.Keeptheappealvibrantandaesthetic.",
+        "section": "Reservation & Location Section",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "contactHoursCard": {
+        "sectionId": "521343ce-8f29-4ba3-bf76-e286918ee42e",
+        "elementName": "contactHoursCard",
+        "fieldId": "d1d9c71f-e7fc-4a0c-a88b-c5d777b154be",
+        "content": "",
+        "contentType": "Cards",
+        "section": "Reservation & Location Section",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true,
+        "loop": [
+          {
+            "field1": "Address",
+            "fieldType1": "Text",
+            "fieldId1": "50190b09-7af9-4e4c-91c2-0dad7a487de9",
+            "field2": "1-2-3 Ginza, Chuo-ku, Tokyo 104-0061",
+            "fieldType2": "Text",
+            "fieldId2": "c03c26c2-c151-4cf1-b391-d7a2e2c1b994"
+          },
+          {
+            "field1": "Phone",
+            "fieldType1": "Text",
+            "fieldId1": "75972319-ab40-491b-9b86-9d36380e1661",
+            "field2": "+81 3-1234-5678",
+            "fieldType2": "Text",
+            "fieldId2": "07f3df56-3a32-4ad7-bea7-4fe82d11b698"
+          },
+          {
+            "field1": "Hours",
+            "fieldType1": "Text",
+            "fieldId1": "14601a50-c1f0-40d7-a8c0-2beb33cfd335",
+            "field2": "Mon–Thu: 5–10pm, Fri–Sun: 5–11pm",
+            "fieldType2": "Text",
+            "fieldId2": "03cfc432-1b07-4c4b-9f13-5f93c3410c02"
+          },
+          {
+            "field1": "Full Contact Details",
+            "fieldType1": "Text",
+            "fieldId1": "c75c8e10-d03d-4d45-893c-1c2745167b2e",
+            "field2": "View Contact Info",
+            "fieldType2": "Text",
+            "fieldId2": "13e22e99-c55f-48c3-8af9-9074d8cd1e00"
+          }
+        ]
+      },
+      "embeddedMap": {
+        "sectionId": "521343ce-8f29-4ba3-bf76-e286918ee42e",
+        "elementName": "embeddedMap",
+        "fieldId": "e2654fab-ef77-4763-8fef-a2d241723a06",
+        "content": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.4!2d139.766084!3d35.676184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b5c2d8305e5%3A0x724919378e0b0a0a!2sGinza!5e0!3m2!1sen!2sjp!4v1698765432100!5m2!1sen!2sjp",
+        "contentType": "Image",
+        "section": "Reservation & Location Section",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
+        "pageName": "home",
+        "isCustom": true,
+        "isCustomEdit": true
+      },
+      "mapCtaLink": {
+        "sectionId": "521343ce-8f29-4ba3-bf76-e286918ee42e",
+        "elementName": "mapCtaLink",
+        "fieldId": "2f3f411b-be05-479e-84c7-cf4a99b55c31",
+        "content": "Open in Google Maps",
+        "contentType": "Text",
+        "section": "Reservation & Location Section",
+        "projectName": "BuildaUIlayoutforanupscaleJapanesefusionrestaurantwebsite.Itmustconsistofafull-screenherowiththerestaurant'ssignaturedish,acuratedmenusectionwithcategories,andachef'sstorysection.Itmustalsohaveareservationbookingformandalocationmapembed.Keeptheappealwarm,minimalist,andelegant.",
         "pageName": "home",
         "isCustom": true,
         "isCustomEdit": true

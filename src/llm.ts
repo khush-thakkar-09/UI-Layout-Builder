@@ -1,27 +1,82 @@
 import dotenv from "dotenv";
-import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
 import { ChatOpenAI } from "@langchain/openai";
 import { BaseMessage } from "@langchain/core/messages";
 
 dotenv.config();
 
 /**
- * Initializes and returns the Gemini LLM client.
+ * Custom ChatQwen class that adapts the Qwen invocation to a LangChain-like interface.
  */
-export function getLlm(temperature: number = 0.7, maxTokens?: number): ChatGoogleGenerativeAI {
-  const modelName = process.env.GEMINI_MODEL || "gemini-1.5-flash";
-  const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
+export class ChatQwen {
+  temperature: number;
+  maxTokens?: number;
 
-  if (!apiKey) {
-    throw new Error("GEMINI_API_KEY or GOOGLE_API_KEY environment variable is not set.");
+  constructor(temperature: number = 0.7, maxTokens?: number) {
+    this.temperature = temperature;
+    this.maxTokens = maxTokens;
   }
 
-  return new ChatGoogleGenerativeAI({
-    model: modelName,
-    apiKey: apiKey,
-    temperature: temperature,
-    maxOutputTokens: maxTokens,
-  });
+  async invoke(messages: any[]): Promise<QwenBedrockResponse> {
+    return invokeQwen(messages, this.temperature, this.maxTokens || 8192);
+  }
+
+  withStructuredOutput(schema: any): { invoke: (messages: any[]) => Promise<any> } {
+    return {
+      invoke: async (messages: any[]): Promise<any> => {
+        // Appending formatting instructions to ensure JSON output
+        const modifiedMessages = [...messages];
+        const lastMessage = modifiedMessages[modifiedMessages.length - 1];
+
+        let schemaDescription = "";
+        if (schema && typeof schema === "object" && schema.shape) {
+          schemaDescription = "The keys in the JSON object must be:\n" + 
+            Object.keys(schema.shape).map(key => `- "${key}"`).join("\n");
+        } else {
+          schemaDescription = "Ensure the keys match the expected output schema.";
+        }
+
+        const jsonInstruction = `\n\nCRITICAL: You must return ONLY a raw JSON object with NO markdown styling (do not wrap in \`\`\`json blocks), and no extra text/explanations.
+${schemaDescription}`;
+
+        if (lastMessage && typeof lastMessage === "object") {
+          // Clone and update the content
+          const updatedLastMessage = { ...lastMessage };
+          if (typeof updatedLastMessage.content === "string") {
+            updatedLastMessage.content = updatedLastMessage.content + jsonInstruction;
+          }
+          modifiedMessages[modifiedMessages.length - 1] = updatedLastMessage;
+        }
+
+        const response = await invokeQwen(modifiedMessages, this.temperature, this.maxTokens || 8192);
+        
+        try {
+          let cleanJson = response.content.trim();
+          if (cleanJson.startsWith("```")) {
+            cleanJson = cleanJson.replace(/^```[a-zA-Z]*\n/, "").replace(/\n```$/, "").trim();
+          }
+          const parsed = JSON.parse(cleanJson);
+          // Attach usage_metadata so that logTokenUsage can read it
+          parsed.usage_metadata = response.usage_metadata;
+          return parsed;
+        } catch (e) {
+          console.error("Failed to parse structured output from Qwen. Raw content was:\n" + response.content, e);
+          // Fallback structure
+          return {
+            enhanced_prompt: response.content,
+            clarification_questions: [],
+            usage_metadata: response.usage_metadata,
+          };
+        }
+      }
+    };
+  }
+}
+
+/**
+ * Initializes and returns the Qwen LLM client wrapper.
+ */
+export function getLlm(temperature: number = 0.7, maxTokens?: number): any {
+  return new ChatQwen(temperature, maxTokens);
 }
 
 /**

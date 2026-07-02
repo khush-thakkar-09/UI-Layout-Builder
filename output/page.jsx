@@ -3,209 +3,168 @@ import cmsDataRaw from './cms_data.json';
 import './index.css';
 
 // --- Section 1: Hero Section ---
-
 function HeroSection({ cmsData }) {
-  const techStack = cmsData.techStackTicker?.loop || [];
-
-  // Generate random positions for the neural network nodes only once
-  const nodePositions = useMemo(() => {
-    return Array.from({ length: 20 }, () => ({
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 4 + 2,
-      speed: Math.random() * 0.5 + 0.2
-    }));
-  }, []);
-
   return (
     <section className="section-1">
-      <div className="hero-container">
-        {/* Left Column: Text Content */}
-        <div className="hero-text">
-          <h1 data-field-id={cmsData.heroHeadline?.fieldId}>
-            {cmsData.heroHeadline?.content}
+      <div className="hero-wrapper">
+        <div className="hero-background">
+          <img 
+            src={cmsData.heroBackgroundImage?.content} 
+            alt="Signature dish presentation" 
+            className="hero-image"
+          />
+          <div className="hero-overlay"></div>
+        </div>
+        
+        <div className="hero-content">
+          <h1 
+            className="hero-heading" 
+            data-field-id={cmsData.heroPrimaryHeading?.fieldId}
+          >
+            {cmsData.heroPrimaryHeading?.content}
           </h1>
-          <p className="hero-subheadline" data-field-id={cmsData.heroSubheadline?.fieldId}>
-            {cmsData.heroSubheadline?.content}
+          
+          <p 
+            className="hero-subtitle" 
+            data-field-id={cmsData.heroSubtitle?.fieldId}
+          >
+            {cmsData.heroSubtitle?.content}
           </p>
+          
           <div className="hero-cta-group">
-            <button className="btn-primary" data-field-id={cmsData.primaryCta?.fieldId}>
-              {cmsData.primaryCta?.content}
-            </button>
-            <button className="btn-secondary" data-field-id={cmsData.secondaryCta?.fieldId}>
-              {cmsData.secondaryCta?.content}
-            </button>
+            <a 
+              href="#reservation"
+              className="hero-primary-cta"
+            >
+              {cmsData.heroPrimaryCtaLabel?.content}
+            </a>
+            <a 
+              href="#menu"
+              className="hero-secondary-cta"
+            >
+              {cmsData.heroSecondaryCtaLabel?.content}
+            </a>
           </div>
         </div>
-
-        {/* Right Column: Dynamic Visual Element */}
-        <div className="hero-visual">
-          <div className="neural-network-canvas">
-            {nodePositions.map((node, index) => (
-              <div
-                key={index}
-                className="node"
-                style={{
-                  left: `${node.x}%`,
-                  top: `${node.y}%`,
-                  width: `${node.size}px`,
-                  height: `${node.size}px`,
-                  animationDuration: `${2 / node.speed}s`
-                }}
-              />
-            ))}
-            {nodePositions.map((node, i) =>
-              nodePositions.slice(i + 1).map((otherNode, j) => {
-                const dx = node.x - otherNode.x;
-                const dy = node.y - otherNode.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < 35) {
-                  return (
-                    <div
-                      key={`link-${i}-${j}`}
-                      className="connection-line"
-                      style={{
-                        left: `${node.x}%`,
-                        top: `${node.y}%`,
-                        width: `${distance}%`,
-                        transform: `rotate(${Math.atan2(dy, dx) * (180 / Math.PI)}deg)`,
-                        opacity: 1 - distance / 35
-                      }}
-                    />
-                  );
-                }
-                return null;
-              })
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* Tech Stack Ticker */}
-      <div className="tech-stack-ticker">
-        <div className="ticker-wrap">
-          <div className="ticker-content">
-            {techStack.map((tech, index) => (
-              <span
-                key={index}
-                className="tech-badge"
-                data-field-id={tech.fieldId1}
-              >
-                {tech.field1}
-              </span>
-            ))}
-            {/* Duplicate for infinite scroll effect */}
-            {techStack.map((tech, index) => (
-              <span
-                key={`dup-${index}`}
-                className="tech-badge"
-                data-field-id={tech.fieldId1}
-              >
-                {tech.field1}
-              </span>
-            ))}
-          </div>
+        
+        <div className="hero-scroll-indicator">
+          <span data-field-id={cmsData.heroScrollIndicator?.fieldId}>
+            {cmsData.heroScrollIndicator?.content}
+          </span>
         </div>
       </div>
     </section>
   );
 }
 
-// --- Section 2: Project Showcase ---
+// --- Section 2: Curated Menu Section ---
 
-function ProjectShowcase({ cmsData }) {
-  const [activeFilter, setActiveFilter] = useState('All');
-  
-  const filterTabs = cmsData.filterTabs?.loop || [];
-  const projectList = cmsData.projectList?.loop || [];
-  
-  const filteredProjects = useMemo(() => {
-    if (activeFilter === 'All') return projectList;
-    return projectList.filter(project => 
-      project.field1.toLowerCase().includes(activeFilter.toLowerCase()) ||
-      project.field2.toLowerCase().includes(activeFilter.toLowerCase())
-    );
-  }, [activeFilter, projectList]);
+function CuratedMenuSection({ cmsData }) {
+  const heading = cmsData.curatedMenuSectionHeading?.content || '';
+  const tabsRaw = cmsData.menuCategoryTabs?.content || '';
+  const tabs = useMemo(() => tabsRaw.split(',').map(t => t.trim()), [tabsRaw]);
+  const menuCards = cmsData.menuCards?.loop || [];
+  const ctaLabel = cmsData.viewFullMenuCtaLabel?.content || 'View Full Menu';
+
+  const [activeTab, setActiveTab] = useState('All');
+  const [filteredCards, setFilteredCards] = useState(menuCards);
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    if (tab === 'All') {
+      setFilteredCards(menuCards);
+    } else {
+      setFilteredCards(menuCards.filter(card => {
+        const tags = card.field4?.split(',').map(t => t.trim().toLowerCase()) || [];
+        return tags.includes(tab.toLowerCase()) || 
+               card.field1.toLowerCase().includes(tab.toLowerCase()) ||
+               card.field2.toLowerCase().includes(tab.toLowerCase());
+      }));
+    }
+  };
+
+  const getTags = (tagString) => {
+    if (!tagString) return [];
+    return tagString.split(',').map(tag => tag.trim()).filter(Boolean);
+  };
 
   return (
     <section className="section-2">
       <div className="container">
-        {/* Header Section */}
-        <div className="header-section">
-          <h1 data-field-id={cmsData.showcaseHeadline?.fieldId}>
-            {cmsData.showcaseHeadline?.content}
-          </h1>
-          <p className="subheadline" data-field-id={cmsData.showcaseSubheadline?.fieldId}>
-            {cmsData.showcaseSubheadline?.content}
-          </p>
-        </div>
+        <h1 data-field-id={cmsData.curatedMenuSectionHeading?.fieldId} className="section-heading">
+          {heading}
+        </h1>
 
-        {/* Filter Tabs */}
-        <div className="filter-container">
+        <div className="category-tabs">
           <button 
-            className={`filter-btn ${activeFilter === 'All' ? 'active' : ''}`}
-            onClick={() => setActiveFilter('All')}
+            className={`tab-btn ${activeTab === 'All' ? 'active' : ''}`}
+            onClick={() => handleTabChange('All')}
           >
             All
           </button>
-          {filterTabs.map((tab, index) => (
+          {tabs.map((tab, index) => (
             <button
               key={index}
-              className={`filter-btn ${activeFilter === tab.field1 ? 'active' : ''}`}
-              onClick={() => setActiveFilter(tab.field1)}
-              data-field-id={tab.fieldId1}
+              className={`tab-btn ${activeTab === tab ? 'active' : ''}`}
+              onClick={() => handleTabChange(tab)}
+              data-field-id={cmsData.menuCategoryTabs?.fieldId}
             >
-              {tab.field1}
+              {tab}
             </button>
           ))}
         </div>
 
-        {/* Project Grid */}
-        <div className="project-grid">
-          {filteredProjects.map((project, index) => (
-            <div key={index} className="project-card">
-              <div className="card-image">
-                <img 
-                  src={`https://placehold.co/600x400/1a1a21/6366f1?text=${encodeURIComponent(project.field1)}`}
-                  alt={project.field1}
-                  className="project-image"
-                />
-                <div className="card-overlay">
-                  <a href="#" className="icon-btn" aria-label="GitHub Repository">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-                    </svg>
-                  </a>
-                  <a href="#" className="icon-btn" aria-label="Live Demo">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <circle cx="12" cy="12" r="10" />
-                      <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" />
-                    </svg>
-                  </a>
+        <div className="menu-grid">
+          {filteredCards.length > 0 ? (
+            filteredCards.map((card, index) => {
+              const tags = getTags(card.field4);
+              return (
+                <div key={index} className="menu-card">
+                  <div className="card-image">
+                    <img 
+                      src="https://placehold.co/600x400/F8F5F0/2B3A42?text=Dish+Image" 
+                      alt={card.field1}
+                      loading="lazy"
+                    />
+                    {tags.includes("chef's recommendation") && (
+                      <span className="badge">Chef's Recommendation</span>
+                    )}
+                  </div>
+                  <div className="card-content">
+                    <h3 data-field-id={card.fieldId1} className="card-title">
+                      {card.field1}
+                    </h3>
+                    <p data-field-id={card.fieldId2} className="card-description">
+                      {card.field2}
+                    </p>
+                    <div className="card-footer">
+                      <span data-field-id={card.fieldId3} className="card-price">
+                      {card.field3}
+                      </span>
+                      {tags.length > 0 && (
+                        <div className="card-tags">
+                          {tags.map((tag, tagIndex) => (
+                            <span key={tagIndex} className="tag">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="card-content">
-                <h3 data-field-id={project.fieldId1} className="project-title">
-                  {project.field1}
-                </h3>
-                <div className="tech-stack" data-field-id={project.fieldId2}>
-                  {project.field2.split(',').map((tech, idx) => (
-                    <span key={idx} className="tech-tag">{tech.trim()}</span>
-                  ))}
-                </div>
-                <p className="project-description" data-field-id={project.fieldId3}>
-                  {project.field3}
-                </p>
-              </div>
+              );
+            })
+          ) : (
+            <div className="no-results">
+              <p>No menu items found for this category.</p>
             </div>
-          ))}
+          )}
         </div>
 
-        {/* View All CTA */}
-        <div className="cta-section">
-          <button className="view-all-btn" data-field-id={cmsData.viewAllCta?.fieldId}>
-            {cmsData.viewAllCta?.content}
+        <div className="cta-container">
+          <button className="cta-button">
+            {ctaLabel}
           </button>
         </div>
       </div>
@@ -213,170 +172,167 @@ function ProjectShowcase({ cmsData }) {
   );
 }
 
-// --- Section 3: Professional Experience ---
-function ProfessionalExperience({ cmsData }) {
-  const experienceList = cmsData.experienceList?.loop || [];
+// --- Section 3: Chef’s Story Section ---
+function ChefSStorySection({ cmsData }) {
+  const galleryItems = cmsData.chefLifestyleGallery?.loop || [];
 
   return (
     <section className="section-3">
       <div className="container">
-        <header className="section-header">
-          <h2 data-field-id={cmsData.experienceHeadline?.fieldId}>
-            {cmsData.experienceHeadline?.content}
-          </h2>
-          <p 
-            className="subheadline"
-            data-field-id={cmsData.experienceSubheadline?.fieldId}
-          >
-            {cmsData.experienceSubheadline?.content}
-          </p>
-        </header>
+        <h1 data-field-id={cmsData.chefStorySectionHeading?.fieldId}>
+          {cmsData.chefStorySectionHeading?.content}
+        </h1>
 
-        <div className="timeline">
-          <div className="timeline-spine"></div>
-          
-          {experienceList.map((item, index) => (
-            <ExperienceCard key={index} item={item} />
-          ))}
-        </div>
+        <div className="layout-grid">
+          <div className="left-column">
+            <div className="chef-portrait-wrapper">
+              <img
+                src={cmsData.chefPortraitImage?.content}
+                alt="Chef Portrait"
+                className="chef-portrait"
+                data-field-id={cmsData.chefPortraitImage?.fieldId}
+              />
+            </div>
 
-        <div className="cta-container">
-          <a 
-            href="#"
-            className="resume-cta"
-            data-field-id={cmsData.downloadResumeCta?.fieldId}
-          >
-            {cmsData.downloadResumeCta?.content}
-          </a>
+            {galleryItems.length > 0 && (
+              <div className="gallery-grid">
+                {galleryItems.map((item, index) => (
+                  <div key={index} className="gallery-card">
+                    <img
+                      src={item.field2}
+                      alt={item.field1}
+                      className="gallery-image"
+                    />
+                    <p className="gallery-caption" data-field-id={item.fieldId1}>
+                      {item.field1}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div className="right-column">
+            <div
+              className="narrative-text"
+              data-field-id={cmsData.chefBiographicalNarrative?.fieldId}
+              dangerouslySetInnerHTML={{
+                __html: cmsData.chefBiographicalNarrative?.content
+                  ?.replace(/\*([^*]+)\*/g, '<em>$1</em>')
+                  .replace(/\n/g, '<br />') || ''
+              }}
+            />
+
+            <blockquote
+              className="philosophy-quote"
+              data-field-id={cmsData.chefSignaturePhilosophyStatement?.fieldId}
+            >
+              {cmsData.chefSignaturePhilosophyStatement?.content}
+            </blockquote>
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-function ExperienceCard({ item }) {
-  const [isExpanded, setIsExpanded] = useState(false);
-  
-  // Parse metadata
-  const roleMetadata = item.field1?.split('|').map(part => part.trim());
-  const jobTitle = roleMetadata?.[0] || '';
-  const company = roleMetadata?.[1] || '';
-  const dates = roleMetadata?.[2] || '';
-  
-  // Parse tech stack
-  const techStack = item.field2?.split(',').map(tag => tag.trim()) || [];
-  
-  // Parse achievements (assuming field3 contains the first achievement, and we might need more fields)
-  // For this implementation, we'll treat field3 as the first achievement and assume additional achievements
-  // could be in field5, field7, etc. But based on the schema, only field3 is provided.
-  // We'll use a fallback to create a list with one item.
-  const achievements = [item.field3].filter(Boolean);
+// --- Section 4: Reservation & Location Section ---
+function ReservationLocationSection({ cmsData }) {
+  const heading = cmsData.reservationLocationSectionHeading?.content || "Reserve Your Table & Find Us";
+  const ctaLabel = cmsData.confirmReservationCtaLabel?.content || "Confirm Reservation";
+  const mapSrc = cmsData.embeddedMap?.content || "";
+  const mapCta = cmsData.mapCtaLink?.content || "Open in Google Maps";
+  const formFields = cmsData.reservationForm?.loop || [];
+  const contactInfo = cmsData.contactHoursCard?.loop || [];
 
-  return (
-    <div className={`experience-card ${isExpanded ? 'expanded' : ''}`}>
-      <div className="card-content">
-        <div className="card-header">
-          <div className="role-info">
-            <h3 data-field-id={item.fieldId1}>{jobTitle}</h3>
-            <div className="company-dates">
-              <span>{company}</span>
-              <span className="separator">•</span>
-              <span>{dates}</span>
-            </div>
-          </div>
-          
-          <div className="tech-stack">
-            {techStack.map((tech, idx) => (
-              <span 
-                key={idx} 
-                className="tech-tag"
-                data-field-id={item.fieldId2}
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
-        
-        <div className="achievements">
-          {achievements.map((achievement, idx) => (
-            <p 
-              key={idx} 
-              className="achievement-item"
-              data-field-id={item.fieldId3}
-            >
-              {achievement}
-            </p>
-          ))}
-        </div>
-        
-        <button 
-          className="expand-toggle"
-          onClick={() => setIsExpanded(!isExpanded)}
-          aria-label={isExpanded ? "Collapse details" : "Expand details"}
-        >
-          <span data-field-id={item.fieldId4}>
-            {isExpanded ? "Hide Details" : item.field4 || "View Details"}
-          </span>
-          <span className={`arrow-icon ${isExpanded ? 'rotated' : ''}`}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </span>
-        </button>
-      </div>
-      
-      {isExpanded && (
-        <div className="expanded-content">
-          <p className="expanded-text">
-            Detailed project description would appear here. This section expands to show 
-            comprehensive information about the role, responsibilities, and specific 
-            contributions to AI/ML projects. The content would be dynamically populated 
-            from additional CMS fields when available.
-          </p>
-        </div>
-      )}
-    </div>
-  );
-}
-
-// --- Section 4: Contact Footer ---
-function ContactFooter({ cmsData }) {
   return (
     <section className="section-4">
       <div className="container">
-        <div className="content-wrapper">
-          <h1 data-field-id={cmsData.contactHeading?.fieldId}>
-            {cmsData.contactHeading?.content}
-          </h1>
-          <p className="subheadline" data-field-id={cmsData.contactSubheadline?.fieldId}>
-            {cmsData.contactSubheadline?.content}
-          </p>
-          <a 
-            href="mailto:contact@example.com" 
-            className="cta-button"
-            data-field-id={cmsData.emailCta?.fieldId}
-          >
-            {cmsData.emailCta?.content}
-          </a>
-          
-          <div className="social-links">
-            {cmsData.socialLinks?.loop?.map((item, index) => (
-              <a 
-                key={index} 
-                href={item.field2} 
-                className="social-link"
+        <h2 data-field-id={cmsData.reservationLocationSectionHeading?.fieldId} className="section-heading">
+          {heading}
+        </h2>
+
+        <div className="layout-grid">
+          {/* Left Column: Reservation Form */}
+          <div className="form-column">
+            <form className="reservation-form" onSubmit={(e) => e.preventDefault()}>
+              <div className="form-grid">
+                {formFields.map((field, index) => (
+                  <div key={index} className="form-group">
+                    <label htmlFor={`field-${index}`} className="form-label">
+                      <span data-field-id={field.fieldId1}>{field.field1}</span>
+                    </label>
+                    <input
+                      type={index === 0 ? "date" : index === 1 ? "time" : index === 2 ? "number" : "text"}
+                      id={`field-${index}`}
+                      className="form-input"
+                      placeholder={field.field2}
+                      aria-label={field.field3}
+                    />
+                    <span className="form-feedback" aria-live="polite"></span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="form-group full-width">
+                <label htmlFor="special-requests" className="form-label">
+                  <span data-field-id={formFields[5]?.fieldId1}>Special Requests</span>
+                </label>
+                <textarea
+                  id="special-requests"
+                  className="form-input textarea"
+                  rows="3"
+                  placeholder={formFields[5]?.field2}
+                  aria-label={formFields[5]?.field3}
+                ></textarea>
+                <span className="form-feedback" aria-live="polite"></span>
+              </div>
+
+              <button
+                type="submit"
+                className="cta-button"
+                data-field-id={cmsData.confirmReservationCtaLabel?.fieldId}
+              >
+                {ctaLabel}
+              </button>
+            </form>
+          </div>
+
+          {/* Right Column: Contact Info & Map */}
+          <div className="info-column">
+            <div className="contact-card">
+              <ul className="info-list">
+                {contactInfo.map((item, idx) => (
+                  <li key={idx} className="info-item">
+                    <span className="info-label" data-field-id={item.fieldId1}>{item.field1}:</span>
+                    <span className="info-value" data-field-id={item.fieldId2}>{item.field2}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href="#" className="contact-link" data-field-id={contactInfo[3]?.fieldId2}>
+                {contactInfo[3]?.field2}
+              </a>
+            </div>
+
+            <div className="map-container">
+              <iframe
+                src={mapSrc}
+                title="Restaurant Location"
+                className="map-embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <a
+                href={`https://maps.google.com/?q=${encodeURIComponent("Ginza, Tokyo")}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="map-cta-link"
+                data-field-id={cmsData.mapCtaLink?.fieldId}
               >
-                <span data-field-id={item.fieldId1}>{item.field1}</span>
+                {mapCta}
               </a>
-            ))}
+            </div>
           </div>
-        </div>
-        
-        <div className="copyright" data-field-id={cmsData.copyrightText?.fieldId}>
-          {cmsData.copyrightText?.content}
         </div>
       </div>
     </section>
@@ -387,9 +343,9 @@ export function GeneratedPage({ cmsData }) {
   return (
     <div className="generated-page-container">
       <HeroSection cmsData={cmsData.heroSection} />
-      <ProjectShowcase cmsData={cmsData.projectShowcase} />
-      <ProfessionalExperience cmsData={cmsData.professionalExperience} />
-      <ContactFooter cmsData={cmsData.contactFooter} />
+      <CuratedMenuSection cmsData={cmsData.curatedMenuSection} />
+      <ChefSStorySection cmsData={cmsData.chefSStorySection} />
+      <ReservationLocationSection cmsData={cmsData.reservationLocationSection} />
     </div>
   );
 }
@@ -401,7 +357,7 @@ export default function App() {
   const [pendingChanges, setPendingChanges] = useState({});
   const [loading, setLoading] = useState(true);
   
-  const projectId = "a31aa36c-79ee-4fc2-b0a0-fb6e08aaeaaf";
+  const projectId = "d0ba56bb-40b2-420d-bbbe-4a33a230b30b";
 
   useEffect(() => {
     fetch(`http://localhost:5001/api/cms/${projectId}`)

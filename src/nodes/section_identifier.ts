@@ -30,7 +30,7 @@ export async function runSectionDetailer(state: Partial<GlobalState>): Promise<P
     try {
       llm = getLlm(0.3);
     } catch (e: any) {
-      console.error(`Error initializing Gemini LLM: ${e}`);
+      console.error(`Error initializing Qwen LLM: ${e}`);
       return { pipeline_status: "failed", failure_reason: `LLM initialization error: ${e.message}` };
     }
 
@@ -76,7 +76,7 @@ export async function runSectionDetailer(state: Partial<GlobalState>): Promise<P
   try {
     detailerLlm = getLlm(0.5);
   } catch (e: any) {
-    console.error(`Error initializing Gemini LLM for detailer: ${e}`);
+    console.error(`Error initializing Qwen LLM for detailer: ${e}`);
     return { pipeline_status: "failed", failure_reason: `LLM initialization error: ${e.message}` };
   }
 

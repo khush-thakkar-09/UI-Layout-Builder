@@ -6,7 +6,7 @@ import { PROMPT_ENHANCER_SYSTEM_PROMPT } from "../prompts/prompt_enhancer_prompt
 import { logTokenUsage } from "../utils/token_tracker.js";
 
 /**
- * Enhances the user prompt using Gemini and handles human-in-the-loop approval.
+ * Enhances the user prompt using Qwen and handles human-in-the-loop approval.
  */
 export async function runPromptEnhancer(state: Partial<GlobalState>): Promise<Partial<GlobalState>> {
   const rawPrompt = state.user_prompt || "";
